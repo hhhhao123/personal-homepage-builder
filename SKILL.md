@@ -29,7 +29,7 @@ Companion skills such as `frontend-design`, `theme-factory`, `web-design-guideli
    - Prefer a `username.github.io` repository for ordinary personal homepages because it has the lowest publishing friction.
    - If the user provides documents, pasted text, media assets, or reference screenshots, treat them as source materials and extract homepage-ready content before asking broad questions.
    - Choose a primary delivery mode from `references/delivery-modes.md`.
-   - Use Context7 when asking about or working with libraries/frameworks/cloud services.
+   - When asking about or working with libraries, frameworks, SDKs, CLIs, or cloud services, use the current agent system's official documentation lookup tool when available, such as Context7. If no such tool is available, rely on official documentation or the environment's best available retrieval path.
 
 2. **Extract Materials**
    - Read uploaded or pasted materials when available: resume/CV, bio, personal notes, social profile text, portfolio lists, publications, service descriptions, articles, transcripts, link collections, media references, photos, video links, or music links.

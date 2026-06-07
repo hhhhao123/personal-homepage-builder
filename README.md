@@ -57,6 +57,27 @@ npx skills add https://github.com/hhhhao123/personal-homepage-builder --skill pe
 
 Restart your agent after installation so the new skill can be discovered.
 
+## Use With Other Agents
+
+This repository is not tied to one agent runtime. If your agent system does not support the `skills` CLI, give the agent this repository, or copy `SKILL.md` plus the `references/` folder into that system's skill, instruction, or knowledge format.
+
+At minimum, the agent needs:
+
+- `SKILL.md` for the main workflow
+- `references/` for interview prompts, content extraction, style directions, implementation guidance, and quality checks
+- optional companion skills or equivalent design/front-end capabilities when available
+
+## What To Prepare
+
+The skill can start from almost nothing, but better materials produce a more personal homepage. Useful inputs include:
+
+- resume, CV, short bio, or self-introduction
+- GitHub, LinkedIn, X/Twitter, Instagram, YouTube, Bilibili, Xiaohongshu, or other social links
+- project, publication, writing, service, product, or portfolio links
+- photos, avatar, screenshots, videos, music references, or existing brand assets
+- examples of personal sites you like or dislike
+- a rough answer to: who should visit this page, and what should they remember about you?
+
 ## Example Prompts
 
 ```text
@@ -86,6 +107,29 @@ Depending on the request and available materials, the agent can produce:
 - a GitHub Pages compatible static site or updates to an existing site
 - a publish-ready commit and push workflow when the user asks for GitHub publishing
 
+## Example Brief
+
+The skill asks the agent to create a compact brief before implementation, so design and code are driven by confirmed intent instead of guesses:
+
+```yaml
+personal_homepage_brief:
+  identity:
+    primary_role: "AI researcher and builder"
+    personal_elements: ["open-source projects", "writing", "selected photos"]
+  audience:
+    primary: "collaborators, recruiters, and peers"
+  goal:
+    first_impression: "thoughtful, technical, approachable"
+    remembered_for: "turning research ideas into usable tools"
+  content:
+    required_sections: ["intro", "projects", "writing", "social links"]
+  style:
+    direction_name: "quiet technical editorial"
+    must_avoid: ["generic portfolio grid", "overly flashy effects"]
+  constraints:
+    hosting: "GitHub Pages"
+```
+
 ## Recommended Companion Skills
 
 This skill works on its own, but homepage quality improves when these companion skills are available:
@@ -105,6 +149,7 @@ The skill does not install companion skills automatically. Install them separate
 
 ```text
 personal-homepage-builder/
+|-- LICENSE                          # MIT license
 |-- SKILL.md                         # Main skill instructions
 |-- README.md                        # Human-facing repository overview
 |-- agents/

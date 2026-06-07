@@ -30,6 +30,7 @@ Avoid these failures when using `personal-homepage-builder`.
 ## Implementation Failures
 
 - Ignoring the existing stack and project conventions.
+- Creating one large monolithic HTML file for a real homepage when a maintainable `assets/css`, `assets/js`, and `assets/images` structure would fit.
 - Hard-coding maintainable profile data when a data file or schema would fit better.
 - Referencing generated assets that were not saved into the project.
 - Adding backend-only features to a simple GitHub Pages site.

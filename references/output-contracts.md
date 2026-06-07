@@ -62,6 +62,7 @@ Must include:
 
 - target files or modules
 - stack and deployment target
+- site structure, including whether CSS, JS, images, and data will be separated under `assets/`
 - asset strategy
 - content data strategy
 - validation commands

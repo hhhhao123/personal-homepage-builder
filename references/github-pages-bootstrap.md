@@ -14,6 +14,7 @@ Default to GitHub Pages for ordinary personal homepages unless the user asks for
 - Plain HTML/CSS/JS for the simplest one-page site.
 - Jekyll for maintainable data-driven static sites using `_data/profile.yml`, layouts, and Liquid.
 - Avoid heavy app frameworks for ordinary profile pages unless the user needs routing, CMS-like behavior, or advanced interactivity.
+- For plain static sites, keep `index.html`, CSS, JavaScript, images, and optional data files separated under `assets/` by default. See `site-structure.md`.
 
 ## Jekyll Rules
 

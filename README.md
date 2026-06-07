@@ -42,8 +42,10 @@ This is a beta skill. The current v0.2 direction treats `personal-homepage-build
 The skill now emphasizes:
 
 - session state across the whole homepage-design conversation
+- lightweight personal signal intake for users starting from zero
 - required output gates before style, implementation, review, and publish
 - explicit companion skill routing for taste, theme, frontend, media, and review work
+- structured static site implementation instead of monolithic HTML by default
 - forward-test prompts for future regression checks
 - no emoji by default unless the user explicitly asks for emoji
 
@@ -96,6 +98,8 @@ The skill can start from almost nothing, but better materials produce a more per
 - examples of personal sites you like or dislike
 - a rough answer to: who should visit this page, and what should they remember about you?
 
+To save tokens, prepare a short Personal Signal Pack before starting: who you are, who the homepage is for, what visitors should remember, what to show, what to keep private, and what visual styles you like or dislike. See `references/personal-signal-intake.md`.
+
 ## Example Prompts
 
 ```text
@@ -122,7 +126,7 @@ Depending on the request and available materials, the agent can produce:
 - a content structure and public-facing profile summary
 - homepage archetype and section recommendations
 - visual direction, color, typography, image, media, and motion guidance
-- a GitHub Pages compatible static site or updates to an existing site
+- a GitHub Pages compatible static site or updates to an existing site, with CSS, JavaScript, images, and optional data separated under `assets/` by default
 - a publish-ready commit and push workflow when the user asks for GitHub publishing
 
 ## Example Brief
@@ -194,10 +198,12 @@ personal-homepage-builder/
     |-- interview.md                 # Discovery question bank
     |-- media-assets.md              # Image, video, audio, and embed handling
     |-- output-contracts.md          # Gates before design, implementation, review, and publish
+    |-- personal-signal-intake.md    # Lightweight user signal intake
     |-- profile-schema.md            # Maintainable profile data contract
     |-- profile-signals.md           # Optional identity and taste signals
     |-- quality-checklist.md         # Final review checklist
     |-- session-protocol.md          # Conversation state and phase transitions
+    |-- site-structure.md            # Default static site file organization
     |-- skill-routing.md             # Companion skill routing and fallbacks
     |-- social-links.md              # Contact and platform display rules
     `-- style-directions.md          # Style direction translation patterns

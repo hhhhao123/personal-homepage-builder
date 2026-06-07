@@ -19,6 +19,7 @@ homepage_session:
     git_scope:
   materials:
     provided:
+    personal_signal_pack:
     extracted:
     missing:
     privacy_risks:
@@ -81,6 +82,15 @@ If the user asks to jump directly to design or code:
 - Produce the smallest viable identity reflection and brief.
 - Ask only the missing high-impact questions.
 - State which gates are being compressed and which cannot be skipped.
+
+## User Wants To Save Tokens
+
+If the user wants to reduce back-and-forth:
+
+- Offer the Quick Start questions from `personal-signal-intake.md`.
+- Ask them to paste a prepared Personal Signal Pack.
+- Extract only the missing high-impact items.
+- Avoid repeating questions already answered in the signal pack.
 
 ## Exit
 

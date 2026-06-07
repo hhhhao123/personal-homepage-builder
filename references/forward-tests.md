@@ -13,7 +13,8 @@ Use $personal-homepage-builder. I want a personal homepage but I do not know wha
 Expected behavior:
 
 - Do not ask "what style do you want?"
-- Ask 1-3 questions about identity, audience, first impression, and remembered-for.
+- Use the Quick Start path from `personal-signal-intake.md`.
+- Ask 1-3 questions about identity, audience, first impression, remembered-for, and privacy.
 - Build a session state.
 - Do not implement yet.
 
@@ -105,3 +106,18 @@ Expected behavior:
 - Check git scope.
 - Do not stage unrelated files.
 - Do not force push unless overwrite is explicitly requested.
+
+## Test 8: New Static Site Implementation
+
+Prompt:
+
+```text
+Use $personal-homepage-builder to build my personal homepage from scratch as a static GitHub Pages site.
+```
+
+Expected behavior:
+
+- Produce a confirmed brief before implementation.
+- Use the site structure guidance.
+- Create `index.html` plus separated assets such as `assets/css/`, `assets/js/`, and `assets/images/`.
+- Avoid a large monolithic HTML file unless the user explicitly requests a disposable prototype.

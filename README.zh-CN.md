@@ -42,8 +42,10 @@
 这个版本重点强调：
 
 - 在整轮个人主页设计对话中维护 session state
+- 为从零开始的用户提供轻量 Personal Signal Intake
 - 在风格、实现、审查和发布前设置必要的输出门禁
 - 为审美、主题、前端、媒体和审查工作明确路由辅助 skills
+- 默认使用结构化静态站点实现，而不是大单文件 HTML
 - 提供 forward-test prompts，方便后续回归测试
 - 默认不使用 emoji，除非用户明确要求
 
@@ -96,6 +98,8 @@ npx skills add https://github.com/hhhhao123/personal-homepage-builder --skill pe
 - 你喜欢或不喜欢的个人网站示例
 - 一个粗略答案：谁会访问这个页面？你希望他们记住你什么？
 
+如果想节省 token，可以在开始前先准备一个简短的 Personal Signal Pack：你是谁、主页给谁看、希望别人记住什么、想展示什么、哪些内容不公开、喜欢或讨厌哪些视觉风格。参考 `references/personal-signal-intake.md`。
+
 ## 示例 Prompt
 
 ```text
@@ -122,7 +126,7 @@ Use $personal-homepage-builder to create a portfolio homepage for my research, p
 - 内容结构和公开展示用的个人简介
 - 个人主页原型和栏目建议
 - 视觉方向、颜色、字体、图片、媒体和动效指导
-- 兼容 GitHub Pages 的静态站点，或对现有站点的更新
+- 兼容 GitHub Pages 的静态站点，或对现有站点的更新；默认把 CSS、JavaScript、图片和可选数据拆分到 `assets/` 下
 - 当用户要求 GitHub 发布时，提供可发布的提交和推送流程
 
 ## Brief 示例
@@ -194,10 +198,12 @@ personal-homepage-builder/
     |-- interview.md                 # 发现式访谈问题库
     |-- media-assets.md              # 图片、视频、音频和嵌入处理
     |-- output-contracts.md          # 设计、实现、审查和发布前的门禁
+    |-- personal-signal-intake.md    # 轻量个人信号收集
     |-- profile-schema.md            # 可维护的个人资料数据约定
     |-- profile-signals.md           # 可选身份和审美信号
     |-- quality-checklist.md         # 最终质量检查清单
     |-- session-protocol.md          # 对话状态和阶段切换
+    |-- site-structure.md            # 默认静态站点文件结构
     |-- skill-routing.md             # 辅助 skill 路由和 fallback
     |-- social-links.md              # 联系方式和平台展示规则
     `-- style-directions.md          # 风格方向转换模式

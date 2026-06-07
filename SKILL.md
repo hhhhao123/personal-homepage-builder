@@ -40,13 +40,13 @@ At phase transitions, briefly state:
 Follow these phases in order unless the user explicitly requests a smaller path and the relevant gates still pass:
 
 1. **Orient**: inspect project context, deployment target, existing files, user goal, and delivery mode. Use `references/delivery-modes.md`.
-2. **Intake**: extract facts, links, media, tone clues, privacy risks, and gaps from supplied materials. Use `references/content-intake.md`, `references/media-assets.md`, and `references/social-links.md`.
+2. **Intake**: extract facts, links, media, tone clues, privacy risks, and gaps from supplied materials. If the user has little or no material, use `references/personal-signal-intake.md` to collect only the signals needed for homepage design, not to teach resume writing. Use `references/content-intake.md`, `references/media-assets.md`, and `references/social-links.md`.
 3. **Interview**: ask 1-3 high-impact questions per round. Use `references/interview.md`. Prefer identity, audience, first impression, remembered-for, taste signals, and explicit avoids.
 4. **Reflect**: produce an identity reflection that separates confirmed facts, inferred positioning, tentative taste hypotheses, and open questions. Gate this with `references/output-contracts.md`.
 5. **Taste Discovery**: use `design-taste-frontend`, `taste-skill`, `taste`, or an equivalent taste/design-direction skill when available. If unavailable, use `references/style-directions.md` and say what fallback is being used.
 6. **Brief**: create a `personal_homepage_brief` using `references/homepage-brief.md`. Do not implement until the user accepts or corrects it.
 7. **Design Routing**: declare which companion skills are available, which will be used, and which fallbacks apply. Use `references/skill-routing.md`.
-8. **Implement**: prefer the existing stack and conventions. For new GitHub Pages sites, use `references/github-pages-bootstrap.md` and `references/implementation.md`.
+8. **Implement**: prefer the existing stack and conventions. For new GitHub Pages sites, use `references/github-pages-bootstrap.md`, `references/implementation.md`, and `references/site-structure.md`. Do not default to a large single-file HTML implementation unless the user explicitly asks for a disposable prototype.
 9. **Review**: run build/tests where possible and use `web-design-guidelines` or an equivalent review skill when available. Use `references/quality-checklist.md`.
 10. **Publish**: commit and push only when the user asks for publishing. Do not stage unrelated changes silently.
 
@@ -88,6 +88,7 @@ Every brief must include:
 - first impression
 - remembered-for statement
 - source materials
+- personal signal pack when provided
 - confirmed facts
 - inferred positioning
 - open questions
@@ -100,6 +101,7 @@ Every brief must include:
 - emoji policy
 - companion skill routing
 - implementation and validation plan
+- structured site file plan for real implementations
 
 ## Reference Map
 
@@ -107,6 +109,8 @@ Every brief must include:
 - `references/output-contracts.md`: required outputs and gates before design, implementation, review, and publish.
 - `references/skill-routing.md`: companion skill routing, required calls when available, and fallback behavior.
 - `references/homepage-brief.md`: canonical `personal_homepage_brief` schema and examples.
+- `references/personal-signal-intake.md`: lightweight intake prompts for users with little or no prepared material.
+- `references/site-structure.md`: default structured static site layout for HTML/CSS/JS GitHub Pages implementations.
 - `references/anti-patterns.md`: common failure modes to avoid during discovery, design, implementation, and delivery.
 - `references/forward-tests.md`: realistic test prompts and expected behavior for future validation.
 - `references/interview.md`: staged question bank for discovering user needs and taste.

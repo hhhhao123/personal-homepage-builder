@@ -27,6 +27,7 @@ personal_homepage_brief:
     needs_confirmation:
   content:
     source_materials:
+    personal_signal_pack:
     priority_order:
     required_sections:
     optional_sections:
@@ -61,6 +62,7 @@ personal_homepage_brief:
   implementation:
     delivery_mode:
     quality_tier:
+    site_structure:
     pages:
     assets:
     validation:

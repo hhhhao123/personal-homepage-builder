@@ -36,8 +36,13 @@ Choose the smallest stack that fits the user's needs:
 - Astro: content-rich personal sites with components and static output.
 - Next.js/React: interactive apps, CMS-heavy sites, or advanced routing.
 
-Use Context7 for framework/library/cloud docs before implementation.
+Use the current agent system's official documentation lookup tool for framework, library, SDK, CLI, or cloud docs before implementation. If no such tool is available, use official documentation or the best available retrieval path.
 Use `github-pages-bootstrap.md` for GitHub Pages setup and publish details.
+Use `site-structure.md` for default file organization.
+
+## File Structure Rule
+
+For a real static homepage implementation, do not default to one large HTML file. Prefer a maintainable structure with `index.html`, `assets/css/`, `assets/js/`, `assets/images/`, and optional `assets/data/`. Keep single-file HTML only for disposable prototypes, constrained artifact environments, or when the user explicitly asks for it.
 
 ## Skill Orchestration
 
@@ -92,6 +97,7 @@ For a planning-only request:
 For an implementation request:
 - modified or created site files
 - generated assets saved in the workspace
+- CSS and JavaScript separated into project asset files unless intentionally building a prototype
 - media assets or covers saved in the workspace when used
 - build/test results
 - local preview instructions

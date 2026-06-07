@@ -5,7 +5,7 @@
 <h1 align="center">Personal Homepage Builder</h1>
 
 <p align="center">
-  一个 agent skill，用于把一个人的身份、材料、审美偏好和发布约束转化为有辨识度、适合 GitHub Pages 发布的个人主页。
+  一个 agent skill，用于把一个人的身份、材料、审美偏好和发布限制转化为有辨识度、适合 GitHub Pages 发布的个人主页。
 </p>
 
 <p align="center">
@@ -23,7 +23,7 @@
 
 ## 为什么需要这个 Skill
 
-大多数人开始做个人主页时，并不会一开始就拥有清晰的网站结构、品牌系统和内容策略。他们通常只有一些零散材料：一份简历、一个 GitHub 主页、几个社交链接、一些照片、还没有完全成形的偏好，以及一种模糊的“我希望别人怎样看见我”的感觉。
+大多数人开始做个人主页时，并不会一开始就拥有清晰的网站结构、个人品味和内容策略。他们通常只有一些零散材料：一份简历、一个 GitHub 主页、几个社交链接、一些照片、还没有完全成形的偏好，以及一种模糊的“我希望别人怎样看见我”的感觉。
 
 `personal-homepage-builder` 为 AI coding agent 提供了一套可复用的工作流，专门处理这种混乱的起点。它帮助 agent 提出更好的问题，提取有用材料，把个人信号转化为设计方向，并构建一个具体、有个人辨识度，而不是模板感很重的主页。
 
@@ -75,7 +75,7 @@ npx skills add https://github.com/hhhhao123/personal-homepage-builder --skill pe
 
 这个 skill 几乎可以从零开始，但材料越充分，主页越容易做出个人感。建议准备：
 
-- 简历、CV、短 bio 或自我介绍
+- 简历、简短描述或自我介绍
 - GitHub、LinkedIn、X/Twitter、Instagram、YouTube、Bilibili、小红书或其他社交链接
 - 项目、论文、文章、服务、产品或作品集链接
 - 照片、头像、截图、视频、音乐参考或已有品牌资产
@@ -104,7 +104,7 @@ Use $personal-homepage-builder to create a portfolio homepage for my research, p
 
 根据你的需求和可用材料，agent 可以产出：
 
-- 简洁的个人主页 brief
+- 简洁的个人主页
 - 内容结构和公开展示用的个人简介
 - 个人主页原型和栏目建议
 - 视觉方向、颜色、字体、图片、媒体和动效指导

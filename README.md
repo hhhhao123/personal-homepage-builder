@@ -5,12 +5,12 @@
 <h1 align="center">Personal Homepage Builder</h1>
 
 <p align="center">
-  A Codex skill for turning a person's identity, materials, taste, and publishing constraints into a distinctive GitHub Pages friendly personal homepage.
+  An agent skill for turning a person's identity, materials, taste, and publishing constraints into a distinctive GitHub Pages friendly personal homepage.
 </p>
 
 <p align="center">
   <a href="https://github.com/hhhhao123/personal-homepage-builder"><img alt="GitHub" src="https://img.shields.io/badge/GitHub-personal--homepage--builder-24292f?logo=github"></a>
-  <img alt="Codex Skill" src="https://img.shields.io/badge/Codex-Skill-0A7EBA">
+  <img alt="Agent Skill" src="https://img.shields.io/badge/Agent-Skill-0A7EBA">
   <img alt="GitHub Pages" src="https://img.shields.io/badge/GitHub%20Pages-ready-2E6B3F">
   <img alt="License" src="https://img.shields.io/badge/License-MIT-E95D3C">
 </p>
@@ -21,7 +21,7 @@
 
 Most people do not start a personal homepage project with a clean sitemap, brand system, and content strategy. They start with scattered materials: a resume, a GitHub profile, a few social links, some photos, half-formed preferences, and a vague sense of how they want to be seen.
 
-`personal-homepage-builder` gives Codex a reusable workflow for that messy beginning. It helps the agent ask better questions, extract useful material, translate personal signals into design direction, and build a homepage that feels specific instead of template-shaped.
+`personal-homepage-builder` gives AI coding agents a reusable workflow for that messy beginning. It helps the agent ask better questions, extract useful material, translate personal signals into design direction, and build a homepage that feels specific instead of template-shaped.
 
 Use it when you want to create or redesign:
 
@@ -31,9 +31,9 @@ Use it when you want to create or redesign:
 - a lightweight static homepage that can be published without a backend
 - a richer media-forward homepage using photos, video, music, or generated visual assets
 
-## What The Skill Helps Codex Do
+## What The Skill Helps Agents Do
 
-The skill guides Codex through a complete homepage workflow:
+The skill guides an agent through a complete homepage workflow:
 
 1. **Orient**: inspect the existing project or choose a GitHub Pages friendly starting point.
 2. **Extract**: read resumes, bios, notes, links, photos, screenshots, and other source materials.
@@ -45,17 +45,17 @@ The skill guides Codex through a complete homepage workflow:
 8. **Implement**: build or update the site using the current project stack.
 9. **Review and publish**: test the result and prepare it for GitHub Pages.
 
-The core rule is simple: do not begin by asking "what style do you want?" Most users cannot answer that well. The skill pushes Codex to discover identity first, then derive design choices from evidence.
+The core rule is simple: do not begin by asking "what style do you want?" Most users cannot answer that well. The skill pushes the agent to discover identity first, then derive design choices from evidence.
 
 ## Install
 
-Install the skill from this repository:
+Install the skill from this repository with any skill-compatible agent setup. For Codex or other environments that support the `skills` CLI, use:
 
 ```powershell
 npx skills add https://github.com/hhhhao123/personal-homepage-builder --skill personal-homepage-builder
 ```
 
-Restart Codex after installation so the new skill can be discovered.
+Restart your agent after installation so the new skill can be discovered.
 
 ## Example Prompts
 
@@ -77,7 +77,7 @@ Use $personal-homepage-builder to create a portfolio homepage for my research, p
 
 ## What You Get
 
-Depending on the request and available materials, Codex can produce:
+Depending on the request and available materials, the agent can produce:
 
 - a concise personal homepage brief
 - a content structure and public-facing profile summary
@@ -86,19 +86,20 @@ Depending on the request and available materials, Codex can produce:
 - a GitHub Pages compatible static site or updates to an existing site
 - a publish-ready commit and push workflow when the user asks for GitHub publishing
 
-## Companion Skills
+## Recommended Companion Skills
 
 This skill works on its own, but homepage quality improves when these companion skills are available:
 
-| Skill | Why it helps |
-| --- | --- |
-| `frontend-design` | Improves page composition, visual polish, responsive behavior, and product-level UI quality. |
-| `theme-factory` | Helps create or apply a coherent color and typography system. |
-| `web-design-guidelines` | Adds a final UI, UX, accessibility, and responsive design review pass. |
-| `web-artifacts-builder` | Useful for complex React, Tailwind, or shadcn-based homepage artifacts. |
-| `find-skills` | Helps discover extra skills when a project needs something outside this workflow. |
+| Skill | Why install it | Install / source |
+| --- | --- | --- |
+| `frontend-design` | Produces more distinctive, production-grade homepage UI instead of generic layouts. | [`npx skills add https://github.com/anthropics/skills --skill frontend-design`](https://www.skills.sh/anthropics/skills/frontend-design) |
+| `theme-factory` | Helps create or apply consistent color and typography systems. | [`npx skills add https://github.com/anthropics/skills --skill theme-factory`](https://www.skills.sh/anthropics/skills/theme-factory) |
+| `web-design-guidelines` | Provides a final UI, UX, and accessibility review pass. | [`npx skills add https://github.com/vercel-labs/agent-skills --skill web-design-guidelines`](https://www.skills.sh/vercel-labs/agent-skills/web-design-guidelines) |
+| `web-artifacts-builder` | Useful only when the homepage is implemented as a complex React/Tailwind/shadcn artifact. | [`npx skills add https://github.com/anthropics/skills --skill web-artifacts-builder`](https://www.skills.sh/anthropics/skills/web-artifacts-builder) |
+| `find-skills` | Helps users discover and install additional skills when the current set is not enough. | [`npx skills add https://github.com/vercel-labs/add-skill --skill find-skills`](https://www.skills.sh/vercel-labs/add-skill/find-skills) |
+| `skill-installer` | Codex system skill for installing skills from curated lists or GitHub paths; usually already available in Codex. | [Source: `openai/skills`](https://github.com/openai/skills/tree/main/skills/.system/skill-installer) |
 
-The skill does not install companion skills automatically. Install them separately if you want Codex to use them during homepage creation.
+The skill does not install companion skills automatically. Install them separately if you want your agent to use them during homepage creation.
 
 ## Repository Layout
 
@@ -107,7 +108,7 @@ personal-homepage-builder/
 |-- SKILL.md                         # Main skill instructions
 |-- README.md                        # Human-facing repository overview
 |-- agents/
-|   `-- openai.yaml                  # Codex UI metadata
+|   `-- openai.yaml                  # Optional OpenAI/Codex UI metadata
 |-- assets/
 |   `-- images/
 |       `-- personal-homepage-builder-logo.svg
@@ -134,4 +135,4 @@ Personal homepages should not all look like the same portfolio template. A stron
 - what they want to be known for
 - why their work, story, or taste is memorable
 
-This skill is built around that premise. It treats resumes, MBTI labels, hobbies, favorite media, screenshots, photos, work links, and social platforms as signals. Some are strong evidence, some are just clues. Codex is instructed to confirm the meaning with the user before turning those signals into public-facing design and content.
+This skill is built around that premise. It treats resumes, MBTI labels, hobbies, favorite media, screenshots, photos, work links, and social platforms as signals. Some are strong evidence, some are just clues. The agent is instructed to confirm the meaning with the user before turning those signals into public-facing design and content.

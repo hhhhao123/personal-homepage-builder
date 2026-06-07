@@ -19,7 +19,7 @@ Treat images, videos, music, reference screenshots, and platform links as option
 
 Always run a clarification dialogue before finalizing the brief. Uploaded materials can reduce repeated questions, but they cannot replace user-confirmed intent, audience, public/private boundaries, and desired first impression.
 
-Companion skills such as `frontend-design`, `theme-factory`, `web-design-guidelines`, and `web-artifacts-builder` are optional enhancements. When these companion skills are available, explicitly use them at the relevant workflow stages before falling back to general capability. Do not assume they are installed, do not try to install them automatically, and do not block the homepage workflow if they are unavailable. If the user asks how to improve design quality before using this skill, point them to the repository README for recommended companion skill installation.
+Companion skills such as `frontend-design`, `theme-factory`, `web-design-guidelines`, and `web-artifacts-builder` are optional enhancements. When these companion skills are available in the current agent system, explicitly use them at the relevant workflow stages before falling back to general capability. Do not assume they are installed, do not try to install them automatically, and do not block the homepage workflow if they are unavailable. If the user asks how to improve design quality before using this skill, point them to the repository README for recommended companion skill installation.
 
 ## Workflow
 

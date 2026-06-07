@@ -30,6 +30,7 @@ Must include:
 - layout variance
 - visual density
 - motion intensity
+- motion level: none, subtle, moderate, or expressive
 - style avoids
 - anti-template constraints
 
@@ -38,6 +39,8 @@ Must include:
 Required before implementation.
 
 Must use `references/homepage-brief.md`.
+
+Must include a motion strategy, even when the decision is `level: none`.
 
 The user must accept or correct the brief before code changes begin, unless the user explicitly requests a compressed quick path. Even in a compressed path, produce a minimal brief first.
 
@@ -52,6 +55,7 @@ Must include:
 - frontend route
 - media route
 - review route
+- motion plan and reduced-motion fallback
 - fallback notes
 
 ## Gate 5: Implementation Plan

@@ -45,7 +45,16 @@ personal_homepage_brief:
     color_notes:
     typography_notes:
     image_strategy:
-    motion_strategy:
+  motion_strategy:
+    level: none | subtle | moderate | expressive
+    rationale:
+    entrance:
+    scroll_reveal:
+    hover_feedback:
+    state_feedback:
+    content_specific_motion:
+    reduced_motion:
+    avoid:
   constraints:
     stack:
     hosting: GitHub Pages by default
@@ -78,6 +87,7 @@ For speed-focused work, the brief may be short but still needs these fields:
 - remembered-for
 - required sections
 - style direction
+- motion strategy
 - privacy avoids
 - companion skill routing
 - validation plan

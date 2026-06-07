@@ -17,6 +17,7 @@ Default structure:
 |   |-- css/
 |   |   |-- base.css
 |   |   |-- components.css
+|   |   |-- animations.css
 |   |   `-- home.css
 |   |-- js/
 |   |   |-- main.js
@@ -44,6 +45,7 @@ Use fewer files for very small sites, but keep CSS and JS out of `index.html` by
 - `index.html`: semantic document structure, sections, metadata, and links to assets.
 - `assets/css/base.css`: reset, variables, typography, layout primitives.
 - `assets/css/components.css`: reusable cards, buttons, link groups, media blocks, nav, footer.
+- `assets/css/animations.css`: optional reusable motion styles when motion is enabled.
 - `assets/css/home.css`: page-specific composition and responsive layout.
 - `assets/js/main.js`: initialization and safe progressive enhancement.
 - `assets/js/interactions.js`: optional interactions, motion toggles, filters, or small UI behavior.

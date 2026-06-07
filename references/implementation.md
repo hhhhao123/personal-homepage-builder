@@ -39,10 +39,15 @@ Choose the smallest stack that fits the user's needs:
 Use the current agent system's official documentation lookup tool for framework, library, SDK, CLI, or cloud docs before implementation. If no such tool is available, use official documentation or the best available retrieval path.
 Use `github-pages-bootstrap.md` for GitHub Pages setup and publish details.
 Use `site-structure.md` for default file organization.
+Use `motion-design.md` when the brief allows motion.
 
 ## File Structure Rule
 
 For a real static homepage implementation, do not default to one large HTML file. Prefer a maintainable structure with `index.html`, `assets/css/`, `assets/js/`, `assets/images/`, and optional `assets/data/`. Keep single-file HTML only for disposable prototypes, constrained artifact environments, or when the user explicitly asks for it.
+
+## Motion Rule
+
+Motion is optional and must match the brief. If motion is enabled, implement it as progressive enhancement with `prefers-reduced-motion` support. Prefer `opacity` and `transform`, keep core content visible without JavaScript, and place reusable motion styles or scripts in asset files instead of inline code.
 
 ## Skill Orchestration
 
@@ -98,6 +103,7 @@ For an implementation request:
 - modified or created site files
 - generated assets saved in the workspace
 - CSS and JavaScript separated into project asset files unless intentionally building a prototype
+- motion behavior implemented according to the confirmed `motion_strategy`, or explicitly omitted when motion is disabled
 - media assets or covers saved in the workspace when used
 - build/test results
 - local preview instructions

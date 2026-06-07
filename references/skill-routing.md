@@ -33,5 +33,6 @@ Design routing:
 - Theme: <skill used or fallback>
 - Frontend/UI: <skill used or fallback>
 - Media: <skill used or not needed>
+- Motion: <level and rationale, or none>
 - Review: <planned skill or fallback>
 ```

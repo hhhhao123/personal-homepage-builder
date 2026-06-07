@@ -41,6 +41,9 @@
 - Links and controls have visible focus states.
 - Touch targets are comfortable on mobile.
 - Motion respects reduced-motion preferences.
+- If the brief sets `motion_strategy.level` to `none`, decorative motion is absent.
+- Enabled motion matches the confirmed motion strategy and does not distract from reading.
+- Hover effects have keyboard focus equivalents where relevant.
 - Images have appropriate alt text or empty alt when decorative.
 - Layout has no horizontal overflow.
 
@@ -52,5 +55,6 @@
 - Multilingual sites have a clear default language and consistent translated fields.
 - Build command passes.
 - Generated assets are saved in the project.
+- Motion CSS/JS is stored in project asset files and does not require core content to load.
 - Unrelated user changes are not reverted.
 - Git commits stage only intended files.

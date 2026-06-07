@@ -15,6 +15,7 @@ Avoid these failures when using `personal-homepage-builder`.
 - Mixing confirmed facts and agent inference without labels.
 - Omitting audience, first impression, or remembered-for.
 - Omitting explicit avoids.
+- Omitting the motion decision, including whether motion is disabled or enabled.
 - Omitting companion skill routing.
 - Using emoji by default.
 - Writing a generic portfolio brief that could fit anyone.
@@ -26,6 +27,8 @@ Avoid these failures when using `personal-homepage-builder`.
 - Producing a generic hero, three equal cards, and social icons layout without personal rationale.
 - Letting a hobby dominate the whole site when it should only be an accent.
 - Using rich media because it is available rather than because it supports identity or audience.
+- Forcing dynamic effects after the user asked for no motion.
+- Adding heavy motion because it looks impressive rather than because it supports the person's content.
 
 ## Implementation Failures
 
@@ -34,6 +37,7 @@ Avoid these failures when using `personal-homepage-builder`.
 - Hard-coding maintainable profile data when a data file or schema would fit better.
 - Referencing generated assets that were not saved into the project.
 - Adding backend-only features to a simple GitHub Pages site.
+- Adding motion that ignores `prefers-reduced-motion`, causes layout shift, blocks reading, or depends on JavaScript for core content.
 - Staging unrelated files.
 
 ## Review Failures

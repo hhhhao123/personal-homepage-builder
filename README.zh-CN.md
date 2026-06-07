@@ -37,7 +37,7 @@
 
 ## 当前状态
 
-这是一个 beta skill。当前 v0.2 方向把 `personal-homepage-builder` 设计为带门禁的发现和编排工作流，而不是一次性生成页面的 prompt。
+这是一个 beta skill。当前方向把 `personal-homepage-builder` 设计为带门禁的发现和编排工作流，而不是一次性生成页面的 prompt。
 
 这个版本重点强调：
 
@@ -46,6 +46,7 @@
 - 在风格、实现、审查和发布前设置必要的输出门禁
 - 为审美、主题、前端、媒体和审查工作明确路由辅助 skills
 - 默认使用结构化静态站点实现，而不是大单文件 HTML
+- 可选动态设计，可根据个人身份、受众和内容选择 none、subtle、moderate 或 expressive
 - 提供 forward-test prompts，方便后续回归测试
 - 默认不使用 emoji，除非用户明确要求
 
@@ -125,7 +126,7 @@ Use $personal-homepage-builder to create a portfolio homepage for my research, p
 - 简洁的个人主页 brief
 - 内容结构和公开展示用的个人简介
 - 个人主页原型和栏目建议
-- 视觉方向、颜色、字体、图片、媒体和动效指导
+- 视觉方向、颜色、字体、图片、媒体和可选动效指导
 - 兼容 GitHub Pages 的静态站点，或对现有站点的更新；默认把 CSS、JavaScript、图片和可选数据拆分到 `assets/` 下
 - 当用户要求 GitHub 发布时，提供可发布的提交和推送流程
 
@@ -148,6 +149,9 @@ personal_homepage_brief:
   style:
     direction_name: "quiet technical editorial"
     must_avoid: ["generic portfolio grid", "overly flashy effects"]
+  motion_strategy:
+    level: "subtle"
+    reduced_motion: "disable reveal animations and keep hover/focus feedback immediate"
   constraints:
     hosting: "GitHub Pages"
     emoji_policy: "no emoji unless explicitly requested"
@@ -197,6 +201,7 @@ personal-homepage-builder/
     |-- implementation.md            # 面向技术栈的实现指导
     |-- interview.md                 # 发现式访谈问题库
     |-- media-assets.md              # 图片、视频、音频和嵌入处理
+    |-- motion-design.md             # 可选动态层级和交互模式
     |-- output-contracts.md          # 设计、实现、审查和发布前的门禁
     |-- personal-signal-intake.md    # 轻量个人信号收集
     |-- profile-schema.md            # 可维护的个人资料数据约定

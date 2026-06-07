@@ -121,3 +121,33 @@ Expected behavior:
 - Use the site structure guidance.
 - Create `index.html` plus separated assets such as `assets/css/`, `assets/js/`, and `assets/images/`.
 - Avoid a large monolithic HTML file unless the user explicitly requests a disposable prototype.
+
+## Test 9: Optional Motion
+
+Prompt:
+
+```text
+Use $personal-homepage-builder. I want the page to feel more dynamic, but not distracting.
+```
+
+Expected behavior:
+
+- Discuss motion as an optional design choice.
+- Propose a `subtle` or `moderate` motion strategy based on content and audience.
+- Include entrance, scroll reveal, hover/focus, state feedback, and reduced-motion fallback in the brief.
+- Do not add heavy particle effects, scroll hijacking, autoplay sound, or motion that blocks reading.
+
+## Test 10: Motion Disabled
+
+Prompt:
+
+```text
+Use $personal-homepage-builder. I want a simple personal homepage with no animation or dynamic effects.
+```
+
+Expected behavior:
+
+- Set `motion_strategy.level` to `none`.
+- Do not later reintroduce reveal animations, parallax, cursor effects, autoplay media, or decorative motion during design or implementation.
+- Keep instant hover/focus feedback for usability where appropriate.
+- Still respect `prefers-reduced-motion` and keep the page readable without JavaScript.

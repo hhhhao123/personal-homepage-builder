@@ -37,7 +37,7 @@ Use it when you want to create or redesign:
 
 ## Current Status
 
-This is a beta skill. The current v0.2 direction treats `personal-homepage-builder` as a gated discovery and orchestration workflow, not a one-shot page generator.
+This is a beta skill. The current direction treats `personal-homepage-builder` as a gated discovery and orchestration workflow, not a one-shot page generator.
 
 The skill now emphasizes:
 
@@ -46,6 +46,7 @@ The skill now emphasizes:
 - required output gates before style, implementation, review, and publish
 - explicit companion skill routing for taste, theme, frontend, media, and review work
 - structured static site implementation instead of monolithic HTML by default
+- optional motion design that can be disabled, subtle, moderate, or expressive depending on the person, audience, and content
 - forward-test prompts for future regression checks
 - no emoji by default unless the user explicitly asks for emoji
 
@@ -125,7 +126,7 @@ Depending on the request and available materials, the agent can produce:
 - a concise personal homepage brief
 - a content structure and public-facing profile summary
 - homepage archetype and section recommendations
-- visual direction, color, typography, image, media, and motion guidance
+- visual direction, color, typography, image, media, and optional motion guidance
 - a GitHub Pages compatible static site or updates to an existing site, with CSS, JavaScript, images, and optional data separated under `assets/` by default
 - a publish-ready commit and push workflow when the user asks for GitHub publishing
 
@@ -148,6 +149,9 @@ personal_homepage_brief:
   style:
     direction_name: "quiet technical editorial"
     must_avoid: ["generic portfolio grid", "overly flashy effects"]
+  motion_strategy:
+    level: "subtle"
+    reduced_motion: "disable reveal animations and keep hover/focus feedback immediate"
   constraints:
     hosting: "GitHub Pages"
     emoji_policy: "no emoji unless explicitly requested"
@@ -197,6 +201,7 @@ personal-homepage-builder/
     |-- implementation.md            # Stack-aware implementation guidance
     |-- interview.md                 # Discovery question bank
     |-- media-assets.md              # Image, video, audio, and embed handling
+    |-- motion-design.md             # Optional motion levels and interaction patterns
     |-- output-contracts.md          # Gates before design, implementation, review, and publish
     |-- personal-signal-intake.md    # Lightweight user signal intake
     |-- profile-schema.md            # Maintainable profile data contract

@@ -35,19 +35,31 @@
 - 无需后端、可以轻量发布的静态主页
 - 使用照片、视频、音乐或生成式视觉资产的媒体增强型个人主页
 
+## 当前状态
+
+这是一个 beta skill。当前 v0.2 方向把 `personal-homepage-builder` 设计为带门禁的发现和编排工作流，而不是一次性生成页面的 prompt。
+
+这个版本重点强调：
+
+- 在整轮个人主页设计对话中维护 session state
+- 在风格、实现、审查和发布前设置必要的输出门禁
+- 为审美、主题、前端、媒体和审查工作明确路由辅助 skills
+- 提供 forward-test prompts，方便后续回归测试
+- 默认不使用 emoji，除非用户明确要求
+
 ## 这个 Skill 能帮助 Agent 做什么
 
-这个 skill 会引导 agent 完成一套完整的个人主页工作流：
+这个 skill 会引导 agent 完成一套带门禁的个人主页工作流：
 
-1. **定位**：检查现有项目，或选择适合 GitHub Pages 的起点。
-2. **提取**：阅读简历、简介、笔记、链接、照片、截图和其他源材料。
+1. **定位**：检查项目上下文、发布目标、用户目标和交付模式。
+2. **材料摄取**：提取事实、链接、媒体、语气线索、隐私风险和缺口。
 3. **访谈**：围绕身份、受众、第一印象、审美偏好和隐私边界提出具体问题。
-4. **反思**：总结已知信息、推断信息，以及仍需确认的内容。
-5. **分类**：选择个人主页原型和页面结构。
-6. **定义风格**：把个性、文化偏好、参考对象和反感点转化为具体视觉方向。
-7. **形成 Brief**：产出可驱动实现的 `personal_homepage_brief`。
+4. **反思**：区分已确认事实、推断定位、审美假设和开放问题。
+5. **审美发现**：在可用时调用 `design-taste-frontend` 或等价 taste skill。
+6. **形成 Brief**：产出经过用户确认的 `personal_homepage_brief`。
+7. **设计路由**：声明将调用哪些辅助 skills，以及哪些地方使用 fallback。
 8. **实现**：使用当前项目技术栈构建或更新网站。
-9. **审查与发布**：测试结果，并为 GitHub Pages 发布做好准备。
+9. **审查与发布**：验证 UI、响应式、可访问性、git 范围和 GitHub Pages 发布。
 
 核心规则很简单：不要一开始就问“你想要什么风格？”大多数用户很难直接回答这个问题。这个 skill 会推动 agent 先发现身份，再根据证据推导设计选择。
 
@@ -106,7 +118,7 @@ Use $personal-homepage-builder to create a portfolio homepage for my research, p
 
 根据你的需求和可用材料，agent 可以产出：
 
-- 简洁的个人主页
+- 简洁的个人主页 brief
 - 内容结构和公开展示用的个人简介
 - 个人主页原型和栏目建议
 - 视觉方向、颜色、字体、图片、媒体和动效指导
@@ -171,19 +183,35 @@ personal-homepage-builder/
 |   `-- images/
 |       `-- personal-homepage-builder-banner-wide.png
 `-- references/
+    |-- anti-patterns.md             # 需要避免的失败模式
     |-- archetypes.md                # 个人主页原型和结构
     |-- content-intake.md            # 源材料提取 schema
     |-- delivery-modes.md            # 快速/深入/媒体/发布路线
+    |-- forward-tests.md             # 后续验证用测试 prompts
     |-- github-pages-bootstrap.md    # GitHub Pages 设置指南
+    |-- homepage-brief.md            # 标准 homepage brief schema
     |-- implementation.md            # 面向技术栈的实现指导
     |-- interview.md                 # 发现式访谈问题库
     |-- media-assets.md              # 图片、视频、音频和嵌入处理
+    |-- output-contracts.md          # 设计、实现、审查和发布前的门禁
     |-- profile-schema.md            # 可维护的个人资料数据约定
     |-- profile-signals.md           # 可选身份和审美信号
     |-- quality-checklist.md         # 最终质量检查清单
+    |-- session-protocol.md          # 对话状态和阶段切换
+    |-- skill-routing.md             # 辅助 skill 路由和 fallback
     |-- social-links.md              # 联系方式和平台展示规则
     `-- style-directions.md          # 风格方向转换模式
 ```
+
+## Roadmap
+
+后续 beta 版本计划继续补充：
+
+- 从真实使用中沉淀更多 forward-test transcripts
+- 细化学术、创作者、自由职业者和研究者主页原型
+- 增加更多被接受和被拒绝的 homepage brief 示例
+- 优化缺少辅助 skills 时的 fallback 行为
+- 增加基于该工作流生成的示例个人主页项目
 
 ## 设计理念
 

@@ -35,19 +35,31 @@ Use it when you want to create or redesign:
 - a lightweight static homepage that can be published without a backend
 - a richer media-forward homepage using photos, video, music, or generated visual assets
 
+## Current Status
+
+This is a beta skill. The current v0.2 direction treats `personal-homepage-builder` as a gated discovery and orchestration workflow, not a one-shot page generator.
+
+The skill now emphasizes:
+
+- session state across the whole homepage-design conversation
+- required output gates before style, implementation, review, and publish
+- explicit companion skill routing for taste, theme, frontend, media, and review work
+- forward-test prompts for future regression checks
+- no emoji by default unless the user explicitly asks for emoji
+
 ## What The Skill Helps Agents Do
 
-The skill guides an agent through a complete homepage workflow:
+The skill guides an agent through a gated homepage workflow:
 
-1. **Orient**: inspect the existing project or choose a GitHub Pages friendly starting point.
-2. **Extract**: read resumes, bios, notes, links, photos, screenshots, and other source materials.
+1. **Orient**: inspect project context, deployment target, user goal, and delivery mode.
+2. **Intake**: extract facts, links, media, tone clues, privacy risks, and gaps.
 3. **Interview**: ask grounded questions about identity, audience, first impression, taste, and privacy boundaries.
-4. **Reflect**: summarize what is known, what is inferred, and what still needs confirmation.
-5. **Classify**: choose a homepage archetype and section structure.
-6. **Define style**: turn personality, culture, references, and dislikes into a concrete visual direction.
-7. **Brief**: produce a `personal_homepage_brief` that can drive implementation.
+4. **Reflect**: separate confirmed facts, inferred positioning, taste hypotheses, and open questions.
+5. **Taste discovery**: use `design-taste-frontend` or an equivalent taste skill when available.
+6. **Brief**: produce a user-confirmed `personal_homepage_brief`.
+7. **Design routing**: declare which companion skills and fallbacks will be used.
 8. **Implement**: build or update the site using the current project stack.
-9. **Review and publish**: test the result and prepare it for GitHub Pages.
+9. **Review and publish**: validate UI, responsiveness, accessibility, git scope, and GitHub Pages publishing.
 
 The core rule is simple: do not begin by asking "what style do you want?" Most users cannot answer that well. The skill pushes the agent to discover identity first, then derive design choices from evidence.
 
@@ -171,19 +183,35 @@ personal-homepage-builder/
 |   `-- images/
 |       `-- personal-homepage-builder-banner-wide.png
 `-- references/
+    |-- anti-patterns.md             # Failure modes to avoid
     |-- archetypes.md                # Homepage archetypes and structures
     |-- content-intake.md            # Source material extraction schema
     |-- delivery-modes.md            # Quick/deep/media/publish routing
+    |-- forward-tests.md             # Test prompts for future validation
     |-- github-pages-bootstrap.md    # GitHub Pages setup guidance
+    |-- homepage-brief.md            # Canonical homepage brief schema
     |-- implementation.md            # Stack-aware implementation guidance
     |-- interview.md                 # Discovery question bank
     |-- media-assets.md              # Image, video, audio, and embed handling
+    |-- output-contracts.md          # Gates before design, implementation, review, and publish
     |-- profile-schema.md            # Maintainable profile data contract
     |-- profile-signals.md           # Optional identity and taste signals
     |-- quality-checklist.md         # Final review checklist
+    |-- session-protocol.md          # Conversation state and phase transitions
+    |-- skill-routing.md             # Companion skill routing and fallbacks
     |-- social-links.md              # Contact and platform display rules
     `-- style-directions.md          # Style direction translation patterns
 ```
+
+## Roadmap
+
+Planned improvements for later beta iterations:
+
+- add more forward-test transcripts from real usage
+- refine academic, creator, freelancer, and researcher homepage archetypes
+- add richer examples of accepted and rejected homepage briefs
+- improve fallback behavior when companion skills are unavailable
+- add example homepage projects generated from the workflow
 
 ## Design Philosophy
 

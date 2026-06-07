@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/images/personal-homepage-builder-logo.svg" alt="Personal Homepage Builder logo" width="720">
+  <img src="assets/images/personal-homepage-builder-banner-wide.png" alt="Personal Homepage Builder banner" width="720">
 </p>
 
 <h1 align="center">Personal Homepage Builder</h1>
@@ -111,7 +111,7 @@ personal-homepage-builder/
 |   `-- openai.yaml                  # Optional OpenAI/Codex UI metadata
 |-- assets/
 |   `-- images/
-|       `-- personal-homepage-builder-logo.svg
+|       `-- personal-homepage-builder-banner-wide.png
 `-- references/
     |-- archetypes.md                # Homepage archetypes and structures
     |-- content-intake.md            # Source material extraction schema

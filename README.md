@@ -51,6 +51,8 @@ The skill guides an agent through a complete homepage workflow:
 
 The core rule is simple: do not begin by asking "what style do you want?" Most users cannot answer that well. The skill pushes the agent to discover identity first, then derive design choices from evidence.
 
+This skill is a discovery and orchestration layer. It helps clarify the user's identity and design requirements first, then routes taste, theme, frontend, image, and review work to the right companion skills when they are available.
+
 ## Install
 
 Install the skill from this repository with any skill-compatible agent setup. For Codex or other environments that support the `skills` CLI, use:
@@ -132,6 +134,9 @@ personal_homepage_brief:
     must_avoid: ["generic portfolio grid", "overly flashy effects"]
   constraints:
     hosting: "GitHub Pages"
+    emoji_policy: "no emoji unless explicitly requested"
+  implementation:
+    companion_skills: ["design-taste-frontend", "frontend-design", "theme-factory", "web-design-guidelines"]
 ```
 
 ## Recommended Companion Skills
@@ -140,6 +145,7 @@ This skill works on its own, but homepage quality improves when these companion 
 
 | Skill | Why install it | Install / source |
 | --- | --- | --- |
+| `design-taste-frontend` | Reads the brief and infers the right design direction, visual density, motion level, and anti-template constraints before UI work begins. | [`npx skills add https://github.com/Leonxlnx/taste-skill --skill design-taste-frontend`](https://www.skills.sh/leonxlnx/taste-skill/design-taste-frontend) |
 | `frontend-design` | Produces more distinctive, production-grade homepage UI instead of generic layouts. | [`npx skills add https://github.com/anthropics/skills --skill frontend-design`](https://www.skills.sh/anthropics/skills/frontend-design) |
 | `theme-factory` | Helps create or apply consistent color and typography systems. | [`npx skills add https://github.com/anthropics/skills --skill theme-factory`](https://www.skills.sh/anthropics/skills/theme-factory) |
 | `web-design-guidelines` | Provides a final UI, UX, and accessibility review pass. | [`npx skills add https://github.com/vercel-labs/agent-skills --skill web-design-guidelines`](https://www.skills.sh/vercel-labs/agent-skills/web-design-guidelines) |
@@ -148,6 +154,8 @@ This skill works on its own, but homepage quality improves when these companion 
 | `skill-installer` | Codex system skill for installing skills from curated lists or GitHub paths; usually already available in Codex. | [Source: `openai/skills`](https://github.com/openai/skills/tree/main/skills/.system/skill-installer) |
 
 The skill does not install companion skills automatically. Install them separately if you want your agent to use them during homepage creation.
+
+When this skill is active in a homepage-design conversation, the agent should keep using this workflow for the rest of that conversation unless the user explicitly exits it. During taste interpretation and UI customization, it should use the relevant companion design/frontend skills when available. Emoji are disabled by default in briefs, copy, UI labels, and generated content unless the user explicitly asks for them.
 
 ## Repository Layout
 
@@ -186,3 +194,5 @@ Personal homepages should not all look like the same portfolio template. A stron
 - why their work, story, or taste is memorable
 
 This skill is built around that premise. It treats resumes, MBTI labels, hobbies, favorite media, screenshots, photos, work links, and social platforms as signals. Some are strong evidence, some are just clues. The agent is instructed to confirm the meaning with the user before turning those signals into public-facing design and content.
+
+The intended sequence is: clarify the person, produce a stronger design brief, then use specialized taste and frontend skills to implement a more customized personal homepage.

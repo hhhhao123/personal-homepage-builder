@@ -51,6 +51,8 @@
 
 核心规则很简单：不要一开始就问“你想要什么风格？”大多数用户很难直接回答这个问题。这个 skill 会推动 agent 先发现身份，再根据证据推导设计选择。
 
+这个 skill 是发现和编排层。它先帮助用户明确身份和设计需求，再在可用时把审美、主题、前端、图片和审查工作交给正确的辅助 skills。
+
 ## 安装
 
 可以在任何兼容 skill 的 agent 环境中从本仓库安装该 skill。对于 Codex 或其他支持 `skills` CLI 的环境，可以使用：
@@ -132,6 +134,9 @@ personal_homepage_brief:
     must_avoid: ["generic portfolio grid", "overly flashy effects"]
   constraints:
     hosting: "GitHub Pages"
+    emoji_policy: "no emoji unless explicitly requested"
+  implementation:
+    companion_skills: ["design-taste-frontend", "frontend-design", "theme-factory", "web-design-guidelines"]
 ```
 
 ## 推荐辅助 Skills
@@ -140,6 +145,7 @@ personal_homepage_brief:
 
 | Skill | 为什么安装它 | 安装 / 来源 |
 | --- | --- | --- |
+| `design-taste-frontend` | 在 UI 工作开始前读取 brief，推断合适的设计方向、视觉密度、动效强度和反模板约束。 | [`npx skills add https://github.com/Leonxlnx/taste-skill --skill design-taste-frontend`](https://www.skills.sh/leonxlnx/taste-skill/design-taste-frontend) |
 | `frontend-design` | 生成更有辨识度、更接近生产级的主页 UI，避免通用模板感。 | [`npx skills add https://github.com/anthropics/skills --skill frontend-design`](https://www.skills.sh/anthropics/skills/frontend-design) |
 | `theme-factory` | 帮助创建或应用一致的颜色和字体系统。 | [`npx skills add https://github.com/anthropics/skills --skill theme-factory`](https://www.skills.sh/anthropics/skills/theme-factory) |
 | `web-design-guidelines` | 提供最终的 UI、UX 和可访问性审查。 | [`npx skills add https://github.com/vercel-labs/agent-skills --skill web-design-guidelines`](https://www.skills.sh/vercel-labs/agent-skills/web-design-guidelines) |
@@ -148,6 +154,8 @@ personal_homepage_brief:
 | `skill-installer` | Codex 系统 skill，用于从精选列表或 GitHub 路径安装 skills；通常已在 Codex 中可用。 | [Source: `openai/skills`](https://github.com/openai/skills/tree/main/skills/.system/skill-installer) |
 
 本 skill 不会自动安装这些辅助 skills。如果你希望 agent 在创建主页时使用它们，需要单独安装。
+
+当这个 skill 在个人主页设计对话中被启用后，除非用户明确退出，否则 agent 应该在本轮对话后续都继续遵守这个工作流。在审美理解和 UI 定制阶段，agent 应该在可用时调用相关的设计/前端辅助 skills。brief、文案、UI 标签和生成内容默认禁用 emoji，除非用户明确要求使用。
 
 ## 仓库结构
 
@@ -186,3 +194,5 @@ personal-homepage-builder/
 - 他的工作、故事或审美为什么值得记住
 
 这个 skill 正是围绕这一点设计的。它把简历、MBTI 标签、兴趣爱好、喜欢的媒体、截图、照片、作品链接和社交平台都视为信号。有些是强证据，有些只是线索。agent 会被要求先和用户确认这些信号的真实含义，再把它们转化为公开展示的设计和内容。
+
+预期顺序是：先明确“这个人是谁”，形成更好的设计 brief，然后再调用专门的 taste 和前端 skills，做出更个性化的个人主页。

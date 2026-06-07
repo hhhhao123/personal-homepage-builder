@@ -13,13 +13,27 @@ Guide a user from vague self-expression or raw personal materials to a buildable
 
 Do not ask "what style do you want?" as the first design question. Most users cannot answer that. Ask grounded questions about identity, audience, memory, taste, personality signals, and dislikes; translate those answers into design choices.
 
+When this skill is invoked for a homepage discovery, design, redesign, personalization, or publishing conversation, treat it as the controlling workflow for the rest of that conversation until the user explicitly exits this workflow or gives a superseding instruction. Do not jump directly into page design, UI customization, code implementation, or publishing outside this skill's discovery, reflection, brief, implementation, and review sequence.
+
+Use this skill as the discovery and orchestration layer. Its job is to help the user understand and articulate their identity, taste, audience, constraints, and content priorities, then route specialized work to the right companion skills. It is not a substitute for dedicated frontend, taste, theme, image, or UI review skills.
+
+Do not use emoji in homepage briefs, agent questions, homepage copy, UI labels, status text, generated markdown, or final content unless the user explicitly asks for emoji. Prefer precise words, icons from the implementation's icon system, or plain labels.
+
 Treat MBTI, zodiac signs, enneagram, hobbies, favorite media, and similar inputs as optional self-expression clues, not scientific truths or fixed personality rules. Use them to open conversation and generate aesthetic hypotheses; always confirm the actual design meaning with the user.
 
 Treat images, videos, music, reference screenshots, and platform links as optional advanced customization. Keep the default site light and GitHub Pages friendly; add rich media only when it supports the user's identity, work, or audience.
 
 Always run a clarification dialogue before finalizing the brief. Uploaded materials can reduce repeated questions, but they cannot replace user-confirmed intent, audience, public/private boundaries, and desired first impression.
 
-Companion skills such as `frontend-design`, `theme-factory`, `web-design-guidelines`, and `web-artifacts-builder` are optional enhancements. When these companion skills are available in the current agent system, explicitly use them at the relevant workflow stages before falling back to general capability. Do not assume they are installed, do not try to install them automatically, and do not block the homepage workflow if they are unavailable. If the user asks how to improve design quality before using this skill, point them to the repository README for recommended companion skill installation.
+Companion skills such as `design-taste-frontend` from Taste Skill, `frontend-design`, `theme-factory`, `web-design-guidelines`, and `web-artifacts-builder` are optional enhancements. When these companion skills or equivalent capabilities are available in the current agent system, explicitly use them at the relevant workflow stages before falling back to general capability. Do not assume they are installed, do not try to install them automatically, and do not block the homepage workflow if they are unavailable. If a relevant companion skill is unavailable, say so briefly and continue with the matching bundled reference file or general capability. If the user asks how to improve design quality before using this skill, point them to the repository README for recommended companion skill installation.
+
+Use companion skills with this routing:
+
+- Use `design-taste-frontend`, `taste-skill`, `taste`, or an equivalent taste/design-direction skill when interpreting the user's taste, references, aesthetic dislikes, homepage vibe, layout variance, motion intensity, and visual density.
+- Use `theme-factory` or an equivalent theme skill when choosing or creating color, typography, spacing, and token systems.
+- Use `frontend-design` or an equivalent frontend design skill before implementing or substantially redesigning homepage UI.
+- Use `web-artifacts-builder` only when the homepage is implemented as a complex React/Tailwind/shadcn artifact.
+- Use `web-design-guidelines` or an equivalent review skill before final delivery for UI, UX, accessibility, responsive behavior, and text-fit checks.
 
 ## Workflow
 
@@ -43,6 +57,7 @@ Companion skills such as `frontend-design`, `theme-factory`, `web-design-guideli
    - Prefer broad multiple-choice options plus an "Other" path when the UI supports it.
    - Start with identity, audience, and desired first impression before visual details, unless source materials already answer them.
    - Offer choices that cover professional goals, personality, cultural taste, life atmosphere, and visual avoids.
+   - When taste signals become central, use `design-taste-frontend`, `taste-skill`, `taste`, or an equivalent taste skill if available to interpret the user's aesthetic clues before committing to a design direction.
    - Collect contact and social links as first-class content, including domestic and international platforms.
    - If source materials were provided, ask a targeted confirmation round instead of skipping the interview.
    - If no source materials were provided, run the broader discovery path.
@@ -64,6 +79,7 @@ Companion skills such as `frontend-design`, `theme-factory`, `web-design-guideli
 6. **Define Style**
    - Offer 2-3 style directions based on the user's answers, not generic templates.
    - Use `references/style-directions.md` for direction patterns and translation rules.
+   - Before finalizing a style direction or UI customization plan, use `design-taste-frontend`, `taste-skill`, `taste`, or an equivalent taste skill when available. Use its output to sharpen the design read, anti-template constraints, layout variance, motion intensity, and visual density.
    - Create or choose a theme with `theme-factory` when available.
    - Use `imagegen` when a distinctive raster hero image, portrait treatment, texture, or visual asset would make the page feel personal.
 
@@ -76,7 +92,8 @@ Companion skills such as `frontend-design`, `theme-factory`, `web-design-guideli
 8. **Implement**
    - Prefer the existing project stack and conventions.
    - For new GitHub Pages sites, use `references/github-pages-bootstrap.md`.
-   - Use `frontend-design` for page/interface design quality.
+   - Use `frontend-design` for page/interface design quality before implementing or revising UI.
+   - Use `design-taste-frontend`, `taste-skill`, `taste`, or an equivalent taste skill when available before translating the brief into concrete visual layout, motion, density, and anti-template decisions.
    - Use `web-artifacts-builder` only for new complex React/Tailwind/shadcn artifacts; do not force it onto static/Jekyll sites.
    - Keep changes scoped to the homepage/site request.
    - Save generated project assets inside the workspace, not only in a tool output directory.
@@ -125,6 +142,8 @@ personal_homepage_brief:
     stack:
     hosting: GitHub Pages by default
     timeline:
+    emoji_policy: no emoji unless explicitly requested
+    companion_skill_routing:
     must_keep:
     must_avoid:
   implementation:

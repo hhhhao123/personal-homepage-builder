@@ -15,6 +15,10 @@
   <img alt="License" src="https://img.shields.io/badge/License-MIT-E95D3C">
 </p>
 
+<p align="center">
+  English | <a href="README.zh-CN.md">简体中文</a>
+</p>
+
 ---
 
 ## Why This Skill Exists
@@ -152,6 +156,7 @@ personal-homepage-builder/
 |-- LICENSE                          # MIT license
 |-- SKILL.md                         # Main skill instructions
 |-- README.md                        # Human-facing repository overview
+|-- README.zh-CN.md                  # Simplified Chinese repository overview
 |-- agents/
 |   `-- openai.yaml                  # Optional OpenAI/Codex UI metadata
 |-- assets/

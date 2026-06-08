@@ -120,6 +120,7 @@ Every brief must include:
 - `references/site-structure.md`: default structured static site layout for HTML/CSS/JS GitHub Pages implementations.
 - `references/anti-patterns.md`: common failure modes to avoid during discovery, design, implementation, and delivery.
 - `references/forward-tests.md`: realistic test prompts and expected behavior for future validation.
+- `references/beginner-validation-scenario.md`: end-to-end first-person beginner validation script.
 - `references/interview.md`: staged question bank for discovering user needs and taste.
 - `references/content-intake.md`: extraction workflow for uploaded documents and pasted text.
 - `references/media-assets.md`: images, reference screenshots, video, music, embeds, covers, and autoplay guidance.

@@ -2,6 +2,8 @@
 
 Use these prompts to test future versions of the skill. A passing run should follow the session protocol, respect output gates, route companion skills when available, and avoid emoji by default.
 
+For a complete first-person beginner transcript, use `beginner-validation-scenario.md`.
+
 ## Test 1: No Materials
 
 Prompt:
@@ -110,6 +112,7 @@ Expected behavior:
 - Clearly label confirmed facts versus inferred design direction.
 - Offer 2-3 design directions and recommend one before implementation.
 - Do not ask the user to manually choose between `Basic`, `Profile`, `Creator`, `Academic`, or `Premium` unless they ask to control the tier.
+- For a full end-to-end version of this test, run `beginner-validation-scenario.md`.
 
 ## Test 7: Publishing
 

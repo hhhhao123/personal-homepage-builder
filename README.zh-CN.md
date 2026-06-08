@@ -282,6 +282,7 @@ personal-homepage-builder/
 `-- references/
     |-- anti-patterns.md             # 需要避免的失败模式
     |-- archetypes.md                # 个人主页原型和结构
+    |-- beginner-validation-scenario.md # 端到端小白验证脚本
     |-- content-intake.md            # 源材料提取 schema
     |-- delivery-modes.md            # 快速/深入/媒体/发布路线
     |-- forward-tests.md             # 后续验证用测试 prompts

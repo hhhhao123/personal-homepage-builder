@@ -282,6 +282,7 @@ personal-homepage-builder/
 `-- references/
     |-- anti-patterns.md             # Failure modes to avoid
     |-- archetypes.md                # Homepage archetypes and structures
+    |-- beginner-validation-scenario.md # End-to-end beginner validation script
     |-- content-intake.md            # Source material extraction schema
     |-- delivery-modes.md            # Quick/deep/media/publish routing
     |-- forward-tests.md             # Test prompts for future validation

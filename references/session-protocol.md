@@ -11,6 +11,8 @@ homepage_session:
   active: true
   current_phase:
   delivery_mode:
+  quality_tier:
+  motion_level:
   user_goal:
   project_context:
     has_existing_site:

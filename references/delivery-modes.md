@@ -2,6 +2,35 @@
 
 Use delivery modes to match the workflow to the user's patience, clarity, assets, and publishing goal.
 
+## Default Behavior
+
+If the user is unsure, vague, or says they do not know what style they want, default to:
+
+```yaml
+delivery_mode: Deep Profile
+quality_tier: Profile
+motion_strategy.level: subtle
+```
+
+This default means: guide the user through lightweight identity and taste discovery, produce a personalized brief, and build a polished but not overengineered homepage.
+
+Do not ask beginners to choose a mode or tier unless they want control. Infer the mode from their words, then state it briefly:
+
+```text
+I will treat this as Deep Profile + Profile quality for now: enough discovery to make it personal, without turning it into a large custom site.
+```
+
+Change the default when the user gives a stronger signal:
+
+- "quick", "simple", "just make it work", "go live soon": `Quick Launch` with `Basic` or `Profile`.
+- "I do not know my style", "make it feel like me", "help me discover what I want": `Deep Profile` with `Profile`.
+- photos, videos, music, galleries, strong visual references: add `Media Enhanced`, usually `Creator` or `Premium`.
+- papers, CV, lab, research, talks, academic credibility: `Academic`.
+- "premium", "very polished", "custom visual identity", "launch publicly": `Premium` if time and assets allow.
+- "publish", "push", "deploy", "sync to GitHub": add `Publish`.
+
+For motion, default to `subtle` unless the user asks for no motion, stronger expression, or the content clearly calls for restraint.
+
 ## Quick Launch
 
 Use when the user wants a usable `github.io` page quickly.
@@ -56,3 +85,4 @@ Use when the user wants to push or update the live site.
 - If the user uploads media or references, layer Media Enhanced onto Quick Launch or Deep Profile.
 - If the user says "publish", "push", "deploy", or "sync to GitHub", choose Publish.
 - Modes can combine, but keep one primary mode to avoid over-questioning.
+- Record the selected `delivery_mode`, `quality_tier`, and motion level in the homepage brief.

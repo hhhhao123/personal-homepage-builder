@@ -8,6 +8,8 @@ Required before style directions or UI work.
 
 Must include:
 
+- inferred or selected delivery mode
+- inferred or selected quality tier
 - confirmed facts
 - inferred positioning
 - tentative taste signals
@@ -39,6 +41,8 @@ Must include:
 Required before implementation.
 
 Must use `references/homepage-brief.md`.
+
+Must include `delivery_mode` and `quality_tier`.
 
 Must include a motion strategy, even when the decision is `level: none`.
 

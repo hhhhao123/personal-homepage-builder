@@ -65,6 +65,25 @@ Offer directions in human language, not only design terms. Each direction should
 - A profession should influence content hierarchy first, visual style second.
 - A hobby should usually become atmosphere, imagery, section naming, or one visual motif, not the whole site identity unless the user wants that.
 
+## From Preference To Engineering
+
+After taste discovery, translate the user's preferences into implementation decisions:
+
+```yaml
+style_translation:
+  homepage_archetype:
+  style_direction:
+  content_priority:
+  theme_notes:
+  typography_notes:
+  image_strategy:
+  motion_level:
+  section_structure:
+  implementation_notes:
+```
+
+Keep this translation visible in the brief so frontend and theme skills have concrete input. Avoid leaving the result as vague words such as "cool", "clean", or "personal".
+
 ## Presenting Options
 
 Use a format like:

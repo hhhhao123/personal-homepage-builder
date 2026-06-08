@@ -69,8 +69,8 @@ personal_homepage_brief:
     media:
     review:
   implementation:
-    delivery_mode:
-    quality_tier:
+    delivery_mode: Quick Launch | Deep Profile | Media Enhanced | Publish
+    quality_tier: Basic | Profile | Creator | Academic | Premium
     site_structure:
     pages:
     assets:

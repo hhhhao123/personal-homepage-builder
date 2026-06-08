@@ -39,7 +39,7 @@ At phase transitions, briefly state:
 
 Follow these phases in order unless the user explicitly requests a smaller path and the relevant gates still pass:
 
-1. **Orient**: inspect project context, deployment target, existing files, user goal, and delivery mode. Use `references/delivery-modes.md`.
+1. **Orient**: inspect project context, deployment target, existing files, user goal, delivery mode, and quality tier. Use `references/delivery-modes.md`; if the user is unsure, default to Deep Profile + Profile quality + subtle motion.
 2. **Intake**: extract facts, links, media, tone clues, privacy risks, and gaps from supplied materials. If the user has little or no material, use `references/personal-signal-intake.md` to collect only the signals needed for homepage design, not to teach resume writing. Use `references/content-intake.md`, `references/media-assets.md`, and `references/social-links.md`.
 3. **Interview**: ask 1-3 high-impact questions per round. Use `references/interview.md`. Prefer identity, audience, first impression, remembered-for, taste signals, and explicit avoids.
 4. **Reflect**: produce an identity reflection that separates confirmed facts, inferred positioning, tentative taste hypotheses, and open questions. Gate this with `references/output-contracts.md`.
@@ -85,6 +85,8 @@ Use `references/homepage-brief.md` for the canonical brief schema.
 
 Every brief must include:
 
+- delivery mode
+- quality tier
 - identity
 - audience
 - first impression

@@ -14,6 +14,7 @@ Expected behavior:
 
 - Do not ask "what style do you want?"
 - Use the Quick Start path from `personal-signal-intake.md`.
+- Default to `Deep Profile`, `Profile` quality, and `subtle` motion unless the user gives a stronger signal.
 - Ask 1-3 questions about identity, audience, first impression, remembered-for, and privacy.
 - Build a session state.
 - Do not implement yet.
@@ -89,8 +90,26 @@ Expected behavior:
 
 - Compress the workflow but do not skip gates silently.
 - Produce minimal identity reflection and brief.
+- Select an inferred delivery mode and quality tier instead of asking the user to understand the tier system.
 - Ask the smallest number of high-impact confirmation questions.
 - Do not implement until the minimal brief is accepted or the user explicitly accepts a quick-path risk.
+
+## Test 12: Beginner Preference Discovery
+
+Prompt:
+
+```text
+Use $personal-homepage-builder. I am a beginner and only know that I want the homepage to feel like me. I do not know what style, structure, or effects I want.
+```
+
+Expected behavior:
+
+- Use the preference discovery ladder from `personal-signal-intake.md`.
+- Ask easy personal questions before design terms.
+- Translate answers into delivery mode, quality tier, style direction, content structure, and motion level.
+- Clearly label confirmed facts versus inferred design direction.
+- Offer 2-3 design directions and recommend one before implementation.
+- Do not ask the user to manually choose between `Basic`, `Profile`, `Creator`, `Academic`, or `Premium` unless they ask to control the tier.
 
 ## Test 7: Publishing
 

@@ -104,6 +104,26 @@ Use $personal-homepage-builder. I feel the homepage may need dynamic elements, b
 
 The skill should then ask a small number of grounded questions, produce a homepage brief, route design/frontend companion skills when available, and only move into implementation after the direction is clear.
 
+## Default Mode
+
+Beginners do not need to choose a tier. If you are unsure, the agent should default to:
+
+```yaml
+delivery_mode: Deep Profile
+quality_tier: Profile
+motion_strategy.level: subtle
+```
+
+That means the agent will spend enough time understanding your identity, audience, content, privacy boundaries, and taste to make the homepage personal, while avoiding an oversized custom site.
+
+The agent should change the mode when your request is clearer:
+
+- quick/simple/go live soon: `Quick Launch`
+- photos/video/music/visual assets: add `Media Enhanced`
+- research/CV/papers/talks: `Academic`
+- premium/custom/polished launch: `Premium`
+- publish/push/deploy: add `Publish`
+
 ## How The Agent Should Ask You
 
 The agent should not start by asking "what style do you want?" A better conversation starts with concrete questions:
@@ -191,6 +211,7 @@ Use $personal-homepage-builder. My homepage is already partly built, but I think
 Depending on the request and available materials, the agent can produce:
 
 - a concise personal homepage brief
+- an inferred delivery mode and quality tier, so beginners do not need to choose one manually
 - a content structure and public-facing profile summary
 - homepage archetype and section recommendations
 - visual direction, color, typography, image, media, and optional motion guidance

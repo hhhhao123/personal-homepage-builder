@@ -5,6 +5,7 @@ Avoid these failures when using `personal-homepage-builder`.
 ## Discovery Failures
 
 - Asking "what style do you want?" before understanding identity and audience.
+- Asking beginners to choose delivery modes, quality tiers, or design systems before translating their plain-language needs.
 - Treating MBTI, zodiac, hobbies, or favorite media as deterministic personality facts.
 - Publishing personal details without confirming public boundaries.
 - Asking too many questions at once.

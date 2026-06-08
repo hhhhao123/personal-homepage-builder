@@ -104,6 +104,26 @@ Use $personal-homepage-builder. I feel the homepage may need dynamic elements, b
 
 这个 skill 应该先问少量具体问题，形成主页 brief，在可用时调用设计和前端辅助 skills，并在方向清楚后再进入实现。
 
+## 默认模式
+
+小白不需要自己选择层级。如果你不确定，agent 应该默认使用：
+
+```yaml
+delivery_mode: Deep Profile
+quality_tier: Profile
+motion_strategy.level: subtle
+```
+
+这意味着 agent 会花足够的时间理解你的身份、受众、内容、隐私边界和审美线索，让主页更像你本人，同时避免把项目做成过重的大型定制站点。
+
+当你的请求更明确时，agent 应该自动切换模式：
+
+- 快速、简单、尽快上线：`Quick Launch`
+- 有照片、视频、音乐、视觉资产：叠加 `Media Enhanced`
+- 研究、CV、论文、报告：`Academic`
+- 高级、定制、精致公开发布：`Premium`
+- 发布、push、deploy：叠加 `Publish`
+
 ## Agent 应该怎么问你
 
 agent 不应该一开始就问“你想要什么风格？”更合理的对话应该从具体问题开始：
@@ -191,6 +211,7 @@ Use $personal-homepage-builder. My homepage is already partly built, but I think
 根据你的需求和可用材料，agent 可以产出：
 
 - 简洁的个人主页 brief
+- 自动推断的交付模式和质量层级，让小白不需要手动选择
 - 内容结构和公开展示用的个人简介
 - 个人主页原型和栏目建议
 - 视觉方向、颜色、字体、图片、媒体和可选动效指导

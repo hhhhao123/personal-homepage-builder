@@ -17,6 +17,41 @@ Good signals include:
 
 Allow incomplete answers. "I do not know yet" is useful input.
 
+## Preference Discovery Ladder
+
+When the user is a beginner, move from easy personal language to implementation decisions:
+
+1. Identity: who they are in plain language.
+2. Audience: who should visit and what that visitor needs.
+3. Memory point: what should be remembered after 10-30 seconds.
+4. Content priority: what must be visible first, what can be secondary.
+5. Privacy boundary: what should not become public.
+6. Taste clues: moods, places, objects, media, brands, sites, colors, dislikes.
+7. Design translation: homepage archetype, style direction, content modules, theme, motion level, and implementation structure.
+
+Do not ask the user to choose a technical design system. Convert their words into a brief and label what is confirmed versus inferred.
+
+Use this response shape after collecting signals:
+
+```text
+What I heard:
+- You are:
+- The homepage is mainly for:
+- Visitors should remember:
+- The page should show:
+- It should not reveal:
+- Taste clues:
+
+My design translation:
+- Delivery mode:
+- Quality tier:
+- Style direction:
+- Motion level:
+- Homepage structure:
+
+Please correct anything that feels off.
+```
+
 ## Quick Start: 5 Questions
 
 Use this when the user starts from zero or wants to save tokens.

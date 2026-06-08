@@ -25,6 +25,7 @@ Avoid by default:
 - Preserve the existing stack unless a rewrite is explicitly requested.
 - Identify deployment path: GitHub Pages, Vercel, Netlify, static files, or unknown.
 - If the site already targets GitHub Pages, preserve that path unless the user explicitly wants another host.
+- For mid-project feature or design requests, use `iteration-requests.md` and update the smallest coherent set of files.
 - Keep unrelated dirty worktree changes untouched.
 
 ## From Scratch

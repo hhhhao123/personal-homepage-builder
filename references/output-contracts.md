@@ -72,6 +72,23 @@ Must include:
 - validation commands
 - git scope
 
+## Iteration Mini Gate
+
+Required before editing an existing or in-progress homepage for a new requirement.
+
+Must include:
+
+- current issue or opportunity
+- recommended change
+- why it fits the current homepage
+- target files or modules
+- companion skill routing if design/UI work is involved
+- motion level and reduced-motion fallback if relevant
+- validation needed
+- risks or tradeoffs
+
+If the user is asking for suggestions rather than implementation, provide options first and do not edit until a direction is chosen.
+
 ## Gate 6: Review Report
 
 Required before final delivery.

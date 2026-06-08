@@ -29,6 +29,7 @@ Avoid these failures when using `personal-homepage-builder`.
 - Using rich media because it is available rather than because it supports identity or audience.
 - Forcing dynamic effects after the user asked for no motion.
 - Adding heavy motion because it looks impressive rather than because it supports the person's content.
+- Answering mid-project design questions with generic option lists instead of inspecting the current homepage.
 
 ## Implementation Failures
 
@@ -38,6 +39,7 @@ Avoid these failures when using `personal-homepage-builder`.
 - Referencing generated assets that were not saved into the project.
 - Adding backend-only features to a simple GitHub Pages site.
 - Adding motion that ignores `prefers-reduced-motion`, causes layout shift, blocks reading, or depends on JavaScript for core content.
+- Rebuilding the whole homepage for a small iteration request when a scoped edit would solve it.
 - Staging unrelated files.
 
 ## Review Failures

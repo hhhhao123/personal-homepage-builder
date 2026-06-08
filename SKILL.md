@@ -1,6 +1,6 @@
 ---
 name: personal-homepage-builder
-description: Discover a person's identity, audience, story, taste, constraints, source materials, media assets, and social links, then orchestrate a gated workflow that produces a confirmed personal homepage brief and a GitHub Pages friendly implementation. Use when users want to create, redesign, personalize, or publish a github.io homepage, personal homepage, portfolio, academic profile, creator site, resume site, freelancer page, or personal brand site, especially when they are unsure what style or structure they want, need help articulating personal requirements, want uploaded/pasted materials organized, or want companion taste/frontend skills routed correctly before design and UI work.
+description: Discover a person's identity, audience, story, taste, constraints, source materials, media assets, and social links, then orchestrate a gated workflow that produces a confirmed personal homepage brief and a GitHub Pages friendly implementation. Use when users want to create, redesign, personalize, refine, extend, or publish a github.io homepage, personal homepage, portfolio, academic profile, creator site, resume site, freelancer page, or personal brand site, including when they have an existing or in-progress homepage and ask for new ideas, dynamic effects, UI changes, section additions, or better design suggestions before implementation.
 ---
 
 # Personal Homepage Builder
@@ -49,6 +49,8 @@ Follow these phases in order unless the user explicitly requests a smaller path 
 8. **Implement**: prefer the existing stack and conventions. For new GitHub Pages sites, use `references/github-pages-bootstrap.md`, `references/implementation.md`, and `references/site-structure.md`. Do not default to a large single-file HTML implementation unless the user explicitly asks for a disposable prototype.
 9. **Review**: run build/tests where possible and use `web-design-guidelines` or an equivalent review skill when available. Use `references/quality-checklist.md`.
 10. **Publish**: commit and push only when the user asks for publishing. Do not stage unrelated changes silently.
+
+For existing or in-progress sites where the user asks for a new requirement or asks "should we add something like X?", use `references/iteration-requests.md`. Do not restart the whole discovery workflow unless the requested change invalidates the existing brief or audience.
 
 ## Companion Skill Routing
 
@@ -111,6 +113,7 @@ Every brief must include:
 - `references/skill-routing.md`: companion skill routing, required calls when available, and fallback behavior.
 - `references/homepage-brief.md`: canonical `personal_homepage_brief` schema and examples.
 - `references/personal-signal-intake.md`: lightweight intake prompts for users with little or no prepared material.
+- `references/iteration-requests.md`: handling new requirements on existing or in-progress homepages.
 - `references/motion-design.md`: optional motion design levels, patterns, and safety rules.
 - `references/site-structure.md`: default structured static site layout for HTML/CSS/JS GitHub Pages implementations.
 - `references/anti-patterns.md`: common failure modes to avoid during discovery, design, implementation, and delivery.

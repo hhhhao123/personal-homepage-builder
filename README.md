@@ -34,6 +34,7 @@ Use it when you want to create or redesign:
 - a personal brand site with social links and selected work
 - a lightweight static homepage that can be published without a backend
 - a richer media-forward homepage using photos, video, music, or generated visual assets
+- an existing or in-progress homepage that needs better design suggestions, dynamic effects, or scoped refinements
 
 ## Current Status
 
@@ -46,6 +47,7 @@ The skill now emphasizes:
 - required output gates before style, implementation, review, and publish
 - explicit companion skill routing for taste, theme, frontend, media, and review work
 - structured static site implementation instead of monolithic HTML by default
+- iteration handling for existing or in-progress homepages when users ask for new ideas or scoped changes
 - optional motion design that can be disabled, subtle, moderate, or expressive depending on the person, audience, and content
 - forward-test prompts for future regression checks
 - no emoji by default unless the user explicitly asks for emoji
@@ -61,7 +63,7 @@ The skill guides an agent through a gated homepage workflow:
 5. **Taste discovery**: use `design-taste-frontend` or an equivalent taste skill when available.
 6. **Brief**: produce a user-confirmed `personal_homepage_brief`.
 7. **Design routing**: declare which companion skills and fallbacks will be used.
-8. **Implement**: build or update the site using the current project stack.
+8. **Implement or iterate**: build the site, or inspect an existing page and propose scoped improvements before editing.
 9. **Review and publish**: validate UI, responsiveness, accessibility, git scope, and GitHub Pages publishing.
 
 The core rule is simple: do not begin by asking "what style do you want?" Most users cannot answer that well. The skill pushes the agent to discover identity first, then derive design choices from evidence.
@@ -119,6 +121,10 @@ Use $personal-homepage-builder to redesign my existing personal site so it feels
 Use $personal-homepage-builder to create a portfolio homepage for my research, projects, writing, and contact links.
 ```
 
+```text
+Use $personal-homepage-builder. My homepage is already partly built, but I think it may need dynamic elements. Look at the current page and suggest what would fit.
+```
+
 ## What You Get
 
 Depending on the request and available materials, the agent can produce:
@@ -128,6 +134,7 @@ Depending on the request and available materials, the agent can produce:
 - homepage archetype and section recommendations
 - visual direction, color, typography, image, media, and optional motion guidance
 - a GitHub Pages compatible static site or updates to an existing site, with CSS, JavaScript, images, and optional data separated under `assets/` by default
+- scoped suggestions for existing pages, including where an effect belongs, why it fits, implementation complexity, and risks
 - a publish-ready commit and push workflow when the user asks for GitHub publishing
 
 ## Example Brief
@@ -200,6 +207,7 @@ personal-homepage-builder/
     |-- homepage-brief.md            # Canonical homepage brief schema
     |-- implementation.md            # Stack-aware implementation guidance
     |-- interview.md                 # Discovery question bank
+    |-- iteration-requests.md        # Existing-site change and suggestion workflow
     |-- media-assets.md              # Image, video, audio, and embed handling
     |-- motion-design.md             # Optional motion levels and interaction patterns
     |-- output-contracts.md          # Gates before design, implementation, review, and publish

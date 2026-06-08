@@ -83,6 +83,17 @@ If the user asks to jump directly to design or code:
 - Ask only the missing high-impact questions.
 - State which gates are being compressed and which cannot be skipped.
 
+## User Adds A New Requirement Mid-Project
+
+If the user already has a built or in-progress homepage and asks for a new feature, design adjustment, dynamic element, section, media treatment, or exploratory suggestion:
+
+- Treat it as an iteration request.
+- Use `iteration-requests.md`.
+- Inspect the current page or available implementation before recommending UI changes.
+- Preserve the confirmed brief unless the new request changes identity, audience, or public content.
+- Offer 2-4 context-aware options when the user has no clear solution.
+- Produce a compact change plan before editing.
+
 ## User Wants To Save Tokens
 
 If the user wants to reduce back-and-forth:

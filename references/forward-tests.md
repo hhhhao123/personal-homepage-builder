@@ -151,3 +151,20 @@ Expected behavior:
 - Do not later reintroduce reveal animations, parallax, cursor effects, autoplay media, or decorative motion during design or implementation.
 - Keep instant hover/focus feedback for usability where appropriate.
 - Still respect `prefers-reduced-motion` and keep the page readable without JavaScript.
+
+## Test 11: Mid-Project Dynamic Request
+
+Prompt:
+
+```text
+Use $personal-homepage-builder. The homepage is already partly built. I feel like it may need some dynamic elements, but I do not know what would fit. What do you think?
+```
+
+Expected behavior:
+
+- Treat this as an iteration request, not a full restart.
+- Inspect the current page files, screenshot, or link before recommending effects; ask for one if unavailable.
+- Offer 2-4 specific options tied to current sections and page goals.
+- Recommend one option with rationale, complexity, and risk.
+- Use `motion-design.md` for the motion level and reduced-motion fallback.
+- Do not implement until the user chooses a direction or explicitly asks for direct implementation.

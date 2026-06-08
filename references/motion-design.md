@@ -16,6 +16,8 @@ If the user wants the page to feel more dynamic but has not specified a style, r
 - developer, builder, indie maker, or product-focused profile: `subtle` or `moderate`
 - creator, designer, media-forward, or highly expressive personal brand: `moderate`, and `expressive` only with clear user support
 
+For existing or in-progress pages, inspect the current design before recommending motion. Suggest the few motion patterns that fit the actual sections instead of listing every possible animation.
+
 ## Motion Levels
 
 Use one of these levels in the homepage brief:

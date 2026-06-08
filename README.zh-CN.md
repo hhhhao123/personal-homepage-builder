@@ -34,6 +34,7 @@
 - 包含社交链接和精选作品的个人品牌网站
 - 无需后端、可以轻量发布的静态主页
 - 使用照片、视频、音乐或生成式视觉资产的媒体增强型个人主页
+- 已经做完或正在制作中的主页，需要新的设计建议、动态效果或局部优化
 
 ## 当前状态
 
@@ -46,6 +47,7 @@
 - 在风格、实现、审查和发布前设置必要的输出门禁
 - 为审美、主题、前端、媒体和审查工作明确路由辅助 skills
 - 默认使用结构化静态站点实现，而不是大单文件 HTML
+- 支持已有或制作中的主页迭代，当用户提出新想法或局部修改时先结合当前页面给建议
 - 可选动态设计，可根据个人身份、受众和内容选择 none、subtle、moderate 或 expressive
 - 提供 forward-test prompts，方便后续回归测试
 - 默认不使用 emoji，除非用户明确要求
@@ -61,7 +63,7 @@
 5. **审美发现**：在可用时调用 `design-taste-frontend` 或等价 taste skill。
 6. **形成 Brief**：产出经过用户确认的 `personal_homepage_brief`。
 7. **设计路由**：声明将调用哪些辅助 skills，以及哪些地方使用 fallback。
-8. **实现**：使用当前项目技术栈构建或更新网站。
+8. **实现或迭代**：构建网站，或先检查现有页面并提出局部优化方案再编辑。
 9. **审查与发布**：验证 UI、响应式、可访问性、git 范围和 GitHub Pages 发布。
 
 核心规则很简单：不要一开始就问“你想要什么风格？”大多数用户很难直接回答这个问题。这个 skill 会推动 agent 先发现身份，再根据证据推导设计选择。
@@ -119,6 +121,10 @@ Use $personal-homepage-builder to redesign my existing personal site so it feels
 Use $personal-homepage-builder to create a portfolio homepage for my research, projects, writing, and contact links.
 ```
 
+```text
+Use $personal-homepage-builder. My homepage is already partly built, but I think it may need dynamic elements. Look at the current page and suggest what would fit.
+```
+
 ## 你会得到什么
 
 根据你的需求和可用材料，agent 可以产出：
@@ -128,6 +134,7 @@ Use $personal-homepage-builder to create a portfolio homepage for my research, p
 - 个人主页原型和栏目建议
 - 视觉方向、颜色、字体、图片、媒体和可选动效指导
 - 兼容 GitHub Pages 的静态站点，或对现有站点的更新；默认把 CSS、JavaScript、图片和可选数据拆分到 `assets/` 下
+- 面向现有页面的局部建议，包括效果放在哪里、为什么适合、实现复杂度和风险
 - 当用户要求 GitHub 发布时，提供可发布的提交和推送流程
 
 ## Brief 示例
@@ -200,6 +207,7 @@ personal-homepage-builder/
     |-- homepage-brief.md            # 标准 homepage brief schema
     |-- implementation.md            # 面向技术栈的实现指导
     |-- interview.md                 # 发现式访谈问题库
+    |-- iteration-requests.md        # 已有站点变更和建议工作流
     |-- media-assets.md              # 图片、视频、音频和嵌入处理
     |-- motion-design.md             # 可选动态层级和交互模式
     |-- output-contracts.md          # 设计、实现、审查和发布前的门禁

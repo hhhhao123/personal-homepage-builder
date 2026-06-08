@@ -80,6 +80,67 @@ npx skills add https://github.com/hhhhao123/personal-homepage-builder --skill pe
 
 安装后请重启你的 agent，这样新 skill 才能被发现。
 
+## 小白快速开始
+
+安装这个 skill 和相关辅助 skills 后，直接打开你的 agent，用一句普通请求开始即可。你不需要懂网页设计术语，也不需要先想好完整的网站结构或风格名称。
+
+如果是从零开始做主页：
+
+```text
+Use $personal-homepage-builder. I want to build a personal github.io homepage, but I do not know what style I want. Please guide me step by step.
+```
+
+如果已经有一个做完或正在做的主页：
+
+```text
+Use $personal-homepage-builder. My homepage is already partly built. Please inspect it and suggest how to improve the design before changing code.
+```
+
+如果只是感觉页面需要优化，但自己没有明确想法：
+
+```text
+Use $personal-homepage-builder. I feel the homepage may need dynamic elements, but I do not know what would fit. Look at the current page and propose a few options.
+```
+
+这个 skill 应该先问少量具体问题，形成主页 brief，在可用时调用设计和前端辅助 skills，并在方向清楚后再进入实现。
+
+## Agent 应该怎么问你
+
+agent 不应该一开始就问“你想要什么风格？”更合理的对话应该从具体问题开始：
+
+```text
+谁会访问这个主页？
+你希望访问者 10 秒后记住你什么？
+哪些链接、项目、照片或社交账号必须展示？
+哪些内容不要公开？
+你希望页面感觉安静、技术感、表达性强、编辑感、活泼、正式，还是别的方向？
+```
+
+如果你没有准备好材料，可以先简单回答。这个 skill 的目的就是从粗略信号里整理出清晰的主页 brief。
+
+## 推荐第一条消息
+
+如果想节省 token、减少来回问答，可以一开始粘贴一个简短的 Personal Signal Pack：
+
+```text
+Use $personal-homepage-builder.
+
+Personal Signal Pack:
+- Who I am:
+- Audience:
+- What visitors should remember:
+- Must-show content:
+- Do not publish:
+- Links:
+- Images or media:
+- Visual styles I like:
+- Visual styles I dislike:
+- Existing homepage or repository:
+- Motion preference: none / subtle / moderate / expressive / not sure
+```
+
+可以留空不确定的字段。agent 应该只追问真正影响主页方向的关键信息。
+
 ## 在其他 Agent 中使用
 
 这个仓库不绑定某一个 agent 运行时。如果你的 agent 系统不支持 `skills` CLI，可以把整个仓库交给 agent，或者把 `SKILL.md` 和 `references/` 文件夹复制到该系统的 skill、instruction 或 knowledge 格式中。

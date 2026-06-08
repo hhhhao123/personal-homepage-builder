@@ -80,6 +80,67 @@ npx skills add https://github.com/hhhhao123/personal-homepage-builder --skill pe
 
 Restart your agent after installation so the new skill can be discovered.
 
+## Quick Start For Beginners
+
+After installing this skill and any companion skills, open your agent and start with one plain request. You do not need to know web design terms, choose a style name, or prepare a complete site plan.
+
+For a new homepage:
+
+```text
+Use $personal-homepage-builder. I want to build a personal github.io homepage, but I do not know what style I want. Please guide me step by step.
+```
+
+For an existing or in-progress homepage:
+
+```text
+Use $personal-homepage-builder. My homepage is already partly built. Please inspect it and suggest how to improve the design before changing code.
+```
+
+For a design question with no clear idea yet:
+
+```text
+Use $personal-homepage-builder. I feel the homepage may need dynamic elements, but I do not know what would fit. Look at the current page and propose a few options.
+```
+
+The skill should then ask a small number of grounded questions, produce a homepage brief, route design/frontend companion skills when available, and only move into implementation after the direction is clear.
+
+## How The Agent Should Ask You
+
+The agent should not start by asking "what style do you want?" A better conversation starts with concrete questions:
+
+```text
+Who should visit this homepage?
+What should they remember about you after 10 seconds?
+Which links, projects, photos, or social accounts must be included?
+What should not be public?
+Do you want the page to feel quiet, technical, expressive, editorial, playful, formal, or something else?
+```
+
+If you do not have prepared materials, answer briefly. The skill is designed to work from rough signals and refine them into a clear brief.
+
+## Suggested First Message
+
+To save tokens and reduce back-and-forth, paste a compact Personal Signal Pack:
+
+```text
+Use $personal-homepage-builder.
+
+Personal Signal Pack:
+- Who I am:
+- Audience:
+- What visitors should remember:
+- Must-show content:
+- Do not publish:
+- Links:
+- Images or media:
+- Visual styles I like:
+- Visual styles I dislike:
+- Existing homepage or repository:
+- Motion preference: none / subtle / moderate / expressive / not sure
+```
+
+You can leave fields blank. The agent should ask only for the missing high-impact details.
+
 ## Use With Other Agents
 
 This repository is not tied to one agent runtime. If your agent system does not support the `skills` CLI, give the agent this repository, or copy `SKILL.md` plus the `references/` folder into that system's skill, instruction, or knowledge format.

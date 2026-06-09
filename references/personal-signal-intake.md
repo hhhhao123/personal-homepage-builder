@@ -17,6 +17,51 @@ Good signals include:
 
 Allow incomplete answers. "I do not know yet" is useful input.
 
+## Zero-Prep Onboarding Protocol
+
+Use this when the user starts with only a sentence such as "I want to make a personal homepage, but I have no idea yet."
+
+The first response should do three things:
+
+1. Set expectations: explain that the agent will ask in short rounds before writing code.
+2. Give a light materials roadmap: tell the user they do not need everything now, but links, projects, photos, social accounts, and style references may help later.
+3. Ask only the first 1-3 questions about identity, audience, and memory point.
+
+Do not ask for a complete resume, full biography, brand system, or all links in the first message.
+
+After each user answer:
+
+1. Summarize what is now confirmed.
+2. State what is still missing.
+3. Tell the user what kind of material may be useful in the next round.
+4. Ask the next 1-3 questions.
+
+Before producing a homepage brief for a zero-prep user, cover these minimum checkpoints unless the user explicitly chooses a quick-path shortcut:
+
+- identity: who the user is in ordinary language
+- audience: who the homepage is for
+- memory point: what visitors should remember
+- content/materials: what to show and which links or placeholders exist
+- privacy: what not to publish
+- taste: preferred feeling, disliked styles, and any references
+- media/assets: photos, screenshots, video, audio, or typography-first fallback
+- constraints: language, hosting, timeline, and whether publishing is needed now
+- motion: none, subtle, moderate, expressive, or not sure
+
+Use this short materials roadmap when helpful:
+
+```text
+You do not need to prepare everything now. As we go, useful materials may include:
+- basic identity: public name, one-line introduction, audience
+- content: projects, writing, publications, services, or links
+- proof: GitHub, demos, screenshots, papers, testimonials, metrics
+- media: avatar, photos, covers, videos, or a decision to stay typography-first
+- taste: sites, apps, moods, colors, objects, music, books, films, or dislikes
+- boundaries: anything private, outdated, exaggerated, or not ready for public use
+```
+
+The goal is not to collect everything upfront. The goal is to make the user comfortable and help them discover what matters.
+
 ## Preference Discovery Ladder
 
 When the user is a beginner, move from easy personal language to implementation decisions:
@@ -72,6 +117,7 @@ After the user answers, summarize:
 - taste clues
 - privacy boundaries
 - missing information
+- next materials to prepare or decide
 
 ## Standard Intake: 15 Signals
 

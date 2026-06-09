@@ -13,6 +13,7 @@ Must include:
 - confirmed facts
 - inferred positioning
 - tentative taste signals
+- material readiness: provided, missing, placeholders, and what the user should prepare next
 - audience
 - first impression
 - remembered-for statement
@@ -45,6 +46,8 @@ Must use `references/homepage-brief.md`.
 Must include `delivery_mode` and `quality_tier`.
 
 Must include a motion strategy, even when the decision is `level: none`.
+
+For zero-prep users, must include a materials status summary: provided materials, missing materials, placeholders, and materials to prepare next.
 
 The user must accept or correct the brief before code changes begin, unless the user explicitly requests a compressed quick path. Even in a compressed path, produce a minimal brief first.
 

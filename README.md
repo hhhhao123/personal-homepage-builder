@@ -44,6 +44,7 @@ The skill now emphasizes:
 
 - session state across the whole homepage-design conversation
 - lightweight personal signal intake for users starting from zero
+- zero-prep onboarding that explains what materials may be useful later instead of demanding everything upfront
 - required output gates before style, implementation, review, and publish
 - explicit companion skill routing for taste, theme, frontend, media, and review work
 - structured static site implementation instead of monolithic HTML by default
@@ -102,7 +103,7 @@ For a design question with no clear idea yet:
 Use $personal-homepage-builder. I feel the homepage may need dynamic elements, but I do not know what would fit. Look at the current page and propose a few options.
 ```
 
-The skill should then ask a small number of grounded questions, produce a homepage brief, route design/frontend companion skills when available, and only move into implementation after the direction is clear.
+The skill should then guide discovery in short rounds, tell you what materials may be useful later, produce a homepage brief, route design/frontend companion skills when available, and only move into implementation after the direction is clear.
 
 ## Default Mode
 
@@ -137,6 +138,8 @@ Do you want the page to feel quiet, technical, expressive, editorial, playful, f
 ```
 
 If you do not have prepared materials, answer briefly. The skill is designed to work from rough signals and refine them into a clear brief.
+
+After each answer, the agent should summarize what is confirmed, explain what is still missing, and ask only the next useful questions. It should not end the discovery after a few short turns unless the core materials, privacy boundaries, taste clues, and implementation constraints are covered.
 
 ## Suggested First Message
 
@@ -173,7 +176,7 @@ At minimum, the agent needs:
 
 ## What To Prepare
 
-The skill can start from almost nothing, but better materials produce a more personal homepage. Useful inputs include:
+The skill can start from almost nothing. You do not need all materials upfront, but better materials produce a more personal homepage over time. Useful inputs include:
 
 - resume, CV, short bio, or self-introduction
 - GitHub, LinkedIn, X/Twitter, Instagram, YouTube, Bilibili, Xiaohongshu, or other social links

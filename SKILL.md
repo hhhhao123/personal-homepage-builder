@@ -20,6 +20,7 @@ This skill is not a one-shot page generator. It is a controlled workflow for tur
 - Treat MBTI, zodiac signs, enneagram, hobbies, favorite media, and similar inputs as optional self-expression clues, not scientific facts or fixed personality rules.
 - Confirm public/private boundaries before using personal details, photos, contact links, location, legal names, career information, or sensitive life context.
 - Preserve the user's intent over template aesthetics. The goal is a homepage that feels specific to the person, not just visually polished.
+- When the user starts with no materials or no clear idea, do not compress discovery into a short three-turn exchange. Guide the user in rounds, explain what to prepare next, and complete the zero-prep discovery coverage in `references/personal-signal-intake.md` before producing a homepage brief unless the user explicitly asks for a quick-path shortcut.
 
 ## Session Protocol
 
@@ -40,8 +41,8 @@ At phase transitions, briefly state:
 Follow these phases in order unless the user explicitly requests a smaller path and the relevant gates still pass:
 
 1. **Orient**: inspect project context, deployment target, existing files, user goal, delivery mode, and quality tier. Use `references/delivery-modes.md`; if the user is unsure, default to Deep Profile + Profile quality + subtle motion.
-2. **Intake**: extract facts, links, media, tone clues, privacy risks, and gaps from supplied materials. If the user has little or no material, use `references/personal-signal-intake.md` to collect only the signals needed for homepage design, not to teach resume writing. Use `references/content-intake.md`, `references/media-assets.md`, and `references/social-links.md`.
-3. **Interview**: ask 1-3 high-impact questions per round. Use `references/interview.md`. Prefer identity, audience, first impression, remembered-for, taste signals, and explicit avoids.
+2. **Intake**: extract facts, links, media, tone clues, privacy risks, and gaps from supplied materials. If the user has little or no material, use the zero-prep onboarding protocol in `references/personal-signal-intake.md`: explain the discovery path, tell the user what materials may be useful later, and collect only the next useful signals. Use `references/content-intake.md`, `references/media-assets.md`, and `references/social-links.md`.
+3. **Interview**: ask 1-3 high-impact questions per round. Use `references/interview.md`. Prefer identity, audience, first impression, remembered-for, taste signals, and explicit avoids. For zero-prep users, continue in progressive rounds until the minimum discovery coverage in `references/personal-signal-intake.md` is satisfied or the user explicitly chooses a compressed quick path.
 4. **Reflect**: produce an identity reflection that separates confirmed facts, inferred positioning, tentative taste hypotheses, and open questions. Gate this with `references/output-contracts.md`.
 5. **Taste Discovery**: use `design-taste-frontend`, `taste-skill`, `taste`, or an equivalent taste/design-direction skill when available. If unavailable, use `references/style-directions.md` and say what fallback is being used. Discuss motion as an optional design choice using `references/motion-design.md`.
 6. **Brief**: create a `personal_homepage_brief` using `references/homepage-brief.md`. Do not implement until the user accepts or corrects it.

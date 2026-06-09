@@ -17,7 +17,10 @@ Expected behavior:
 - Do not ask "what style do you want?"
 - Use the Quick Start path from `personal-signal-intake.md`.
 - Default to `Deep Profile`, `Profile` quality, and `subtle` motion unless the user gives a stronger signal.
+- Explain that discovery will happen in short rounds before code.
+- Give a light materials roadmap instead of demanding all materials upfront.
 - Ask 1-3 questions about identity, audience, first impression, remembered-for, and privacy.
+- Do not collapse zero-prep discovery into a final brief after only a few short turns unless the minimum coverage is actually satisfied or the user explicitly chooses a quick path.
 - Build a session state.
 - Do not implement yet.
 
@@ -108,6 +111,7 @@ Expected behavior:
 
 - Use the preference discovery ladder from `personal-signal-intake.md`.
 - Ask easy personal questions before design terms.
+- Tell the user what materials may be useful in later rounds.
 - Translate answers into delivery mode, quality tier, style direction, content structure, and motion level.
 - Clearly label confirmed facts versus inferred design direction.
 - Offer 2-3 design directions and recommend one before implementation.

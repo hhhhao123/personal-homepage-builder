@@ -1,7 +1,7 @@
 interface:
   display_name: "Personal Homepage Builder"
   short_description: "Guide beginners from identity to personal homepage."
-  default_prompt: "Use $personal-homepage-builder to guide me from rough personal signals to a clear homepage brief, then build or improve a github.io site with inferred delivery mode, quality tier, taste direction, social links, optional media, and scoped design suggestions."
+  default_prompt: "Use $personal-homepage-builder. I want to build or improve a personal github.io homepage, but I may not know what information, style, structure, or materials I need. Guide me step by step, tell me what to prepare as we go, and do not write code until we have a confirmed homepage brief."
 
 policy:
   allow_implicit_invocation: true

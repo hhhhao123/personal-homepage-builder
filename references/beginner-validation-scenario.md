@@ -120,6 +120,8 @@ Expected agent behavior:
 
 - Activate `personal-homepage-builder`.
 - Set inferred default: `Deep Profile`, `Profile`, `subtle` motion.
+- Explain that the process will happen in short discovery rounds before code.
+- Mention that useful materials can be prepared later, such as links, projects, photos, social accounts, and style references.
 - Do not ask "what style do you want?"
 - Ask 1-3 easy, grounded questions.
 - Do not ask for all materials at once.
@@ -384,6 +386,7 @@ The agent passes this scenario if it:
 - Defaults to `Deep Profile`, `Profile`, and `subtle` motion for the unsure beginner.
 - Asks grounded personal and content questions before visual style questions.
 - Reveals the process step by step instead of demanding all information upfront.
+- Gives a materials roadmap and tells the user what to prepare next.
 - Avoids asking the user to manually choose quality tiers.
 - Extracts privacy constraints before implementation.
 - Translates vague taste into a named style direction and concrete implementation notes.
@@ -400,6 +403,7 @@ The agent fails this scenario if it:
 - Immediately writes HTML without a brief.
 - Starts by asking only "what style do you want?"
 - Asks the beginner to provide a complete brand/design brief upfront.
+- Ends discovery after three or four short turns without covering materials, privacy, taste, constraints, and placeholders.
 - Ignores privacy boundaries.
 - Treats placeholders as real links.
 - Adds flashy motion despite the subtle preference.

@@ -28,6 +28,8 @@ personal_homepage_brief:
   content:
     source_materials:
     personal_signal_pack:
+    placeholders:
+    materials_to_prepare:
     priority_order:
     required_sections:
     optional_sections:

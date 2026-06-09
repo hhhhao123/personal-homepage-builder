@@ -24,6 +24,8 @@ homepage_session:
     personal_signal_pack:
     extracted:
     missing:
+    placeholders:
+    to_prepare_next:
     privacy_risks:
   identity:
     confirmed_facts:

@@ -2,7 +2,7 @@
 
 ## Default Target: GitHub Pages
 
-Default to a GitHub Pages compatible static site for ordinary personal homepages.
+Default to a GitHub Pages compatible static site for ordinary personal homepages or small personal sites.
 
 Prefer:
 - repository name: `<username>.github.io`
@@ -11,6 +11,7 @@ Prefer:
 - no required backend
 - simple link/contact modules
 - assets stored inside the repository
+- one-page, hybrid, or multi-page structure based on the confirmed content
 
 Avoid by default:
 - server-only contact forms
@@ -26,16 +27,17 @@ Avoid by default:
 - Identify deployment path: GitHub Pages, Vercel, Netlify, static files, or unknown.
 - If the site already targets GitHub Pages, preserve that path unless the user explicitly wants another host.
 - For mid-project feature or design requests, use `iteration-requests.md` and update the smallest coherent set of files.
+- Do not edit visible page behavior, content, layout, style, navigation, media, or motion until the user confirms the compact change plan.
 - Keep unrelated dirty worktree changes untouched.
 
 ## From Scratch
 
-Choose the smallest stack that fits the user's needs:
+Choose the smallest stack and page model that fits the user's needs:
 
-- Static HTML/CSS/JS: simple one-page homepage.
-- Jekyll/GitHub Pages: default for simple personal homepages, resume sites, academic profiles, and creator link hubs.
-- Astro: content-rich personal sites with components and static output.
-- Next.js/React: interactive apps, CMS-heavy sites, or advanced routing.
+- Static HTML/CSS/JS: simple one-page homepage or small multi-page site.
+- Jekyll/GitHub Pages: personal sites with repeated projects, writing, publications, or basic content collections.
+- Astro: content-rich personal sites with components, collections, and static output.
+- Next.js/React: interactive apps, CMS-heavy sites, advanced routing, or application-like personal products.
 
 Use the current agent system's official documentation lookup tool for framework, library, SDK, CLI, or cloud docs before implementation. If no such tool is available, use official documentation or the best available retrieval path.
 Use `github-pages-bootstrap.md` for GitHub Pages setup and publish details.
@@ -44,7 +46,16 @@ Use `motion-design.md` when the brief allows motion.
 
 ## File Structure Rule
 
-For a real static homepage implementation, do not default to one large HTML file. Prefer a maintainable structure with `index.html`, `assets/css/`, `assets/js/`, `assets/images/`, and optional `assets/data/`. Keep single-file HTML only for disposable prototypes, constrained artifact environments, or when the user explicitly asks for it.
+For a real static homepage implementation, do not default to one large HTML file. Prefer a maintainable structure with `index.html`, optional supporting pages such as `about.html`, `projects.html`, or `writing.html`, `assets/css/`, `assets/js/`, `assets/images/`, and optional `assets/data/`. Keep single-file HTML only for disposable prototypes, constrained artifact environments, or when the user explicitly asks for it.
+
+Before editing, decide and state:
+
+- page model: single page, hybrid, or multi-page
+- page map: page names, paths, purpose, and primary sections
+- navigation: header/footer links, active states, and mobile behavior
+- shared assets: CSS, JavaScript, data, images, and reusable components
+- content ownership: which content appears on the homepage summary versus supporting pages
+- confirmation status: whether the user has approved this implementation plan
 
 ## Motion Rule
 
@@ -95,6 +106,7 @@ Motion is optional and must match the brief. If motion is enabled, implement it 
 
 For a planning-only request:
 - personal homepage brief
+- page model and page map recommendation
 - profile data outline when maintainability is requested
 - extracted content summary when source materials were provided
 - implementation plan
@@ -104,6 +116,7 @@ For an implementation request:
 - modified or created site files
 - generated assets saved in the workspace
 - CSS and JavaScript separated into project asset files unless intentionally building a prototype
+- page files separated when the confirmed page map requires multiple pages
 - motion behavior implemented according to the confirmed `motion_strategy`, or explicitly omitted when motion is disabled
 - media assets or covers saved in the workspace when used
 - build/test results

@@ -6,13 +6,14 @@ These gates are internal controls. For beginner users, do not present them as pr
 
 ## Gate 0: Minimum Viable Requirements
 
-Required before implementation, formal homepage brief, or final design direction.
+Required before implementation, formal homepage/site brief, or final design direction.
 
 Must include:
 
 - primary audience: who should open the homepage first
 - main purpose: what the homepage should help the visitor understand or do
 - core content modules: at least three sections or content types
+- page model: whether the content fits one page, a homepage plus supporting pages, or a multi-page site
 - style tendency or explicit visual dislikes
 - privacy boundary: what must not be public
 - contact or next action
@@ -93,6 +94,7 @@ Must include:
 
 - Gate 0 status
 - functional requirements
+- information architecture: page model, page map, and navigation plan when more than one page is needed
 - content model for repeated items such as projects, links, posts, publications, or media
 - non-functional requirements: responsive behavior, accessibility, SEO basics, performance, maintainability, reduced motion
 - constraints and assumptions: hosting, language, external resources, placeholders, user-provided assets
@@ -123,15 +125,18 @@ Must include:
 
 - target files or modules
 - stack and deployment target
-- site structure, including whether CSS, JS, images, and data will be separated under `assets/`
+- site structure, including whether the project is single-page, hybrid, or multi-page
+- page map, paths, shared navigation, and which content belongs on each page
+- whether CSS, JS, images, and data will be separated under `assets/`
 - asset strategy
 - content data strategy
 - validation commands
 - git scope
+- explicit user confirmation before file edits
 
 ## Iteration Mini Gate
 
-Required before editing an existing or in-progress homepage for a new requirement.
+Required before editing an existing or in-progress homepage/site for any visible user-facing adjustment.
 
 Must include:
 
@@ -139,12 +144,19 @@ Must include:
 - recommended change
 - why it fits the current homepage
 - target files or modules
+- visible user-facing impact
 - companion skill routing if design/UI work is involved
 - motion level and reduced-motion fallback if relevant
 - validation needed
 - risks or tradeoffs
+- exact confirmation question
+- confirmation status
 
-If the user is asking for suggestions rather than implementation, provide options first and do not edit until a direction is chosen.
+If the user is asking for suggestions rather than implementation, provide options first and do not edit until a direction is chosen and confirmed.
+
+If the user asks to directly edit, still produce the mini gate and wait for explicit confirmation before editing.
+
+Never treat "make it better", "you decide", "adjust it", or "add something" as approval to edit files.
 
 ## Change Control Gate
 
@@ -157,6 +169,7 @@ Must include:
 - affected sections or files
 - impact on content, design, motion, privacy, or implementation
 - updated confirmation question
+- confirmation status
 
 Do not silently merge a major change into an old brief. Reconfirm the affected part before editing.
 

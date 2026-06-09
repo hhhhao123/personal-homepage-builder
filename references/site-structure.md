@@ -6,9 +6,21 @@ Use this file when implementing a new plain static personal homepage or reorgani
 
 Do not default to one giant HTML file for a real homepage implementation. Prefer a small structured static site with separate assets unless the user explicitly asks for a disposable prototype or the existing project already uses a single-file pattern.
 
+Do not assume every personal homepage should be a single page. Choose the smallest site shape that fits the confirmed content:
+
+- **Single page**: best for a simple identity page, compact portfolio, link hub, or quick launch.
+- **Hybrid**: one strong landing page plus 1-3 supporting pages, best when the first screen should stay focused but some content needs room.
+- **Multi-page**: best for blogs, publications, project case studies, galleries, services, speaking, teaching, or a detailed academic/creator profile.
+
+Ask in user-facing language when unclear:
+
+```text
+Should everything live on one scrollable page, or should some things have their own pages, such as Projects, Writing, About, or Contact?
+```
+
 ## Plain Static Site
 
-Default structure:
+Default single-page structure:
 
 ```text
 /
@@ -27,6 +39,32 @@ Default structure:
 |       `-- profile.json
 ```
 
+Default multi-page plain static structure:
+
+```text
+/
+|-- index.html
+|-- about.html
+|-- projects.html
+|-- writing.html
+|-- contact.html
+|-- assets/
+|   |-- css/
+|   |   |-- base.css
+|   |   |-- components.css
+|   |   |-- animations.css
+|   |   |-- layout.css
+|   |   `-- pages.css
+|   |-- js/
+|   |   |-- main.js
+|   |   `-- interactions.js
+|   |-- images/
+|   `-- data/
+|       |-- profile.json
+|       |-- projects.json
+|       `-- writing.json
+```
+
 Use fewer files for very small sites, but keep CSS and JS out of `index.html` by default:
 
 ```text
@@ -43,13 +81,15 @@ Use fewer files for very small sites, but keep CSS and JS out of `index.html` by
 ## Responsibilities
 
 - `index.html`: semantic document structure, sections, metadata, and links to assets.
+- supporting HTML pages: focused content that would make the homepage too long, such as about, projects, writing, publications, speaking, gallery, services, or contact.
 - `assets/css/base.css`: reset, variables, typography, layout primitives.
 - `assets/css/components.css`: reusable cards, buttons, link groups, media blocks, nav, footer.
 - `assets/css/animations.css`: optional reusable motion styles when motion is enabled.
-- `assets/css/home.css`: page-specific composition and responsive layout.
+- `assets/css/home.css` or `assets/css/pages.css`: page-specific composition and responsive layout.
 - `assets/js/main.js`: initialization and safe progressive enhancement.
 - `assets/js/interactions.js`: optional interactions, motion toggles, filters, or small UI behavior.
-- `assets/data/profile.json`: optional user-editable content data for maintainability.
+- `assets/data/profile.json`: optional user-editable profile content for maintainability.
+- `assets/data/projects.json`, `writing.json`, or similar files: optional repeated content data for multi-page sites.
 
 ## Jekyll Or GitHub Pages With Data
 
@@ -63,6 +103,9 @@ For maintainable Jekyll sites, prefer:
 |-- _includes/
 |-- _layouts/
 |-- index.html
+|-- about.md
+|-- projects.md
+|-- writing.md
 |-- assets/
 |   |-- css/
 |   |-- js/
@@ -71,12 +114,55 @@ For maintainable Jekyll sites, prefer:
 
 Use `_data/profile.yml` for content the user may edit later.
 
+For content-heavy sites, use collections when appropriate:
+
+```text
+/
+|-- _projects/
+|-- _posts/
+|-- _publications/
+|-- _layouts/
+|-- _includes/
+|-- index.html
+```
+
+Use collections only when they reduce maintenance effort. Do not add Jekyll complexity for a tiny site.
+
+## Page Model Decision
+
+Prefer a single page when:
+
+- the homepage has fewer than 5-6 compact sections
+- the user has limited content or wants a fast launch
+- visitor action is simple, such as contact, follow, or view top projects
+- the site should feel like one focused introduction
+
+Prefer multiple pages when:
+
+- projects, writing, publications, services, gallery, speaking, or teaching each need their own space
+- there are repeated items that need filtering, indexing, tags, dates, or detail views
+- the homepage would become too long or unfocused
+- different audiences need different paths, such as recruiters vs readers vs clients
+- SEO, shareable project pages, or article pages matter
+
+For hybrid sites, keep `index.html` as the strongest summary page and link to supporting pages for depth.
+
+## Navigation Rules
+
+- Confirm the page map before implementation.
+- Keep navigation labels short and human-readable: Home, About, Projects, Writing, Research, Gallery, Contact.
+- Avoid adding pages with no real content. Use placeholders only when the user confirms they are acceptable.
+- Make the current page clear with an active state.
+- Keep footer links and social/contact links consistent across pages.
+- For multi-page sites, include canonical metadata and page-specific titles/descriptions when practical.
+
 ## Implementation Rules
 
 - Follow the existing project structure if one already exists.
 - Keep HTML semantic and readable.
 - Keep CSS modular enough to maintain, but do not over-split tiny projects.
 - Keep JavaScript optional where possible. The page should still show core content without JS.
+- Share layout, navigation, footer, theme variables, and reusable components across pages.
 - Use kebab-case file names.
 - Save generated or user-provided images under `assets/images/`.
 - Avoid inline CSS and inline JS except for tiny critical snippets with a clear reason.

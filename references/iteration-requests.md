@@ -1,6 +1,6 @@
 # Iteration Requests
 
-Use this file when a user already has a built or in-progress personal homepage and asks for a new requirement, such as adding dynamic elements, changing a section, improving interaction, adding media, revising layout, or asking whether an idea would be good.
+Use this file when a user already has a built or in-progress personal homepage or small personal site and asks for a new requirement, such as adding dynamic elements, changing a section, improving interaction, adding media, revising layout, changing navigation, adding pages, or asking whether an idea would be good.
 
 ## Principle
 
@@ -10,9 +10,11 @@ When the user has no clear idea, do not ask them to invent the solution. Inspect
 
 For beginner users, keep the recommendation visual and concrete. Do not describe the request as a schema or gate. Explain what the visitor will notice and what tradeoff it creates.
 
+Any visible page/site adjustment requires explicit confirmation before code edits. This applies even when the user says "make it better", "add some motion", "adjust the page", "improve the UI", "change the style", or "you decide". Treat the user's request as permission to analyze and propose, not permission to edit.
+
 ## Intake
 
-Before recommending or implementing, inspect available context:
+Before recommending or requesting confirmation, inspect available context:
 
 - current page structure and key sections
 - existing visual direction, density, and motion level
@@ -39,6 +41,8 @@ Based on the current homepage, I would consider these options:
    Risk:
 
 Recommended choice:
+
+Please confirm which option to apply before I edit the files.
 ```
 
 Keep options concrete and limited to 2-4. Prefer one clear recommendation instead of an unranked menu.
@@ -50,7 +54,7 @@ Keep options concrete and limited to 2-4. Prefer one clear recommendation instea
 - State when the current page should not add the requested effect.
 - For motion requests, use `motion-design.md` and choose `none`, `subtle`, `moderate`, or `expressive`.
 - If the user asks for an effect that conflicts with the page goal, propose a safer alternative.
-- If implementation is requested, update only the affected files and preserve the existing structure.
+- If implementation is requested, still produce the compact change plan and wait for explicit confirmation before editing. After confirmation, update only the affected files and preserve the existing structure.
 - If the change affects identity, audience, privacy, core content priority, visual direction, or motion level, use the Change Control Gate in `output-contracts.md` before editing.
 
 ## Common Iteration Types
@@ -90,19 +94,39 @@ For partial redesigns, preserve recognizable content and URLs unless the user as
 
 ## Mini Gate
 
-Before editing code for an iteration request, produce a compact change plan:
+Before editing code for any iteration request, produce a compact change plan:
 
 - current issue or opportunity
 - recommended change
 - target files
+- visible user-facing impact
 - motion level if relevant
 - validation needed
 - risks or tradeoffs
+- exact confirmation question
 
-Ask for confirmation unless the user explicitly requested direct implementation and the change is low risk.
+Do not edit until the user explicitly confirms the plan. A vague positive reaction such as "looks good" is acceptable only if it clearly refers to the proposed change plan. If confirmation is ambiguous, ask once more before editing.
 
 If a previous requirements summary or homepage brief was confirmed, add:
 
 - whether this change updates the confirmed plan
 - which part of the plan changes
 - whether the user needs to reconfirm that part
+
+## Direct-Edit Requests
+
+If the user asks to directly edit an existing page without discussion, respond with the smallest useful confirmation step:
+
+```text
+I can make that change, but before editing I need to confirm the exact adjustment:
+
+- Change:
+- Where it applies:
+- Visitor-facing effect:
+- Files likely affected:
+- Risk:
+
+Please confirm this plan, then I will edit the files.
+```
+
+Do not use direct-edit wording as approval to skip the confirmation step.

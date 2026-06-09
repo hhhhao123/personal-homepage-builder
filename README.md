@@ -5,7 +5,7 @@
 <h1 align="center">Personal Homepage Builder</h1>
 
 <p align="center">
-  An agent skill for turning vague personal signals into a confirmed homepage plan, then into a distinctive GitHub Pages friendly implementation.
+  An agent skill for turning vague personal signals into a confirmed homepage or small personal site plan, then into a distinctive GitHub Pages friendly implementation.
 </p>
 
 <p align="center">
@@ -32,6 +32,7 @@ Use it when you want to create or redesign:
 - a `username.github.io` personal homepage
 - a portfolio, resume site, creator page, or academic profile
 - a personal brand site with social links and selected work
+- a single-page, hybrid, or small multi-page personal site
 - a lightweight static homepage that can be published without a backend
 - a richer media-forward homepage using photos, video, music, or generated visual assets
 - an existing or in-progress homepage that needs better design suggestions, dynamic effects, or scoped refinements
@@ -48,6 +49,8 @@ The skill now emphasizes:
 - zero-prep onboarding that explains what materials may be useful later instead of demanding everything upfront
 - minimum viable requirements before implementation
 - user-confirmed requirements summaries before code
+- single-page, hybrid, or multi-page page-map decisions before implementation
+- explicit confirmation before editing existing page adjustments
 - required output gates before style, implementation, review, and publish
 - explicit companion skill routing for taste, theme, frontend, media, and review work
 - structured static site implementation instead of monolithic HTML by default
@@ -106,6 +109,12 @@ For a design question with no clear idea yet:
 
 ```text
 Use $personal-homepage-builder. I feel the homepage may need dynamic elements, but I do not know what would fit. Look at the current page and propose a few options.
+```
+
+For a known adjustment:
+
+```text
+Use $personal-homepage-builder. I want the project section to look better and add subtle motion. Please propose the change first, then wait for my confirmation before editing code.
 ```
 
 The skill should then guide discovery in short rounds, offer concrete choices when you are unsure, show non-code direction sketches when helpful, tell you what materials may be useful later, produce a homepage brief, route design/frontend companion skills when available, and only move into implementation after the direction is clear.
@@ -213,12 +222,14 @@ Depending on the request and available materials, the agent can produce:
 - direction cards, rough text wireframes, and content gap maps during discovery
 - a user-readable requirements summary before implementation
 - a concise personal homepage brief
+- a page model and page map: one page, homepage plus supporting pages, or a small multi-page site
 - an internally inferred scope and quality target, so beginners do not need to choose workflow labels manually
 - a content structure and public-facing profile summary
 - homepage archetype and section recommendations
 - visual direction, color, typography, image, media, and optional motion guidance
-- a GitHub Pages compatible static site or updates to an existing site, with CSS, JavaScript, images, and optional data separated under `assets/` by default
+- a GitHub Pages compatible static site or updates to an existing site, with page files, CSS, JavaScript, images, and optional data kept maintainable by default
 - scoped suggestions for existing pages, including where an effect belongs, why it fits, implementation complexity, and risks
+- confirmed change plans before editing existing page adjustments
 - a publish-ready commit and push workflow when the user asks for GitHub publishing
 
 ## Example Brief
@@ -237,6 +248,13 @@ personal_homepage_brief:
     remembered_for: "turning research ideas into usable tools"
   content:
     required_sections: ["intro", "projects", "writing", "social links"]
+  information_architecture:
+    page_model: "hybrid"
+    page_map:
+      - path: "index.html"
+        purpose: "focused overview and primary links"
+      - path: "projects.html"
+        purpose: "selected project details"
   style:
     direction_name: "quiet technical editorial"
     must_avoid: ["generic portfolio grid", "overly flashy effects"]

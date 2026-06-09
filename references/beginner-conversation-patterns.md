@@ -65,6 +65,16 @@ If the first screen can only make three things obvious, which three should they 
 6. My story, taste, or personal side.
 ```
 
+### Page Shape
+
+```text
+How should the content be organized?
+1. One scrollable page: best if the page should feel simple and focused.
+2. A homepage plus a few detail pages: best if projects, writing, or research need more room.
+3. A small personal site with separate pages: best if you have many works, articles, publications, services, or media.
+4. I am not sure; suggest the smallest structure that fits my content.
+```
+
 ### Taste Direction
 
 ```text
@@ -107,6 +117,7 @@ Allowed probe artifacts:
 
 - **Direction cards**: 2-3 possible page directions with plain-language names.
 - **Text wireframe**: a rough section order using simple labels.
+- **Page map**: a rough list of pages and what each page should contain.
 - **Plain vs richer contrast**: show what the page would become with only current information versus what could improve it.
 - **Content gap map**: show which missing material would make the page more personal.
 
@@ -148,6 +159,26 @@ A rough structure could be:
 This is only a sketch. Tell me what feels wrong or missing.
 ```
 
+### Page Map Template
+
+```text
+The site could stay as one page, but if we split it slightly, I would suggest:
+
+1. Home
+   Purpose: quick first impression and strongest links.
+   Includes: intro, selected highlights, contact.
+
+2. Projects
+   Purpose: give each project enough space.
+   Includes: project cards, links, screenshots, short notes.
+
+3. Writing / Notes
+   Purpose: collect articles, posts, papers, or learning notes.
+   Includes: title, date, topic, link, short summary.
+
+This is only a page map. We should confirm whether these pages are actually needed before implementation.
+```
+
 ### Plain Vs Richer Contrast
 
 ```text
@@ -176,6 +207,8 @@ Convert user answers into internal fields without showing the field names.
 | "I only have GitHub and two projects" | source_materials, placeholders, materials_to_prepare |
 | "Do not show my phone or school details" | privacy.needs_avoidance |
 | "I want Chinese and English" | functional requirements, content model, implementation constraints |
+| "My projects and writing need their own space" | information_architecture.page_model=hybrid or multi_page |
+| "Keep it simple; one page is enough" | information_architecture.page_model=single_page |
 
 ## User-Friendly Term Replacements
 
@@ -184,6 +217,7 @@ Convert user answers into internal fields without showing the field names.
 | audience | who should open this page |
 | conversion | what visitors should do next |
 | content model | what each section needs to show |
+| information architecture | how many pages the site needs and what each page contains |
 | motion strategy | how much movement the page should have |
 | non-functional requirements | practical quality expectations |
 | constraints | things we need to work around |

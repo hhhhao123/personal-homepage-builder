@@ -1,13 +1,13 @@
 ---
 name: personal-homepage-builder
-description: Translate vague personal homepage ideas into clear requirements, identity positioning, audience, content, taste, constraints, source materials, media assets, and social links, then orchestrate a gated workflow that produces a confirmed homepage plan, brief, and GitHub Pages friendly implementation. Use when users want to create, redesign, personalize, refine, extend, or publish a github.io homepage, personal homepage, portfolio, academic profile, creator site, resume site, freelancer page, or personal brand site, including when they start from zero, do not know what information or style they need, or have an existing/in-progress homepage and ask for new ideas, dynamic effects, UI changes, section additions, or better design suggestions before implementation.
+description: Translate vague personal homepage or small personal site ideas into clear requirements, identity positioning, audience, content, taste, constraints, source materials, media assets, page structure, and social links, then orchestrate a gated workflow that produces a confirmed homepage/site plan, brief, and GitHub Pages friendly implementation. Use when users want to create, redesign, personalize, refine, extend, or publish a github.io homepage, personal homepage, portfolio, academic profile, creator site, resume site, freelancer page, or personal brand site, including when they start from zero, do not know what information, page structure, or style they need, or have an existing/in-progress homepage and ask for new ideas, dynamic effects, UI changes, section additions, or better design suggestions before implementation.
 ---
 
 # Personal Homepage Builder
 
 ## Role
 
-Act as the discovery, requirement-translation, and orchestration layer for personal homepage work. Help the user understand and articulate who they are, what they want to show, who the homepage is for, what should be remembered, and what should not be exposed publicly. Then route specialized design, taste, theme, media, frontend, and review work to the right available companion skills.
+Act as the discovery, requirement-translation, and orchestration layer for personal homepage and small personal site work. Help the user understand and articulate who they are, what they want to show, who the homepage is for, what should be remembered, what belongs on the first page versus supporting pages, and what should not be exposed publicly. Then route specialized design, taste, theme, media, frontend, and review work to the right available companion skills.
 
 This skill is not a one-shot page generator. It is a controlled workflow for turning vague personal signals and scattered materials into a confirmed homepage brief, then into a personalized implementation.
 
@@ -20,6 +20,7 @@ Keep two layers separate:
 
 - Treat this skill as the controlling workflow for the rest of the current homepage-design conversation once it is invoked, until the user explicitly exits it or gives a superseding instruction.
 - Do not jump directly into page design, UI customization, implementation, publishing, or repository pushes before the relevant gate in `references/output-contracts.md` has passed.
+- Do not edit homepage/site code for any visible page change before discussing the intended change and receiving explicit user confirmation. This includes layout, content, copy, style, motion, media, navigation, page structure, and component behavior changes, even when the user initially asks to "adjust", "improve", "add", or "make it better".
 - Do not begin by asking "what style do you want?" Ask grounded questions about identity, audience, work, memory point, taste signals, dislikes, privacy boundaries, and public goals.
 - Do not make beginners fill an engineering form. Translate their plain-language answers into internal requirements silently.
 - Do not begin implementation before the minimum viable requirements gate, a confirmed requirements summary, and a confirmed homepage brief. A compressed quick path still needs a minimal brief.
@@ -55,9 +56,9 @@ Follow these phases in order unless the user explicitly requests a smaller path 
 5. **Probe Sketch**: when the user is vague or reactive, optionally show a non-code probe artifact from `references/beginner-conversation-patterns.md`: direction cards, a rough text wireframe, or a "plain version vs richer version" contrast. Use this to invite correction, not to bypass gates.
 6. **Taste Discovery**: use `design-taste-frontend`, `taste-skill`, `taste`, or an equivalent taste/design-direction skill when available. If unavailable, use `references/style-directions.md` and say what fallback is being used. Discuss motion as an optional design choice using `references/motion-design.md`.
 7. **Requirements Confirmation**: produce a user-readable requirements summary or `requirements.md`-style spec using `references/requirements-template.md`. Confirm the requirements baseline before implementation.
-8. **Brief**: create a `personal_homepage_brief` using `references/homepage-brief.md`. Do not implement until the user accepts or corrects it.
+8. **Brief**: create a `personal_homepage_brief` using `references/homepage-brief.md`. Include whether the project is a single-page homepage, a multi-page personal site, or a hybrid landing page with supporting pages. Do not implement until the user accepts or corrects it.
 9. **Design Routing**: declare which companion skills are available, which will be used, and which fallbacks apply. Use `references/skill-routing.md`.
-10. **Implement**: prefer the existing stack and conventions. For new GitHub Pages sites, use `references/github-pages-bootstrap.md`, `references/implementation.md`, and `references/site-structure.md`. Do not default to a large single-file HTML implementation unless the user explicitly asks for a disposable prototype.
+10. **Implement**: prefer the existing stack and conventions. For new GitHub Pages sites, use `references/github-pages-bootstrap.md`, `references/implementation.md`, and `references/site-structure.md`. Do not default to a large single-file HTML implementation unless the user explicitly asks for a disposable prototype. Do not force every project into one long page when the confirmed content needs multiple pages.
 11. **Review**: run build/tests where possible and use `web-design-guidelines` or an equivalent review skill when available. Use `references/quality-checklist.md`.
 12. **Publish**: commit and push only when the user asks for publishing. Do not stage unrelated changes silently.
 
@@ -88,6 +89,7 @@ Minimum gates:
 - No style direction before identity reflection.
 - No implementation before a user-confirmed requirements summary and homepage brief.
 - No UI customization before taste discovery or explicit fallback.
+- No existing-page adjustment before a compact discussion, change plan, and explicit user confirmation.
 - No final delivery before UI/UX/responsive/accessibility review or explicit fallback.
 - No publishing before user approval and clean git scope.
 
@@ -110,6 +112,7 @@ Every brief must include:
 - inferred positioning
 - open questions
 - content modules
+- page model and navigation plan
 - functional requirements
 - content model
 - non-functional requirements

@@ -21,7 +21,8 @@ Expected behavior:
 - Give a light materials roadmap instead of demanding all materials upfront.
 - Ask 1-3 questions or choices about identity, audience, first impression, remembered-for, and privacy.
 - Offer concrete choices if the user cannot answer abstract questions.
-- Optionally provide a non-code direction card or text wireframe as a probe.
+- Optionally provide a non-code direction card, page map, or text wireframe as a probe.
+- Do not assume the result must be one page; determine whether a one-page, hybrid, or multi-page structure fits.
 - Do not collapse zero-prep discovery into a final brief after only a few short turns unless the minimum coverage is actually satisfied or the user explicitly chooses a quick path.
 - Build a session state.
 - Do not implement yet.
@@ -147,8 +148,26 @@ Expected behavior:
 
 - Produce a confirmed brief before implementation.
 - Use the site structure guidance.
-- Create `index.html` plus separated assets such as `assets/css/`, `assets/js/`, and `assets/images/`.
+- Confirm whether the site is single-page, hybrid, or multi-page.
+- Create `index.html` plus any confirmed supporting pages and separated assets such as `assets/css/`, `assets/js/`, and `assets/images/`.
 - Avoid a large monolithic HTML file unless the user explicitly requests a disposable prototype.
+
+## Test 8B: Multi-Page Personal Site
+
+Prompt:
+
+```text
+Use $personal-homepage-builder. I want a personal site with an intro, several projects, writing notes, and a contact page. I am not sure whether this should be one page or multiple pages.
+```
+
+Expected behavior:
+
+- Ask what should be immediately visible on the homepage versus what needs its own space.
+- Recommend a page model: one page, hybrid, or multi-page.
+- Produce a page map before implementation, including page names, paths, purpose, and core content.
+- Confirm navigation labels and whether placeholders are acceptable.
+- Do not force all content into one long homepage.
+- Do not create empty pages just to make the site feel larger.
 
 ## Test 9: Optional Motion
 
@@ -195,4 +214,22 @@ Expected behavior:
 - Offer 2-4 specific options tied to current sections and page goals.
 - Recommend one option with rationale, complexity, and risk.
 - Use `motion-design.md` for the motion level and reduced-motion fallback.
-- Do not implement until the user chooses a direction or explicitly asks for direct implementation.
+- Produce a compact change plan after the user chooses a direction.
+- Do not implement until the user explicitly confirms the change plan.
+
+## Test 11B: Direct Adjustment Request
+
+Prompt:
+
+```text
+Use $personal-homepage-builder. My homepage is already built. Please make the project section look better and add some motion.
+```
+
+Expected behavior:
+
+- Inspect current page files, screenshot, or link before recommending changes; ask for one if unavailable.
+- Treat the request as permission to analyze and propose, not permission to edit.
+- Explain 2-4 concrete options tied to the current page.
+- Produce a compact change plan with target files, visible effect, motion level, validation, and risk.
+- Ask for explicit confirmation before editing code.
+- Do not modify files immediately, even though the user asked to "make" the change.

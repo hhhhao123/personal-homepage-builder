@@ -48,6 +48,22 @@ personal_homepage_brief:
       writing_or_publication_item:
       link_item:
       media_item:
+  information_architecture:
+    page_model: single_page | hybrid | multi_page
+    rationale:
+    page_map:
+      - path:
+        title:
+        purpose:
+        priority:
+        sections:
+        source_content:
+        missing_content:
+    navigation:
+      primary_links:
+      footer_links:
+      mobile_behavior:
+      active_state:
   taste:
     references:
     likes:
@@ -116,6 +132,8 @@ For speed-focused work, the brief may be short but still needs these fields:
 - first impression
 - remembered-for
 - at least three required sections or content modules
+- page model: single page, hybrid, or multi-page
+- page map when supporting pages are needed
 - public/private boundaries
 - style direction
 - motion strategy

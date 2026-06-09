@@ -41,6 +41,10 @@ homepage_session:
     primary_audience_confirmed:
     main_purpose_confirmed:
     core_modules:
+    information_architecture:
+      page_model: unknown | single_page | hybrid | multi_page
+      page_map:
+      navigation:
     style_or_avoids_confirmed:
     privacy_confirmed:
     next_action_confirmed:
@@ -48,9 +52,15 @@ homepage_session:
     baseline_status: none | draft | confirmed | changed
     last_confirmed_summary:
     change_log:
+  iteration:
+    pending_change_plan:
+    confirmation_required:
+    confirmed_change_plan:
+    last_confirmed_at:
   probe_artifacts:
     direction_cards:
     text_wireframes:
+    page_maps:
     content_gap_maps:
   taste:
     references:
@@ -112,6 +122,7 @@ If the user cannot answer abstract questions, do not keep asking the same way.
 
 - Offer 2-4 concrete choices.
 - Produce a non-code probe sketch from `beginner-conversation-patterns.md`.
+- If content may need more than one page, offer a simple page map.
 - Ask what feels wrong, missing, too formal, too personal, too plain, or too flashy.
 - Convert the reaction into internal requirements.
 
@@ -127,6 +138,7 @@ If the user already has a built or in-progress homepage and asks for a new featu
 - Preserve the confirmed brief unless the new request changes identity, audience, or public content.
 - Offer 2-4 context-aware options when the user has no clear solution.
 - Produce a compact change plan before editing.
+- Wait for explicit confirmation of the change plan before editing files. Do not skip this for low-risk or "you decide" requests.
 - If a requirements baseline or brief was confirmed, use the Change Control Gate in `output-contracts.md` and reconfirm the affected part before editing.
 
 ## User Wants To Save Tokens

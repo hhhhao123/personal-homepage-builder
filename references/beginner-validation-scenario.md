@@ -15,6 +15,7 @@ minimal first user request
 -> agent summarizes confirmed and inferred needs
 -> agent uses choices or probe sketches when the user cannot describe preferences
 -> agent translates personal signals into style and structure
+-> agent confirms whether the site should be one page, hybrid, or multi-page
 -> agent produces a user-readable requirements summary
 -> agent produces a homepage brief
 -> user confirms or corrects it
@@ -56,6 +57,7 @@ The agent should not demand every field at once, but a complete run should event
 | Privacy | Details to avoid, outdated facts, sensitive materials | Prevents accidental public exposure |
 | Taste clues | Sites, apps, colors, objects, music, films, moods, dislikes | Helps translate personal language into design direction |
 | Media | Avatar, portraits, covers, screenshots, video, music references | Determines whether to use media-enhanced layout |
+| Page shape | One page, homepage plus supporting pages, or small multi-page site | Prevents forcing all content into one long page |
 | Motion | none, subtle, moderate, expressive, or not sure | Controls dynamic elements and accessibility handling |
 | Language | English, Chinese, bilingual, or another setup | Controls copy and metadata |
 | Constraints | Timeline, hosting, stack, GitHub username, repo status | Controls implementation and publishing plan |
@@ -105,6 +107,7 @@ hidden_user_seed:
     - startup landing page vibes
     - emoji
   language: "English first"
+  page_shape: "hybrid is acceptable: focused home page plus a projects page if project details need more room"
   desired_correction: "less like a resume, more like a small builder profile; professional but not corporate"
 ```
 
@@ -245,7 +248,7 @@ Inferred design direction:
 - Calm movement only where it helps reading, such as subtle entrance and hover/focus feedback
 
 Open question:
-Should the homepage be English only, Chinese only, or bilingual?
+Should the first version be one scrollable page, or should projects or writing have their own pages? Also, should it be English only, Chinese only, or bilingual?
 ```
 
 ### Turn 6: User Answers The Remaining Question
@@ -253,7 +256,7 @@ Should the homepage be English only, Chinese only, or bilingual?
 User:
 
 ```text
-English first. Maybe bilingual later, but not for the first version.
+English first. Maybe bilingual later, but not for the first version. I think a focused homepage plus a simple projects page could work if the project details need more room.
 ```
 
 Expected agent behavior:
@@ -297,6 +300,13 @@ personal_homepage_brief:
     social_links:
       - "GitHub placeholder"
       - "LinkedIn placeholder"
+  information_architecture:
+    page_model: "hybrid"
+    page_map:
+      - path: "index.html"
+        purpose: "focused overview, positioning, highlights, writing link, contact"
+      - path: "projects.html"
+        purpose: "PromptBoard and StudyLens details with placeholders for links"
   style:
     direction_name: "Quiet Technical Editorial"
     tone_keywords:
@@ -399,6 +409,7 @@ The agent passes this scenario if it:
 - Translates vague taste into a named style direction and concrete implementation notes.
 - Produces a user-readable requirements summary before code.
 - Produces a structured `personal_homepage_brief`.
+- Confirms whether the site should be one page, hybrid, or multi-page before implementation.
 - Waits for user confirmation before coding.
 - Routes companion skills before UI implementation.
 - Uses structured static site files for GitHub Pages.
@@ -416,6 +427,8 @@ The agent fails this scenario if it:
 - Treats placeholders as real links.
 - Adds flashy motion despite the subtle preference.
 - Creates one large monolithic HTML file for a real site.
+- Forces all content into one page without checking whether supporting pages would fit better.
+- Creates multiple pages without confirming the page map.
 - Claims companion skills were used when they were not available or invoked.
 - Pushes or publishes without explicit approval.
 

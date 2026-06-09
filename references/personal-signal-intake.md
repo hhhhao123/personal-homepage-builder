@@ -48,6 +48,7 @@ Before producing a homepage brief for a zero-prep user, cover these minimum chec
 - taste: preferred feeling, disliked styles, and any references
 - media/assets: photos, screenshots, video, audio, or typography-first fallback
 - constraints: language, hosting, timeline, and whether publishing is needed now
+- page shape: one page, homepage plus supporting pages, or small multi-page site
 - motion: none, subtle, moderate, expressive, or not sure
 
 Do not show these checkpoints as a form. Treat them as internal coverage. Ask the user in plain language.
@@ -143,8 +144,9 @@ Use this when the user wants a stronger personalized homepage but does not have 
 11. Photos, avatar, video, music, or visual assets available:
 12. Visual references you like:
 13. Visual references you dislike:
-14. Content that must stay private:
-15. Timeline and publishing target:
+14. Whether content should live on one page or separate pages:
+15. Content that must stay private:
+16. Timeline and publishing target:
 ```
 
 Do not require every field. Extract what exists and ask only the next highest-impact missing question.
@@ -187,6 +189,7 @@ personal_signal_pack:
   content_priorities:
   links:
   media_assets:
+  page_model:
   taste_clues:
   dislikes:
   privacy_boundaries:

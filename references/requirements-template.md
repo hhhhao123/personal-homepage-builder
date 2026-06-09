@@ -28,6 +28,7 @@ Here is the plan I would build from. Please check whether it represents you corr
 
 - Public name:
 - Homepage type:
+- Page model: one page / homepage plus detail pages / multi-page site
 - Main purpose:
 - Primary visitors:
 - Desired first impression:
@@ -54,6 +55,15 @@ Here is the plan I would build from. Please check whether it represents you corr
 - Material status:
 
 ## 4. Page Structure
+
+### Page Map
+
+| Page | Path | Purpose | Priority | Main content | Missing material |
+| --- | --- | --- | --- | --- | --- |
+| Home | `/` or `index.html` | | Must | | |
+| Supporting page | | | Nice | | |
+
+### Homepage Sections
 
 | Section | Priority | Purpose | Required content | Missing material |
 | --- | --- | --- | --- | --- |
@@ -140,14 +150,28 @@ Here is the plan I would build from. Please check whether it represents you corr
 ## 11. Implementation Plan
 
 - Site structure:
+- Page model and page map:
 - Target files:
 - Asset organization:
 - Validation:
 - Publishing:
+- Confirmation before editing:
 
 ## 12. Change Baseline
 
 This requirements document is the current build baseline. If identity, audience, content priority, privacy, or visual direction changes, update the affected section and reconfirm before implementation continues.
+
+## 13. Adjustment Approval Rule
+
+For later page adjustments, do not edit files from a broad request alone. First summarize:
+
+- what will change
+- where it will change
+- what visitors will notice
+- which files are likely affected
+- how it will be validated
+
+Then wait for explicit user confirmation.
 ```
 
 ## Change Confirmation Template
@@ -172,6 +196,7 @@ The requirements baseline is not ready until these are known or explicitly defer
 - primary audience
 - main purpose
 - at least three core content modules
+- page model: one page, hybrid, or multi-page
 - style tendency or explicit visual dislikes
 - public/private boundaries
 - contact or visitor next action

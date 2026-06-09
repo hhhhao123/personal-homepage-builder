@@ -5,7 +5,7 @@
 <h1 align="center">Personal Homepage Builder</h1>
 
 <p align="center">
-  一个面向 AI Agent（智能体）的个人主页构建 Skill（能力包）：把普通人模糊、零散的自我表达，转化成可确认的主页方案，再进入设计和开发。
+  一个面向 AI Agent（智能体）的个人主页构建 Skill（能力包）：把普通人模糊、零散的自我表达，转化成可确认的主页或小型个人站点方案，再进入设计和开发。
 </p>
 
 <p align="center">
@@ -31,9 +31,9 @@
 - 手里只有零散材料，比如 GitHub、简历、项目链接、照片、社交账号
 - 想做得有个人特色，但又不想变成模板化作品集
 
-`personal-homepage-builder` 的价值不在于直接生成一个网页模板，而在于先把这些模糊想法拆清楚。它会引导 Agent 先和用户对话，梳理身份、受众、展示内容、隐私边界和审美偏好，然后形成一份结构化的 `personal_homepage_brief` 需求文档，再交给设计、主题、前端、图片和审查类辅助能力去完成页面。
+`personal-homepage-builder` 的价值不在于直接生成一个网页模板，而在于先把这些模糊想法拆清楚。它会引导 Agent 先和用户对话，梳理身份、受众、展示内容、隐私边界和审美偏好，然后整理成一份能看懂、能确认、也能继续开发的主页方案。
 
-简单说，它是个人主页项目的“前置需求发现和设计编排层”。
+简单说，它先帮你把“我想要一个个人主页”变成“这个主页应该怎么表达我、给谁看、放什么内容、做成什么感觉”。
 
 ## 适合什么场景
 
@@ -41,6 +41,7 @@
 
 - 从零开始做 `username.github.io` 个人主页
 - 做作品集、简历站、创作者主页、学术主页或个人品牌页
+- 规划单页主页，或者带有项目、文章、关于我等页面的小型个人站点
 - 把简历、GitHub、项目、论文、文章、照片、社交链接整理成主页内容
 - 已经有一个主页，但觉得太模板、太普通，想重新梳理和优化
 - 想添加动态效果、媒体内容或更强的视觉风格，但不知道什么适合自己
@@ -52,13 +53,14 @@
 
 - **从零引导**：用户没有想法时，Agent 应该一轮一轮问，而不是要求用户一次性提供完整材料。
 - **低压力对话**：优先用选择题、对比场景和简单草图帮助用户反应，而不是让用户填写工程表单。
-- **需求探测草图**：当用户说不清楚时，可以先给方向卡片、文字线框图或内容缺口图，让用户判断哪里不对。
+- **先给方向再判断**：当用户说不清楚时，可以先给几种可能方向、文字版页面草图或内容缺口清单，让用户判断哪里不对。
 - **材料准备提示**：Agent 需要告诉用户后续可能要准备哪些内容，比如链接、项目、照片、社交账号、参考网站。
-- **需求门禁**：没有确认受众、目的、核心内容、风格倾向、隐私边界和下一步行动前，不应该直接写页面。
-- **内部默认分级**：新手不需要自己选择层级，Agent 可以在后台判断合适的工作模式，但前台应该用自然语言解释。
-- **结构化实现**：真实主页默认使用 `index.html`、`assets/css/`、`assets/js/`、`assets/images/`，不默认写成一个巨大 HTML 文件。
-- **辅助能力路由**：在设计、主题、前端、图片和最终审查阶段，尽量调用对应的辅助 Skill。
-- **默认不用 emoji**：除非用户明确要求，否则 brief、文案、UI 标签和生成内容都不使用 emoji。
+- **先确认再动手**：没有确认受众、目的、核心内容、风格倾向、隐私边界和联系方式前，不应该直接写页面。
+- **调整也要先确认**：即使只是优化已有页面、添加动效、改栏目或调整样式，也应该先讨论方案，用户确认后再改代码。
+- **不让新手选配置**：新手不需要自己判断该用什么模式，Agent 会根据对话内容自动决定该问多细、做多复杂。
+- **页面结构清楚**：真实项目可以是一页，也可以拆成首页、项目、文章、关于我等多个页面；文件默认放在清晰的 `assets/` 结构里，不写成一个巨大 HTML 文件。
+- **该用设计能力时就用设计能力**：在设计、主题、前端、图片和最终检查阶段，尽量调用对应的辅助 Skill。
+- **默认不使用表情符号**：除非用户明确要求，否则方案、文案、页面标签和生成内容都不使用 emoji。
 
 ## 安装
 
@@ -90,16 +92,23 @@ Use $personal-homepage-builder。我有 GitHub、几个项目链接和一段自�
 Use $personal-homepage-builder。我已经有一个个人主页，但感觉比较普通。请先看当前页面，再告诉我哪些地方可以优化，不要直接改代码。
 ```
 
+如果你已经知道想改哪里，也可以这样写：
+
+```text
+Use $personal-homepage-builder。我的项目展示区想做得更有设计感，也想加一点轻微动效。请先给我改动方案，等我确认后再改代码。
+```
+
 ## Agent 应该怎么引导你
 
 这个能力包要求 Agent 不要一上来就问“你想要什么风格”。更合理的流程应该是分轮推进：
 
 1. 先用容易回答的问题帮你起步，比如“更像线上名片、作品集，还是个人介绍页？”
 2. 再问你想展示哪些内容，比如项目、文章、作品、照片、社交账号。
-3. 再确认哪些内容不能公开，比如手机号、住址、未完成项目、过时经历。
-4. 然后再聊审美偏好，比如你喜欢什么网站、颜色、氛围、音乐、电影、物件，或者你讨厌什么风格。
-5. 如果你说不清楚，它应该给你几个方向卡片或文字版页面草图，让你判断“太正式、太普通、太花哨、太像简历”。
-6. 最后把这些回答翻译成主页结构、视觉方向、动效方式和实现计划。
+3. 再判断这些内容适合放在一个长页面里，还是拆成首页、项目、文章、关于我等页面。
+4. 再确认哪些内容不能公开，比如手机号、住址、未完成项目、过时经历。
+5. 然后再聊审美偏好，比如你喜欢什么网站、颜色、氛围、音乐、电影、物件，或者你讨厌什么风格。
+6. 如果你说不清楚，它应该给你几个方向卡片或文字版页面草图，让你判断“太正式、太普通、太花哨、太像简历”。
+7. 最后把这些回答翻译成主页结构、视觉方向、动效方式和实现计划。
 
 它应该边问边总结，并告诉你下一轮可能需要准备什么，而不是三四轮就草草结束。
 
@@ -113,6 +122,7 @@ Use $personal-homepage-builder。我已经有一个个人主页，但感觉比�
 | 受众 | 招聘者、合作者、客户、读者、朋友、同行 | 决定内容顺序和语气 |
 | 记忆点 | 希望别人 10 秒后记住什么 | 避免变成普通简历页 |
 | 内容材料 | 项目、论文、文章、服务、作品、社交链接 | 决定页面栏目 |
+| 页面结构 | 全部放一页，还是拆成项目、文章、关于我等页面 | 决定站点规模和导航 |
 | 证明材料 | GitHub、Demo、截图、论文、评价、数据 | 增强可信度 |
 | 隐私边界 | 不公开的信息、过时信息、敏感材料 | 避免误发布 |
 | 审美线索 | 喜欢的网站、App、颜色、音乐、电影、地点、物件 | 帮助推导风格 |
@@ -122,17 +132,17 @@ Use $personal-homepage-builder。我已经有一个个人主页，但感觉比�
 
 ## 默认工作方式
 
-如果你没有明确要求，新手不需要理解什么是 `delivery_mode`、`quality_tier` 或 `motion_strategy`。Agent 应该在后台自己判断工作方式，前台只需要告诉你：
+如果你没有明确要求，新手不需要选择任何模式或档位。Agent 应该在后台自己判断工作方式，前台只需要告诉你：
 
 > 我会先花一点时间了解你是谁、主页给谁看、要展示什么和不想展示什么，然后做一个足够个性化但不过度复杂的方案。
 
 当你的目标更明确时，Agent 应该自动调整：
 
-- 想快速上线：`Quick Launch`
-- 有照片、视频、音乐、视觉资产：叠加 `Media Enhanced`
-- 做学术主页：使用 `Academic`
-- 想做精致定制版本：使用 `Premium`
-- 要发布、推送、部署：叠加 `Publish`
+- 想快速上线：少问一些，先做能发布的版本。
+- 有照片、视频、音乐或视觉素材：安排更适合展示媒体内容的页面。
+- 做学术主页：突出论文、项目、履历、研究方向和联系方式。
+- 想做精致定制版本：增加审美方向、视觉细节和动效打磨。
+- 要发布、推送、部署：增加仓库、分支、构建和上线前检查。
 
 ## 最终会得到什么
 
@@ -141,45 +151,32 @@ Use $personal-homepage-builder。我已经有一个个人主页，但感觉比�
 - 方向卡片、文字线框图、内容缺口清单，帮助你判断自己真正想要什么
 - 一份经过你确认的个人主页需求文档
 - 你的公开身份、受众、记忆点和隐私边界总结
-- 推荐的主页结构和栏目顺序
-- 适合你的视觉方向、颜色、字体、图片策略和动效等级
-- 辅助能力调用计划，比如审美、主题、前端、图片和审查
-- 一个适合 GitHub Pages 的静态主页
+- 推荐的页面结构：单页主页，或者带项目、文章、关于我等页面的小型站点
+- 适合你的视觉方向、颜色、字体、图片策略和动效建议
+- 设计、前端、图片和最终检查步骤的安排
+- 一个适合 GitHub Pages 的静态主页或小型个人站点
 - 对已有主页的局部优化建议
+- 已有页面调整前的改动方案和确认步骤
 - 发布到 GitHub Pages 前的检查和提交流程
 
 ## 需求文档示例
 
 Agent 在写代码前，应该先产出类似这样的需求文档，并等待你确认：
 
-```yaml
-personal_homepage_brief:
-  implementation:
-    delivery_mode: Deep Profile
-    quality_tier: Profile
-  identity:
-    primary_role: "AI tool builder"
-    inferred_positioning: "turns AI ideas into usable prototypes"
-  audience:
-    primary: "collaborators and recruiters"
-  goal:
-    first_impression: "quiet, technical, credible, slightly personal"
-    remembered_for: "building practical AI prototypes"
-  content:
-    required_sections: ["intro", "selected projects", "writing", "links/contact"]
-  privacy:
-    needs_avoidance: ["phone number", "home location", "unfinished projects"]
-  style:
-    direction_name: "Quiet Technical Editorial"
-    image_strategy: "typography-first until good photos are available"
-  motion_strategy:
-    level: "subtle"
-    reduced_motion: "disable reveal animations and keep instant feedback"
-  companion_skill_routing:
-    taste: "design-taste-frontend or fallback"
-    theme: "theme-factory or fallback"
-    frontend: "frontend-design or fallback"
-    review: "web-design-guidelines or fallback"
+```markdown
+## 个人主页方案
+
+- 主页主要给谁看：合作者、招聘者、技术同行
+- 希望别人记住什么：我能把 AI 想法做成可用的小工具
+- 首页必须展示：一句话介绍、两个代表项目、GitHub、LinkedIn、一篇文章、联系方式
+- 暂时没有的材料：正式头像、最终项目链接，可以先用占位内容
+- 不公开的内容：手机号、住址、未完成课程项目、夸大的项目效果
+- 页面感觉：安静、技术感、可信，但不要太像公司官网
+- 动态效果：只做轻微滚动出现和按钮反馈，不做夸张动画
+- 页面结构：首页做清晰概览，项目内容较多时可以单独做 `projects.html`
+- 文件组织：使用 `index.html`、可选的支持页面和 `assets/` 文件夹，方便后续维护
+
+请确认：这个方案是否准确？有没有哪部分需要补充、删掉或改得更像你？
 ```
 
 ## 推荐辅助 Skills
@@ -188,7 +185,7 @@ personal_homepage_brief:
 
 | Skill | 作用 | 安装 / 来源 |
 | --- | --- | --- |
-| `design-taste-frontend` | 根据需求文档推导更合适的审美方向、视觉密度、动效强度和反模板约束。 | [`npx skills add https://github.com/Leonxlnx/taste-skill --skill design-taste-frontend`](https://www.skills.sh/leonxlnx/taste-skill/design-taste-frontend) |
+| `design-taste-frontend` | 根据主页方案推导更合适的审美方向、视觉密度、动效强度和反模板约束。 | [`npx skills add https://github.com/Leonxlnx/taste-skill --skill design-taste-frontend`](https://www.skills.sh/leonxlnx/taste-skill/design-taste-frontend) |
 | `frontend-design` | 生成更有设计感、更接近真实产品质量的页面 UI。 | [`npx skills add https://github.com/anthropics/skills --skill frontend-design`](https://www.skills.sh/anthropics/skills/frontend-design) |
 | `theme-factory` | 帮助生成或整理颜色、字体、间距等主题系统。 | [`npx skills add https://github.com/anthropics/skills --skill theme-factory`](https://www.skills.sh/anthropics/skills/theme-factory) |
 | `web-design-guidelines` | 最后检查 UI、UX、响应式和可访问性问题。 | [`npx skills add https://github.com/vercel-labs/agent-skills --skill web-design-guidelines`](https://www.skills.sh/vercel-labs/agent-skills/web-design-guidelines) |

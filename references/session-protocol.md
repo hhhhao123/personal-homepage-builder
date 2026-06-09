@@ -10,6 +10,7 @@ Maintain this state internally and update it after meaningful user input:
 homepage_session:
   active: true
   current_phase:
+  user_experience_mode: beginner | technical | existing_site
   delivery_mode:
   quality_tier:
   motion_level:
@@ -35,6 +36,22 @@ homepage_session:
   audience:
     primary:
     secondary:
+  requirements:
+    mvr_status: missing | partial | ready | confirmed
+    primary_audience_confirmed:
+    main_purpose_confirmed:
+    core_modules:
+    style_or_avoids_confirmed:
+    privacy_confirmed:
+    next_action_confirmed:
+    material_status_confirmed:
+    baseline_status: none | draft | confirmed | changed
+    last_confirmed_summary:
+    change_log:
+  probe_artifacts:
+    direction_cards:
+    text_wireframes:
+    content_gap_maps:
   taste:
     references:
     likes:
@@ -56,6 +73,8 @@ homepage_session:
 ```
 
 Do not print the full state every turn. Print only the parts that help the user make a decision.
+
+For beginner users, keep `delivery_mode`, `quality_tier`, `motion_level`, schema names, and gate names internal unless the user asks for technical detail. Describe them as plain-language choices instead.
 
 ## Phase Transitions
 
@@ -87,6 +106,17 @@ If the user asks to jump directly to design or code:
 - Ask only the missing high-impact questions.
 - State which gates are being compressed and which cannot be skipped.
 
+## User Needs Something Concrete
+
+If the user cannot answer abstract questions, do not keep asking the same way.
+
+- Offer 2-4 concrete choices.
+- Produce a non-code probe sketch from `beginner-conversation-patterns.md`.
+- Ask what feels wrong, missing, too formal, too personal, too plain, or too flashy.
+- Convert the reaction into internal requirements.
+
+Probe sketches do not permit implementation. They help the requirements baseline become clearer.
+
 ## User Adds A New Requirement Mid-Project
 
 If the user already has a built or in-progress homepage and asks for a new feature, design adjustment, dynamic element, section, media treatment, or exploratory suggestion:
@@ -97,6 +127,7 @@ If the user already has a built or in-progress homepage and asks for a new featu
 - Preserve the confirmed brief unless the new request changes identity, audience, or public content.
 - Offer 2-4 context-aware options when the user has no clear solution.
 - Produce a compact change plan before editing.
+- If a requirements baseline or brief was confirmed, use the Change Control Gate in `output-contracts.md` and reconfirm the affected part before editing.
 
 ## User Wants To Save Tokens
 

@@ -29,6 +29,8 @@ The first response should do three things:
 
 Do not ask for a complete resume, full biography, brand system, or all links in the first message.
 
+For beginner users, prefer `references/beginner-conversation-patterns.md` over direct checklist questions. Use choices, contrasts, and rough sketches to help them react.
+
 After each user answer:
 
 1. Summarize what is now confirmed.
@@ -47,6 +49,8 @@ Before producing a homepage brief for a zero-prep user, cover these minimum chec
 - media/assets: photos, screenshots, video, audio, or typography-first fallback
 - constraints: language, hosting, timeline, and whether publishing is needed now
 - motion: none, subtle, moderate, expressive, or not sure
+
+Do not show these checkpoints as a form. Treat them as internal coverage. Ask the user in plain language.
 
 Use this short materials roadmap when helpful:
 
@@ -76,7 +80,7 @@ When the user is a beginner, move from easy personal language to implementation 
 
 Do not ask the user to choose a technical design system. Convert their words into a brief and label what is confirmed versus inferred.
 
-Use this response shape after collecting signals:
+Use this response shape after collecting signals for a beginner:
 
 ```text
 What I heard:
@@ -87,26 +91,28 @@ What I heard:
 - It should not reveal:
 - Taste clues:
 
-My design translation:
-- Delivery mode:
-- Quality tier:
-- Style direction:
-- Motion level:
-- Homepage structure:
+My current homepage direction:
+- Overall feel:
+- First screen should focus on:
+- Main sections:
+- Movement:
+- Materials still useful:
 
 Please correct anything that feels off.
 ```
+
+Update the internal delivery mode, quality tier, style direction, and motion level silently.
 
 ## Quick Start: 5 Questions
 
 Use this when the user starts from zero or wants to save tokens.
 
 ```text
-1. Who are you in one or two sentences? This can be rough.
-2. Who is this homepage mainly for?
-3. What are the 3 things you most want to show?
+1. Who are you in one or two rough sentences?
+2. Who should open this page first?
+3. What are the three things you most want people to see or remember?
 4. What should not be public?
-5. Are there any sites, colors, moods, objects, music, films, games, books, or visual styles you like or dislike?
+5. Which feels closer: professional, portfolio-like, personal/story-driven, technical, warm, minimal, bold, or not sure?
 ```
 
 After the user answers, summarize:

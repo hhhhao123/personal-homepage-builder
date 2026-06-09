@@ -15,11 +15,13 @@ Use $personal-homepage-builder. I want a personal homepage but I do not know wha
 Expected behavior:
 
 - Do not ask "what style do you want?"
-- Use the Quick Start path from `personal-signal-intake.md`.
-- Default to `Deep Profile`, `Profile` quality, and `subtle` motion unless the user gives a stronger signal.
+- Use the beginner conversation patterns and Quick Start path.
+- Internally default to `Deep Profile`, `Profile` quality, and `subtle` motion unless the user gives a stronger signal, but do not expose those labels to a beginner.
 - Explain that discovery will happen in short rounds before code.
 - Give a light materials roadmap instead of demanding all materials upfront.
-- Ask 1-3 questions about identity, audience, first impression, remembered-for, and privacy.
+- Ask 1-3 questions or choices about identity, audience, first impression, remembered-for, and privacy.
+- Offer concrete choices if the user cannot answer abstract questions.
+- Optionally provide a non-code direction card or text wireframe as a probe.
 - Do not collapse zero-prep discovery into a final brief after only a few short turns unless the minimum coverage is actually satisfied or the user explicitly chooses a quick path.
 - Build a session state.
 - Do not implement yet.
@@ -95,7 +97,7 @@ Expected behavior:
 
 - Compress the workflow but do not skip gates silently.
 - Produce minimal identity reflection and brief.
-- Select an inferred delivery mode and quality tier instead of asking the user to understand the tier system.
+- Select an inferred delivery mode and quality tier internally instead of asking the user to understand the tier system.
 - Ask the smallest number of high-impact confirmation questions.
 - Do not implement until the minimal brief is accepted or the user explicitly accepts a quick-path risk.
 
@@ -110,9 +112,9 @@ Use $personal-homepage-builder. I am a beginner and only know that I want the ho
 Expected behavior:
 
 - Use the preference discovery ladder from `personal-signal-intake.md`.
-- Ask easy personal questions before design terms.
+- Ask easy personal questions and choice-driven prompts before design terms.
 - Tell the user what materials may be useful in later rounds.
-- Translate answers into delivery mode, quality tier, style direction, content structure, and motion level.
+- Translate answers into delivery mode, quality tier, style direction, content structure, and motion level internally.
 - Clearly label confirmed facts versus inferred design direction.
 - Offer 2-3 design directions and recommend one before implementation.
 - Do not ask the user to manually choose between `Basic`, `Profile`, `Creator`, `Academic`, or `Premium` unless they ask to control the tier.

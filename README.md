@@ -5,7 +5,7 @@
 <h1 align="center">Personal Homepage Builder</h1>
 
 <p align="center">
-  An agent skill for turning a person's identity, materials, taste, and publishing constraints into a distinctive GitHub Pages friendly personal homepage.
+  An agent skill for turning vague personal signals into a confirmed homepage plan, then into a distinctive GitHub Pages friendly implementation.
 </p>
 
 <p align="center">
@@ -38,13 +38,16 @@ Use it when you want to create or redesign:
 
 ## Current Status
 
-This is a beta skill. The current direction treats `personal-homepage-builder` as a gated discovery and orchestration workflow, not a one-shot page generator.
+This is a beta skill. The current direction treats `personal-homepage-builder` as a beginner-friendly requirement translator and orchestration workflow, not a one-shot page generator.
 
 The skill now emphasizes:
 
+- low-friction beginner conversations with choices, contrasts, and non-code probe sketches
 - session state across the whole homepage-design conversation
 - lightweight personal signal intake for users starting from zero
 - zero-prep onboarding that explains what materials may be useful later instead of demanding everything upfront
+- minimum viable requirements before implementation
+- user-confirmed requirements summaries before code
 - required output gates before style, implementation, review, and publish
 - explicit companion skill routing for taste, theme, frontend, media, and review work
 - structured static site implementation instead of monolithic HTML by default
@@ -59,13 +62,15 @@ The skill guides an agent through a gated homepage workflow:
 
 1. **Orient**: inspect project context, deployment target, user goal, and delivery mode.
 2. **Intake**: extract facts, links, media, tone clues, privacy risks, and gaps.
-3. **Interview**: ask grounded questions about identity, audience, first impression, taste, and privacy boundaries.
+3. **Interview**: ask grounded questions and choice-driven prompts about identity, audience, first impression, taste, and privacy boundaries.
 4. **Reflect**: separate confirmed facts, inferred positioning, taste hypotheses, and open questions.
-5. **Taste discovery**: use `design-taste-frontend` or an equivalent taste skill when available.
-6. **Brief**: produce a user-confirmed `personal_homepage_brief`.
-7. **Design routing**: declare which companion skills and fallbacks will be used.
-8. **Implement or iterate**: build the site, or inspect an existing page and propose scoped improvements before editing.
-9. **Review and publish**: validate UI, responsiveness, accessibility, git scope, and GitHub Pages publishing.
+5. **Probe**: when useful, show direction cards, a rough text wireframe, or a content gap map so the user can react.
+6. **Taste discovery**: use `design-taste-frontend` or an equivalent taste skill when available.
+7. **Requirements confirmation**: produce a user-readable plan before code.
+8. **Brief**: produce a user-confirmed `personal_homepage_brief`.
+9. **Design routing**: declare which companion skills and fallbacks will be used.
+10. **Implement or iterate**: build the site, or inspect an existing page and propose scoped improvements before editing.
+11. **Review and publish**: validate UI, responsiveness, accessibility, git scope, and GitHub Pages publishing.
 
 The core rule is simple: do not begin by asking "what style do you want?" Most users cannot answer that well. The skill pushes the agent to discover identity first, then derive design choices from evidence.
 
@@ -103,21 +108,13 @@ For a design question with no clear idea yet:
 Use $personal-homepage-builder. I feel the homepage may need dynamic elements, but I do not know what would fit. Look at the current page and propose a few options.
 ```
 
-The skill should then guide discovery in short rounds, tell you what materials may be useful later, produce a homepage brief, route design/frontend companion skills when available, and only move into implementation after the direction is clear.
+The skill should then guide discovery in short rounds, offer concrete choices when you are unsure, show non-code direction sketches when helpful, tell you what materials may be useful later, produce a homepage brief, route design/frontend companion skills when available, and only move into implementation after the direction is clear.
 
 ## Default Mode
 
-Beginners do not need to choose a tier. If you are unsure, the agent should default to:
+Beginners do not need to choose a tier or know internal workflow names. If you are unsure, the agent should first spend enough time understanding your identity, audience, content, privacy boundaries, and taste to make the homepage personal, while avoiding an oversized custom site.
 
-```yaml
-delivery_mode: Deep Profile
-quality_tier: Profile
-motion_strategy.level: subtle
-```
-
-That means the agent will spend enough time understanding your identity, audience, content, privacy boundaries, and taste to make the homepage personal, while avoiding an oversized custom site.
-
-The agent should change the mode when your request is clearer:
+Internally, the skill may map your request to modes such as:
 
 - quick/simple/go live soon: `Quick Launch`
 - photos/video/music/visual assets: add `Media Enhanced`
@@ -130,14 +127,14 @@ The agent should change the mode when your request is clearer:
 The agent should not start by asking "what style do you want?" A better conversation starts with concrete questions:
 
 ```text
-Who should visit this homepage?
-What should they remember about you after 10 seconds?
-Which links, projects, photos, or social accounts must be included?
+Which feels closer: a professional online name card, a work portfolio, or a personal self-introduction?
+Who should open this page first?
+What should visitors remember about you after 10 seconds?
+What are the three things that must appear?
 What should not be public?
-Do you want the page to feel quiet, technical, expressive, editorial, playful, formal, or something else?
 ```
 
-If you do not have prepared materials, answer briefly. The skill is designed to work from rough signals and refine them into a clear brief.
+If you do not have prepared materials, answer briefly. The skill is designed to work from rough signals and refine them into a clear brief. If you cannot describe a preference, the agent should offer 2-3 concrete directions or a rough text wireframe instead of repeating abstract questions.
 
 After each answer, the agent should summarize what is confirmed, explain what is still missing, and ask only the next useful questions. It should not end the discovery after a few short turns unless the core materials, privacy boundaries, taste clues, and implementation constraints are covered.
 
@@ -213,8 +210,10 @@ Use $personal-homepage-builder. My homepage is already partly built, but I think
 
 Depending on the request and available materials, the agent can produce:
 
+- direction cards, rough text wireframes, and content gap maps during discovery
+- a user-readable requirements summary before implementation
 - a concise personal homepage brief
-- an inferred delivery mode and quality tier, so beginners do not need to choose one manually
+- an internally inferred scope and quality target, so beginners do not need to choose workflow labels manually
 - a content structure and public-facing profile summary
 - homepage archetype and section recommendations
 - visual direction, color, typography, image, media, and optional motion guidance
@@ -285,6 +284,7 @@ personal-homepage-builder/
 `-- references/
     |-- anti-patterns.md             # Failure modes to avoid
     |-- archetypes.md                # Homepage archetypes and structures
+    |-- beginner-conversation-patterns.md # Low-friction beginner interaction patterns
     |-- beginner-validation-scenario.md # End-to-end beginner validation script
     |-- content-intake.md            # Source material extraction schema
     |-- delivery-modes.md            # Quick/deep/media/publish routing
@@ -301,6 +301,7 @@ personal-homepage-builder/
     |-- profile-schema.md            # Maintainable profile data contract
     |-- profile-signals.md           # Optional identity and taste signals
     |-- quality-checklist.md         # Final review checklist
+    |-- requirements-template.md     # Requirements document and change baseline
     |-- session-protocol.md          # Conversation state and phase transitions
     |-- site-structure.md            # Default static site file organization
     |-- skill-routing.md             # Companion skill routing and fallbacks

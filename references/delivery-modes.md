@@ -14,10 +14,10 @@ motion_strategy.level: subtle
 
 This default means: guide the user through lightweight identity and taste discovery, produce a personalized brief, and build a polished but not overengineered homepage.
 
-Do not ask beginners to choose a mode or tier unless they want control. Infer the mode from their words, then state it briefly:
+Do not ask beginners to choose a mode or tier unless they want control. Infer the mode from their words. For ordinary users, describe the behavior in plain language instead of naming the internal fields:
 
 ```text
-I will treat this as Deep Profile + Profile quality for now: enough discovery to make it personal, without turning it into a large custom site.
+I will first spend a little time understanding what should feel personal about the page, then keep the build polished but not oversized.
 ```
 
 Change the default when the user gives a stronger signal:

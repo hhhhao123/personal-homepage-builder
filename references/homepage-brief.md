@@ -6,6 +6,10 @@ Use this schema for `personal_homepage_brief`. Keep it compact for quick work an
 
 ```yaml
 personal_homepage_brief:
+  requirements_status:
+    minimum_viable_requirements: incomplete | ready | confirmed
+    confirmed_at:
+    missing_or_deferred:
   identity:
     primary_role:
     secondary_traits:
@@ -21,6 +25,10 @@ personal_homepage_brief:
     first_impression:
     remembered_for:
     conversion_or_next_action:
+  functional_requirements:
+    must_have:
+    nice_to_have:
+    explicitly_out_of_scope:
   privacy:
     public_allowed:
     needs_avoidance:
@@ -35,6 +43,11 @@ personal_homepage_brief:
     optional_sections:
     social_links:
     media_assets:
+    content_model:
+      project_or_work_item:
+      writing_or_publication_item:
+      link_item:
+      media_item:
   taste:
     references:
     likes:
@@ -61,9 +74,20 @@ personal_homepage_brief:
     stack:
     hosting: GitHub Pages by default
     timeline:
+    language:
+    external_resources:
+    placeholders_allowed:
+    assumptions:
     emoji_policy: no emoji unless explicitly requested
     must_keep:
     must_avoid:
+  non_functional_requirements:
+    responsive:
+    accessibility:
+    seo:
+    performance:
+    maintainability:
+    reduced_motion:
   companion_skill_routing:
     taste:
     theme:
@@ -77,6 +101,9 @@ personal_homepage_brief:
     pages:
     assets:
     validation:
+  change_control:
+    baseline_summary:
+    requires_reconfirmation_if_changed:
 ```
 
 ## Minimal Quick Brief
@@ -85,12 +112,17 @@ For speed-focused work, the brief may be short but still needs these fields:
 
 - identity
 - audience
+- main purpose
 - first impression
 - remembered-for
-- required sections
+- at least three required sections or content modules
+- public/private boundaries
 - style direction
 - motion strategy
 - privacy avoids
+- material status
+- functional must-haves
+- practical constraints
 - companion skill routing
 - validation plan
 
@@ -100,4 +132,10 @@ Before implementation, ask:
 
 ```text
 Does this brief accurately describe how the homepage should represent you? Correct anything that feels off before I turn it into UI and code.
+```
+
+For beginner users, phrase the confirmation in plain language:
+
+```text
+This is the plan I would build from. Please check whether it feels like you and whether anything private, exaggerated, missing, or wrongly prioritized needs to change before I start implementation.
 ```

@@ -5,7 +5,7 @@
 <h1 align="center">Personal Homepage Builder</h1>
 
 <p align="center">
-  一个面向 AI Agent（智能体）的个人主页构建 Skill（能力包）：先帮用户把自己是谁、想展示什么、适合什么风格说清楚，再把这些内容整理成可执行的主页方案。
+  一个面向 AI Agent（智能体）的个人主页构建 Skill（能力包）：把普通人模糊、零散的自我表达，转化成可确认的主页方案，再进入设计和开发。
 </p>
 
 <p align="center">
@@ -51,9 +51,11 @@
 这个能力包目前重点强调：
 
 - **从零引导**：用户没有想法时，Agent 应该一轮一轮问，而不是要求用户一次性提供完整材料。
+- **低压力对话**：优先用选择题、对比场景和简单草图帮助用户反应，而不是让用户填写工程表单。
+- **需求探测草图**：当用户说不清楚时，可以先给方向卡片、文字线框图或内容缺口图，让用户判断哪里不对。
 - **材料准备提示**：Agent 需要告诉用户后续可能要准备哪些内容，比如链接、项目、照片、社交账号、参考网站。
-- **需求门禁**：没有确认身份、受众、内容、风格和隐私边界前，不应该直接写页面。
-- **默认分级**：新手不需要自己选择层级，默认是 `Deep Profile`、`Profile`、`subtle` 动效。
+- **需求门禁**：没有确认受众、目的、核心内容、风格倾向、隐私边界和下一步行动前，不应该直接写页面。
+- **内部默认分级**：新手不需要自己选择层级，Agent 可以在后台判断合适的工作模式，但前台应该用自然语言解释。
 - **结构化实现**：真实主页默认使用 `index.html`、`assets/css/`、`assets/js/`、`assets/images/`，不默认写成一个巨大 HTML 文件。
 - **辅助能力路由**：在设计、主题、前端、图片和最终审查阶段，尽量调用对应的辅助 Skill。
 - **默认不用 emoji**：除非用户明确要求，否则 brief、文案、UI 标签和生成内容都不使用 emoji。
@@ -92,11 +94,12 @@ Use $personal-homepage-builder。我已经有一个个人主页，但感觉比�
 
 这个能力包要求 Agent 不要一上来就问“你想要什么风格”。更合理的流程应该是分轮推进：
 
-1. 先问你是谁、主页给谁看、希望别人记住什么。
+1. 先用容易回答的问题帮你起步，比如“更像线上名片、作品集，还是个人介绍页？”
 2. 再问你想展示哪些内容，比如项目、文章、作品、照片、社交账号。
 3. 再确认哪些内容不能公开，比如手机号、住址、未完成项目、过时经历。
 4. 然后再聊审美偏好，比如你喜欢什么网站、颜色、氛围、音乐、电影、物件，或者你讨厌什么风格。
-5. 最后把这些回答翻译成主页结构、视觉方向、动效等级和实现计划。
+5. 如果你说不清楚，它应该给你几个方向卡片或文字版页面草图，让你判断“太正式、太普通、太花哨、太像简历”。
+6. 最后把这些回答翻译成主页结构、视觉方向、动效方式和实现计划。
 
 它应该边问边总结，并告诉你下一轮可能需要准备什么，而不是三四轮就草草结束。
 
@@ -119,15 +122,9 @@ Use $personal-homepage-builder。我已经有一个个人主页，但感觉比�
 
 ## 默认工作方式
 
-如果你没有明确要求，Agent 应该默认使用：
+如果你没有明确要求，新手不需要理解什么是 `delivery_mode`、`quality_tier` 或 `motion_strategy`。Agent 应该在后台自己判断工作方式，前台只需要告诉你：
 
-```yaml
-delivery_mode: Deep Profile
-quality_tier: Profile
-motion_strategy.level: subtle
-```
-
-意思是：先做足够的需求发现，让主页有个人辨识度，但不把项目做得过重。
+> 我会先花一点时间了解你是谁、主页给谁看、要展示什么和不想展示什么，然后做一个足够个性化但不过度复杂的方案。
 
 当你的目标更明确时，Agent 应该自动调整：
 
@@ -141,6 +138,7 @@ motion_strategy.level: subtle
 
 根据你的材料和目标，Agent 可以产出：
 
+- 方向卡片、文字线框图、内容缺口清单，帮助你判断自己真正想要什么
 - 一份经过你确认的个人主页需求文档
 - 你的公开身份、受众、记忆点和隐私边界总结
 - 推荐的主页结构和栏目顺序
@@ -226,6 +224,7 @@ personal-homepage-builder/
 `-- references/
     |-- anti-patterns.md
     |-- archetypes.md
+    |-- beginner-conversation-patterns.md
     |-- beginner-validation-scenario.md
     |-- content-intake.md
     |-- delivery-modes.md
@@ -242,6 +241,7 @@ personal-homepage-builder/
     |-- profile-schema.md
     |-- profile-signals.md
     |-- quality-checklist.md
+    |-- requirements-template.md
     |-- session-protocol.md
     |-- site-structure.md
     |-- skill-routing.md

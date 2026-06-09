@@ -8,6 +8,8 @@ Treat iteration requests as design decisions on top of an existing page, not as 
 
 When the user has no clear idea, do not ask them to invent the solution. Inspect the current page, infer what would fit, and offer a small set of grounded options.
 
+For beginner users, keep the recommendation visual and concrete. Do not describe the request as a schema or gate. Explain what the visitor will notice and what tradeoff it creates.
+
 ## Intake
 
 Before recommending or implementing, inspect available context:
@@ -49,6 +51,7 @@ Keep options concrete and limited to 2-4. Prefer one clear recommendation instea
 - For motion requests, use `motion-design.md` and choose `none`, `subtle`, `moderate`, or `expressive`.
 - If the user asks for an effect that conflicts with the page goal, propose a safer alternative.
 - If implementation is requested, update only the affected files and preserve the existing structure.
+- If the change affects identity, audience, privacy, core content priority, visual direction, or motion level, use the Change Control Gate in `output-contracts.md` before editing.
 
 ## Common Iteration Types
 
@@ -97,3 +100,9 @@ Before editing code for an iteration request, produce a compact change plan:
 - risks or tradeoffs
 
 Ask for confirmation unless the user explicitly requested direct implementation and the change is low risk.
+
+If a previous requirements summary or homepage brief was confirmed, add:
+
+- whether this change updates the confirmed plan
+- which part of the plan changes
+- whether the user needs to reconfirm that part

@@ -13,7 +13,9 @@ minimal first user request
 -> agent asks only the next useful questions
 -> user answers only what was asked
 -> agent summarizes confirmed and inferred needs
+-> agent uses choices or probe sketches when the user cannot describe preferences
 -> agent translates personal signals into style and structure
+-> agent produces a user-readable requirements summary
 -> agent produces a homepage brief
 -> user confirms or corrects it
 -> agent routes companion skills and plans implementation
@@ -120,6 +122,7 @@ Expected agent behavior:
 
 - Activate `personal-homepage-builder`.
 - Set inferred default: `Deep Profile`, `Profile`, `subtle` motion.
+- Keep `Deep Profile`, `Profile`, and `subtle` motion as internal defaults; do not show those labels to the beginner.
 - Explain that the process will happen in short discovery rounds before code.
 - Mention that useful materials can be prepared later, such as links, projects, photos, social accounts, and style references.
 - Do not ask "what style do you want?"
@@ -129,12 +132,16 @@ Expected agent behavior:
 Good agent response shape:
 
 ```text
-I will treat this as Deep Profile + Profile quality for now: enough discovery to make it personal without turning it into a large custom site.
+We can start without a full plan. I will first help you figure out what this homepage should make people understand about you, then we will turn that into a page plan, and only after you confirm it will we write code.
 
-To start, answer these roughly:
-1. Who are you in one or two sentences?
-2. Who should this homepage mainly help?
-3. What should visitors remember about you after 10 seconds?
+You do not need to prepare everything now. Later, useful materials may include links, projects, photos, social accounts, or examples of sites you like.
+
+To start, choose whichever is closest:
+1. A professional online name card.
+2. A portfolio of your work.
+3. A more personal self-introduction.
+
+And answer roughly: who are you, and what should people know about you first?
 ```
 
 ### Turn 2: User Answers Only The First Questions
@@ -219,14 +226,12 @@ Expected agent behavior:
 - Translate taste clues into a style direction.
 - Produce an identity reflection before full implementation.
 - Label confirmed facts and inferred design direction separately.
+- Optionally show 2-3 direction cards or a rough text wireframe if the user still seems unsure.
 
 Good reflection shape:
 
 ```text
 Current understanding:
-- Delivery mode: Deep Profile
-- Quality tier: Profile
-- Motion level: subtle
 - Confirmed identity: computer science student building AI tools and web experiments
 - Audience: collaborators, internship recruiters, technical peers
 - Memory point: turns AI ideas into usable prototypes
@@ -237,7 +242,7 @@ Current understanding:
 Inferred design direction:
 - Quiet Technical Editorial
 - Structured hero, selected projects, writing link, compact social/contact section
-- Subtle entrance and hover/focus motion only
+- Calm movement only where it helps reading, such as subtle entrance and hover/focus feedback
 
 Open question:
 Should the homepage be English only, Chinese only, or bilingual?
@@ -253,6 +258,7 @@ English first. Maybe bilingual later, but not for the first version.
 
 Expected agent behavior:
 
+- Produce a user-readable requirements summary or baseline.
 - Produce a compact `personal_homepage_brief`.
 - Include placeholders clearly.
 - Do not implement until user confirms or corrects the brief.
@@ -383,13 +389,15 @@ Implementation plan:
 The agent passes this scenario if it:
 
 - Uses `personal-homepage-builder` as the controlling workflow.
-- Defaults to `Deep Profile`, `Profile`, and `subtle` motion for the unsure beginner.
+- Defaults internally to `Deep Profile`, `Profile`, and `subtle` motion for the unsure beginner without exposing those labels early.
 - Asks grounded personal and content questions before visual style questions.
+- Uses choices, contrasts, or a non-code probe sketch when the user is unsure.
 - Reveals the process step by step instead of demanding all information upfront.
 - Gives a materials roadmap and tells the user what to prepare next.
 - Avoids asking the user to manually choose quality tiers.
 - Extracts privacy constraints before implementation.
 - Translates vague taste into a named style direction and concrete implementation notes.
+- Produces a user-readable requirements summary before code.
 - Produces a structured `personal_homepage_brief`.
 - Waits for user confirmation before coding.
 - Routes companion skills before UI implementation.

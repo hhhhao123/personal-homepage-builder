@@ -2,6 +2,26 @@
 
 Use this file to decide whether the agent may move to the next phase.
 
+These gates are internal controls. For beginner users, do not present them as process bureaucracy or ask them to fill every field directly. Use plain-language summaries and choices.
+
+## Gate 0: Minimum Viable Requirements
+
+Required before implementation, formal homepage brief, or final design direction.
+
+Must include:
+
+- primary audience: who should open the homepage first
+- main purpose: what the homepage should help the visitor understand or do
+- core content modules: at least three sections or content types
+- style tendency or explicit visual dislikes
+- privacy boundary: what must not be public
+- contact or next action
+- material status: provided, missing, placeholder-ready, and what to prepare next
+
+If a field is missing, ask only for the missing high-impact item or offer 2-4 choices. A compressed quick path may defer lower-risk details, but it may not skip audience, purpose, core modules, privacy, or next action.
+
+Do not show the term "minimum viable requirements" to ordinary users unless they ask for process details.
+
 ## Gate 1: Identity Reflection
 
 Required before style directions or UI work.
@@ -21,6 +41,26 @@ Must include:
 - open questions
 
 Do not present it as final truth. Ask the user to correct it.
+
+## Optional Gate: Probe Sketch
+
+Allowed after at least one useful identity, audience, content, or taste signal exists. Use when the user cannot describe what they want or needs something concrete to react to.
+
+May include:
+
+- 2-3 direction cards
+- a rough text wireframe
+- a plain version vs richer version contrast
+- a content gap map
+
+Must not include:
+
+- final UI code
+- claims that the direction is final
+- unexplained internal field names
+- companion skill routing details unless the user is technical
+
+Probe sketches help discovery; they do not replace Gate 0, Gate 2, or Gate 3.
 
 ## Gate 2: Taste Discovery
 
@@ -49,7 +89,17 @@ Must include a motion strategy, even when the decision is `level: none`.
 
 For zero-prep users, must include a materials status summary: provided materials, missing materials, placeholders, and materials to prepare next.
 
-The user must accept or correct the brief before code changes begin, unless the user explicitly requests a compressed quick path. Even in a compressed path, produce a minimal brief first.
+Must include:
+
+- Gate 0 status
+- functional requirements
+- content model for repeated items such as projects, links, posts, publications, or media
+- non-functional requirements: responsive behavior, accessibility, SEO basics, performance, maintainability, reduced motion
+- constraints and assumptions: hosting, language, external resources, placeholders, user-provided assets
+
+The user must accept or correct the requirements summary and brief before code changes begin. Even in a compressed path, produce and confirm a minimal brief first.
+
+After acceptance, treat the brief and requirements summary as the current build baseline.
 
 ## Gate 4: Design Routing
 
@@ -95,6 +145,20 @@ Must include:
 - risks or tradeoffs
 
 If the user is asking for suggestions rather than implementation, provide options first and do not edit until a direction is chosen.
+
+## Change Control Gate
+
+Required when the user changes identity, audience, content priority, privacy boundary, visual direction, motion level, or implementation target after a requirements summary or brief was confirmed.
+
+Must include:
+
+- previous understanding
+- requested change
+- affected sections or files
+- impact on content, design, motion, privacy, or implementation
+- updated confirmation question
+
+Do not silently merge a major change into an old brief. Reconfirm the affected part before editing.
 
 ## Gate 6: Review Report
 

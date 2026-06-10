@@ -26,6 +26,8 @@ Here is the plan I would build from. Please check whether it represents you corr
 
 ## 1. Project Overview
 
+- Current brief version:
+- Brief status:
 - Public name:
 - Homepage type:
 - Page model: one page / homepage plus detail pages / multi-page site
@@ -159,7 +161,7 @@ Here is the plan I would build from. Please check whether it represents you corr
 
 ## 12. Change Baseline
 
-This requirements document is the current build baseline. If identity, audience, content priority, privacy, or visual direction changes, update the affected section and reconfirm before implementation continues.
+This requirements document and the confirmed brief are the current build baseline. If identity, audience, content priority, page model, privacy, or visual direction changes, update the affected section and reconfirm before implementation continues.
 
 ## 13. Adjustment Approval Rule
 
@@ -172,6 +174,13 @@ For later page adjustments, do not edit files from a broad request alone. First 
 - how it will be validated
 
 Then wait for explicit user confirmation.
+
+## 14. Brief Lifecycle Rule
+
+- Small visual or technical adjustments may keep the current brief unchanged.
+- Changes to confirmed sections, page map, motion level, content items, links, or media should patch the current brief.
+- Changes to audience, purpose, identity positioning, major page structure, privacy boundary, or visual direction require a new brief version.
+- Only one brief version is current at a time.
 ```
 
 ## Change Confirmation Template
@@ -185,6 +194,8 @@ This changes the confirmed plan in one area:
 - New:
 - Impact:
 - Files or sections affected:
+- Brief impact:
+- Brief fields affected:
 
 Please confirm this change before I update the build plan.
 ```

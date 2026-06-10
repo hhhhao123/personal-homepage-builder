@@ -70,6 +70,12 @@ homepage_session:
     companion_skill_used:
   brief:
     status: not_started | draft | confirmed | needs_revision
+    current_version:
+    current_effective:
+    lifecycle_status: initial | unchanged | patched | superseded
+    last_change_classification:
+    changed_fields:
+    change_history:
     last_confirmed_at:
   implementation:
     allowed: false
@@ -138,6 +144,7 @@ If the user already has a built or in-progress homepage and asks for a new featu
 - Preserve the confirmed brief unless the new request changes identity, audience, or public content.
 - Offer 2-4 context-aware options when the user has no clear solution.
 - Produce a compact change plan before editing.
+- Use `brief-lifecycle.md` to classify whether the current brief stays unchanged, needs a patch, or needs a new version.
 - Wait for explicit confirmation of the change plan before editing files. Do not skip this for low-risk or "you decide" requests.
 - If a requirements baseline or brief was confirmed, use the Change Control Gate in `output-contracts.md` and reconfirm the affected part before editing.
 

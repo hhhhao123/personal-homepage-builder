@@ -93,6 +93,7 @@ For zero-prep users, must include a materials status summary: provided materials
 Must include:
 
 - Gate 0 status
+- brief version, status, and whether this is the current effective baseline
 - functional requirements
 - information architecture: page model, page map, and navigation plan when more than one page is needed
 - content model for repeated items such as projects, links, posts, publications, or media
@@ -101,7 +102,7 @@ Must include:
 
 The user must accept or correct the requirements summary and brief before code changes begin. Even in a compressed path, produce and confirm a minimal brief first.
 
-After acceptance, treat the brief and requirements summary as the current build baseline.
+After acceptance, treat the brief and requirements summary as the current build baseline. Use `brief-lifecycle.md` for all later changes.
 
 ## Gate 4: Design Routing
 
@@ -143,6 +144,8 @@ Must include:
 - current issue or opportunity
 - recommended change
 - why it fits the current homepage
+- brief impact: no brief update, brief patch, or new brief version
+- brief fields affected, if any
 - target files or modules
 - visible user-facing impact
 - companion skill routing if design/UI work is involved
@@ -166,6 +169,8 @@ Must include:
 
 - previous understanding
 - requested change
+- brief lifecycle decision: brief patch or new brief version
+- new brief version number if a new version is required
 - affected sections or files
 - impact on content, design, motion, privacy, or implementation
 - updated confirmation question

@@ -49,6 +49,7 @@ The skill now emphasizes:
 - zero-prep onboarding that explains what materials may be useful later instead of demanding everything upfront
 - minimum viable requirements before implementation
 - user-confirmed requirements summaries before code
+- brief lifecycle rules for patches, new versions, and post-launch changes
 - single-page, hybrid, or multi-page page-map decisions before implementation
 - explicit confirmation before editing existing page adjustments
 - required output gates before style, implementation, review, and publish
@@ -230,6 +231,7 @@ Depending on the request and available materials, the agent can produce:
 - a GitHub Pages compatible static site or updates to an existing site, with page files, CSS, JavaScript, images, and optional data kept maintainable by default
 - scoped suggestions for existing pages, including where an effect belongs, why it fits, implementation complexity, and risks
 - confirmed change plans before editing existing page adjustments
+- brief patches or new brief versions when later changes alter the confirmed direction
 - a publish-ready commit and push workflow when the user asks for GitHub publishing
 
 ## Example Brief
@@ -302,6 +304,7 @@ personal-homepage-builder/
 `-- references/
     |-- anti-patterns.md             # Failure modes to avoid
     |-- archetypes.md                # Homepage archetypes and structures
+    |-- brief-lifecycle.md           # Brief versioning and iteration rules
     |-- beginner-conversation-patterns.md # Low-friction beginner interaction patterns
     |-- beginner-validation-scenario.md # End-to-end beginner validation script
     |-- content-intake.md            # Source material extraction schema

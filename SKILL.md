@@ -21,6 +21,7 @@ Keep two layers separate:
 - Treat this skill as the controlling workflow for the rest of the current homepage-design conversation once it is invoked, until the user explicitly exits it or gives a superseding instruction.
 - Do not jump directly into page design, UI customization, implementation, publishing, or repository pushes before the relevant gate in `references/output-contracts.md` has passed.
 - Do not edit homepage/site code for any visible page change before discussing the intended change and receiving explicit user confirmation. This includes layout, content, copy, style, motion, media, navigation, page structure, and component behavior changes, even when the user initially asks to "adjust", "improve", "add", or "make it better".
+- Do not let the implemented site drift away from the confirmed brief. For every post-brief change, use `references/brief-lifecycle.md` to decide whether the current brief stays unchanged, receives a patch, or must become a new brief version before implementation.
 - Do not begin by asking "what style do you want?" Ask grounded questions about identity, audience, work, memory point, taste signals, dislikes, privacy boundaries, and public goals.
 - Do not make beginners fill an engineering form. Translate their plain-language answers into internal requirements silently.
 - Do not begin implementation before the minimum viable requirements gate, a confirmed requirements summary, and a confirmed homepage brief. A compressed quick path still needs a minimal brief.
@@ -62,7 +63,7 @@ Follow these phases in order unless the user explicitly requests a smaller path 
 11. **Review**: run build/tests where possible and use `web-design-guidelines` or an equivalent review skill when available. Use `references/quality-checklist.md`.
 12. **Publish**: commit and push only when the user asks for publishing. Do not stage unrelated changes silently.
 
-For existing or in-progress sites where the user asks for a new requirement or asks "should we add something like X?", use `references/iteration-requests.md`. Do not restart the whole discovery workflow unless the requested change invalidates the existing brief or audience.
+For existing or in-progress sites where the user asks for a new requirement or asks "should we add something like X?", use `references/iteration-requests.md` and `references/brief-lifecycle.md`. Do not restart the whole discovery workflow unless the requested change invalidates the existing brief, audience, purpose, page model, or design direction.
 
 ## Companion Skill Routing
 
@@ -90,6 +91,7 @@ Minimum gates:
 - No implementation before a user-confirmed requirements summary and homepage brief.
 - No UI customization before taste discovery or explicit fallback.
 - No existing-page adjustment before a compact discussion, change plan, and explicit user confirmation.
+- No post-brief change before classifying whether the brief stays unchanged, receives a patch, or becomes a new version.
 - No final delivery before UI/UX/responsive/accessibility review or explicit fallback.
 - No publishing before user approval and clean git scope.
 
@@ -128,11 +130,13 @@ Every brief must include:
 - implementation and validation plan
 - structured site file plan for real implementations
 - requirements baseline and change handling notes
+- brief version and lifecycle status
 
 ## Reference Map
 
 - `references/session-protocol.md`: conversation state, phase transitions, and restart rules.
 - `references/output-contracts.md`: required outputs and gates before design, implementation, review, and publish.
+- `references/brief-lifecycle.md`: active brief, brief patch, new version, and change-plan relationship rules.
 - `references/beginner-conversation-patterns.md`: choice-driven, low-friction conversation patterns for ordinary users.
 - `references/requirements-template.md`: user-readable requirements document template and confirmation baseline.
 - `references/skill-routing.md`: companion skill routing, required calls when available, and fallback behavior.

@@ -28,6 +28,8 @@ Avoid these failures when using `personal-homepage-builder`.
 - Treating a probe sketch or direction card as a confirmed brief.
 - Letting a confirmed brief drift after user changes without reconfirming the affected part.
 - Treating a user's broad adjustment request as permission to edit files before a concrete change plan is confirmed.
+- Continuing to implement from an old brief after audience, purpose, page model, privacy, content priority, or visual direction changed.
+- Creating multiple competing active briefs instead of marking one current effective version.
 
 ## Design Failures
 
@@ -56,6 +58,7 @@ Avoid these failures when using `personal-homepage-builder`.
 - Adding motion that ignores `prefers-reduced-motion`, causes layout shift, blocks reading, or depends on JavaScript for core content.
 - Rebuilding the whole homepage for a small iteration request when a scoped edit would solve it.
 - Applying "you decide" or "make it better" as implicit approval to change files without discussion.
+- Updating code for a brief-impacting change without patching or versioning the brief first.
 - Staging unrelated files.
 
 ## Review Failures

@@ -12,6 +12,8 @@ For beginner users, keep the recommendation visual and concrete. Do not describe
 
 Any visible page/site adjustment requires explicit confirmation before code edits. This applies even when the user says "make it better", "add some motion", "adjust the page", "improve the UI", "change the style", or "you decide". Treat the user's request as permission to analyze and propose, not permission to edit.
 
+After a brief has been confirmed, every iteration request must also classify its brief impact using `brief-lifecycle.md`: no brief update, brief patch, or new brief version.
+
 ## Intake
 
 Before recommending or requesting confirmation, inspect available context:
@@ -19,6 +21,7 @@ Before recommending or requesting confirmation, inspect available context:
 - current page structure and key sections
 - existing visual direction, density, and motion level
 - confirmed homepage brief or prior user intent
+- current effective brief version and whether the request affects it
 - target audience and primary memory point
 - current asset structure and implementation stack
 - responsive/accessibility constraints
@@ -56,6 +59,7 @@ Keep options concrete and limited to 2-4. Prefer one clear recommendation instea
 - If the user asks for an effect that conflicts with the page goal, propose a safer alternative.
 - If implementation is requested, still produce the compact change plan and wait for explicit confirmation before editing. After confirmation, update only the affected files and preserve the existing structure.
 - If the change affects identity, audience, privacy, core content priority, visual direction, or motion level, use the Change Control Gate in `output-contracts.md` before editing.
+- If the change requires a brief patch or new brief version, update or regenerate the brief before implementation.
 
 ## Common Iteration Types
 
@@ -100,6 +104,8 @@ Before editing code for any iteration request, produce a compact change plan:
 - recommended change
 - target files
 - visible user-facing impact
+- brief impact: no brief update, brief patch, or new brief version
+- brief fields affected
 - motion level if relevant
 - validation needed
 - risks or tradeoffs
@@ -112,6 +118,7 @@ If a previous requirements summary or homepage brief was confirmed, add:
 - whether this change updates the confirmed plan
 - which part of the plan changes
 - whether the user needs to reconfirm that part
+- whether the current brief remains valid, needs a patch, or must become a new version
 
 ## Direct-Edit Requests
 
@@ -124,6 +131,7 @@ I can make that change, but before editing I need to confirm the exact adjustmen
 - Where it applies:
 - Visitor-facing effect:
 - Files likely affected:
+- Brief impact:
 - Risk:
 
 Please confirm this plan, then I will edit the files.

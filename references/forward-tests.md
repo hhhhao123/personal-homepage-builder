@@ -233,3 +233,36 @@ Expected behavior:
 - Produce a compact change plan with target files, visible effect, motion level, validation, and risk.
 - Ask for explicit confirmation before editing code.
 - Do not modify files immediately, even though the user asked to "make" the change.
+
+## Test 13: Brief Lifecycle During Iteration
+
+Prompt:
+
+```text
+Use $personal-homepage-builder. We already confirmed a brief for a one-page technical portfolio. Now I want to add a writing section and maybe split projects and writing into separate pages.
+```
+
+Expected behavior:
+
+- Treat the current brief as the active baseline.
+- Classify the request as brief patch or new brief version before implementation.
+- Explain whether the page model, page map, content priority, and navigation change.
+- Produce a change plan with `Brief impact`.
+- Ask for explicit confirmation before changing files.
+- If the split materially changes the site structure, create or update the brief version before implementation.
+- Do not keep using the old one-page brief as if nothing changed.
+
+## Test 14: Minor Change Keeps Brief Stable
+
+Prompt:
+
+```text
+Use $personal-homepage-builder. We already confirmed the brief. Please replace the placeholder GitHub link with my real GitHub URL and fix spacing in the contact section.
+```
+
+Expected behavior:
+
+- Classify the request as no brief update required unless the contact strategy changes.
+- Still produce a small change plan and ask for confirmation before editing.
+- Do not create a new brief version for a simple link replacement and spacing fix.
+- Preserve the current effective brief.

@@ -6,6 +6,14 @@ Use this schema for `personal_homepage_brief`. Keep it compact for quick work an
 
 ```yaml
 personal_homepage_brief:
+  brief_meta:
+    version: v1
+    status: draft | confirmed | patched | superseded
+    created_at:
+    confirmed_at:
+    last_updated_at:
+    supersedes:
+    current_effective: true | false
   requirements_status:
     minimum_viable_requirements: incomplete | ready | confirmed
     confirmed_at:
@@ -119,8 +127,27 @@ personal_homepage_brief:
     validation:
   change_control:
     baseline_summary:
+    lifecycle_decision: initial_brief | no_brief_update | brief_patch | new_brief_version
+    latest_change_plan:
+    changed_fields:
+    change_history:
+      - version:
+        date:
+        classification: no_brief_update | brief_patch | new_brief_version
+        summary:
+        confirmed_by_user: true | false
     requires_reconfirmation_if_changed:
 ```
+
+## Lifecycle Rule
+
+Use `brief-lifecycle.md` after a brief has been confirmed.
+
+- Keep one current effective brief.
+- Use a change plan for every visible adjustment.
+- Patch the current brief when a confirmed change affects its fields but preserves the same direction.
+- Create a new brief version when audience, purpose, identity positioning, page model, major content priority, privacy boundary, or design direction changes.
+- Do not implement from a stale brief.
 
 ## Minimal Quick Brief
 
@@ -143,6 +170,7 @@ For speed-focused work, the brief may be short but still needs these fields:
 - practical constraints
 - companion skill routing
 - validation plan
+- brief version and whether this is a new baseline or a patch
 
 ## Confirmation Prompt
 

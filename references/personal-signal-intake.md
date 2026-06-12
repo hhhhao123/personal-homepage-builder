@@ -61,7 +61,7 @@ You do not need to prepare everything now. As we go, useful materials may includ
 - content: projects, writing, publications, services, or links
 - proof: GitHub, demos, screenshots, papers, testimonials, metrics
 - media: avatar, photos, covers, videos, or a decision to stay typography-first
-- taste: sites, apps, moods, colors, objects, music, books, films, or dislikes
+- taste: sites, apps, dynamic effects, moods, colors, objects, music, books, films, or dislikes
 - boundaries: anything private, outdated, exaggerated, or not ready for public use
 ```
 
@@ -143,10 +143,11 @@ Use this when the user wants a stronger personalized homepage but does not have 
 10. Contact method:
 11. Photos, avatar, video, music, or visual assets available:
 12. Visual references you like:
-13. Visual references you dislike:
-14. Whether content should live on one page or separate pages:
-15. Content that must stay private:
-16. Timeline and publishing target:
+13. Dynamic effects or interactions you like:
+14. Visual references you dislike:
+15. Whether content should live on one page or separate pages:
+16. Content that must stay private:
+17. Timeline and publishing target:
 ```
 
 Do not require every field. Extract what exists and ask only the next highest-impact missing question.
@@ -191,6 +192,8 @@ personal_signal_pack:
   media_assets:
   page_model:
   taste_clues:
+  inspiration_references:
+  dynamic_effect_references:
   dislikes:
   privacy_boundaries:
   open_questions:

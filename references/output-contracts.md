@@ -53,6 +53,7 @@ May include:
 - a rough text wireframe
 - a plain version vs richer version contrast
 - a content gap map
+- an inspiration read when the user provides references, screenshots, or effect links
 
 Must not include:
 
@@ -69,7 +70,8 @@ Required before UI customization.
 
 Must include:
 
-- companion taste skill used, or fallback stated
+- companion taste skill actually invoked, or unavailable fallback stated
+- inspiration read from `references/inspiration-intake.md` when visual references, screenshots, dynamic effect links, or inspiration sites were supplied
 - design read in one sentence
 - layout variance
 - visual density
@@ -94,6 +96,7 @@ Must include:
 
 - Gate 0 status
 - brief version, status, and whether this is the current effective baseline
+- inspiration interpretation, accepted ideas, rejected ideas, and copy/license cautions when references were provided
 - functional requirements
 - information architecture: page model, page map, and navigation plan when more than one page is needed
 - content model for repeated items such as projects, links, posts, publications, or media
@@ -110,13 +113,16 @@ Required before implementation.
 
 Must include:
 
-- taste route
-- theme route
-- frontend route
-- media route
-- review route
+- taste route: invoked skill, unavailable fallback, or not applicable with reason
+- theme route: invoked skill, unavailable fallback, or not applicable with reason
+- frontend route: invoked skill, unavailable fallback, or not applicable with reason
+- media route: invoked skill, unavailable fallback, or not applicable with reason
+- artifact route: `web-artifacts-builder` invoked, unavailable fallback, or not applicable with reason
+- review route: planned invoked skill, unavailable fallback, or not applicable with reason
 - motion plan and reduced-motion fallback
 - fallback notes
+
+If a relevant companion skill is available and the stage applies, the gate does not pass until that skill has been invoked. Do not accept "will use later" as equivalent to invocation, except for the review route, which may be planned here and must be invoked before Gate 6.
 
 ## Gate 5: Implementation Plan
 
@@ -130,6 +136,7 @@ Must include:
 - page map, paths, shared navigation, and which content belongs on each page
 - whether CSS, JS, images, and data will be separated under `assets/`
 - asset strategy
+- starter template decision: whether `assets/static-site-template/` will be copied/adapted, skipped because an existing stack exists, or skipped for a specific reason
 - content data strategy
 - validation commands
 - git scope
@@ -185,7 +192,7 @@ Required before final delivery.
 Must include:
 
 - build/test result, or why it was not run
-- UI/UX review result
+- UI/UX review result, including `web-design-guidelines` or equivalent actually invoked when available, or fallback stated
 - responsive behavior check
 - accessibility/text-fit check
 - known risks

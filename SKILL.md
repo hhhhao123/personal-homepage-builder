@@ -7,7 +7,7 @@ description: Translate vague personal homepage or small personal site ideas into
 
 ## Role
 
-Act as the discovery, requirement-translation, and orchestration layer for personal homepage and small personal site work. Help the user understand and articulate who they are, what they want to show, who the homepage is for, what should be remembered, what belongs on the first page versus supporting pages, and what should not be exposed publicly. Then route specialized design, taste, theme, media, frontend, and review work to the right available companion skills.
+Act as the discovery, requirement-translation, and orchestration layer for personal homepage and small personal site work. Help the user understand and articulate who they are, what they want to show, who the homepage is for, what should be remembered, what belongs on the first page versus supporting pages, what visual references mean, and what should not be exposed publicly. Then route specialized design, taste, theme, media, frontend, and review work to the right available companion skills.
 
 This skill is not a one-shot page generator. It is a controlled workflow for turning vague personal signals and scattered materials into a confirmed homepage brief, then into a personalized implementation.
 
@@ -26,6 +26,7 @@ Keep two layers separate:
 - Do not make beginners fill an engineering form. Translate their plain-language answers into internal requirements silently.
 - Do not begin implementation before the minimum viable requirements gate, a confirmed requirements summary, and a confirmed homepage brief. A compressed quick path still needs a minimal brief.
 - Treat code generation as phase 2. In phase 1, produce conversation summaries, direction cards, text wireframes, probe sketches, and requirements documents, not final HTML/CSS/JS.
+- When a relevant companion skill is available in the current agent environment, actually invoke it at the matching stage before producing that stage's design, implementation, or review output. Do not merely mention companion skills, and do not skip them because general model ability seems sufficient.
 - Do not use emoji in questions, briefs, homepage copy, UI labels, status text, markdown, generated content, or final deliverables unless the user explicitly asks for emoji.
 - Treat MBTI, zodiac signs, enneagram, hobbies, favorite media, and similar inputs as optional self-expression clues, not scientific facts or fixed personality rules.
 - Confirm public/private boundaries before using personal details, photos, contact links, location, legal names, career information, or sensitive life context.
@@ -51,15 +52,15 @@ At phase transitions, briefly state:
 Follow these phases in order unless the user explicitly requests a smaller path and the relevant gates still pass:
 
 1. **Orient**: inspect project context, deployment target, existing files, user goal, delivery mode, and quality tier. Use `references/delivery-modes.md`; if the user is unsure, default to Deep Profile + Profile quality + subtle motion.
-2. **Intake**: extract facts, links, media, tone clues, privacy risks, and gaps from supplied materials. If the user has little or no material, use the zero-prep onboarding protocol in `references/personal-signal-intake.md` and the user-facing patterns in `references/beginner-conversation-patterns.md`: explain the discovery path, tell the user what materials may be useful later, and collect only the next useful signals. Use `references/content-intake.md`, `references/media-assets.md`, and `references/social-links.md`.
+2. **Intake**: extract facts, links, media, tone clues, privacy risks, inspiration references, and gaps from supplied materials. If the user has little or no material, use the zero-prep onboarding protocol in `references/personal-signal-intake.md` and the user-facing patterns in `references/beginner-conversation-patterns.md`: explain the discovery path, tell the user what materials may be useful later, and collect only the next useful signals. Use `references/content-intake.md`, `references/media-assets.md`, `references/social-links.md`, and `references/inspiration-intake.md` when references, screenshots, dynamic effects, or visual inspiration are provided or requested.
 3. **Interview**: ask 1-3 high-impact questions per round. Use `references/interview.md`. Prefer choice-driven questions, concrete contrasts, and plain-language prompts from `references/beginner-conversation-patterns.md`. For zero-prep users, continue in progressive rounds until the minimum viable requirements gate in `references/output-contracts.md` passes or the user explicitly chooses a compressed quick path.
 4. **Reflect**: produce an identity reflection that separates confirmed facts, inferred positioning, tentative taste hypotheses, and open questions. Gate this with `references/output-contracts.md`.
-5. **Probe Sketch**: when the user is vague or reactive, optionally show a non-code probe artifact from `references/beginner-conversation-patterns.md`: direction cards, a rough text wireframe, or a "plain version vs richer version" contrast. Use this to invite correction, not to bypass gates.
-6. **Taste Discovery**: use `design-taste-frontend`, `taste-skill`, `taste`, or an equivalent taste/design-direction skill when available. If unavailable, use `references/style-directions.md` and say what fallback is being used. Discuss motion as an optional design choice using `references/motion-design.md`.
+5. **Probe Sketch**: when the user is vague or reactive, optionally show a non-code probe artifact from `references/beginner-conversation-patterns.md`: direction cards, a rough text wireframe, a page map, an inspiration read, or a "plain version vs richer version" contrast. Use this to invite correction, not to bypass gates.
+6. **Taste Discovery**: if visual references are present, first translate them with `references/inspiration-intake.md` so the agent knows what to borrow, reject, and adapt. Then use `design-taste-frontend`, `taste-skill`, `taste`, or an equivalent taste/design-direction skill when available. If unavailable, use `references/style-directions.md` and say what fallback is being used. Discuss motion as an optional design choice using `references/motion-design.md`.
 7. **Requirements Confirmation**: produce a user-readable requirements summary or `requirements.md`-style spec using `references/requirements-template.md`. Confirm the requirements baseline before implementation.
 8. **Brief**: create a `personal_homepage_brief` using `references/homepage-brief.md`. Include whether the project is a single-page homepage, a multi-page personal site, or a hybrid landing page with supporting pages. Do not implement until the user accepts or corrects it.
 9. **Design Routing**: declare which companion skills are available, which will be used, and which fallbacks apply. Use `references/skill-routing.md`.
-10. **Implement**: prefer the existing stack and conventions. For new GitHub Pages sites, use `references/github-pages-bootstrap.md`, `references/implementation.md`, and `references/site-structure.md`. Do not default to a large single-file HTML implementation unless the user explicitly asks for a disposable prototype. Do not force every project into one long page when the confirmed content needs multiple pages.
+10. **Implement**: prefer the existing stack and conventions. For new GitHub Pages sites, use `references/github-pages-bootstrap.md`, `references/implementation.md`, `references/site-structure.md`, and the starter structure in `assets/static-site-template/` when a plain static site is appropriate. Do not default to a large single-file HTML implementation unless the user explicitly asks for a disposable prototype. Do not force every project into one long page when the confirmed content needs multiple pages.
 11. **Review**: run build/tests where possible and use `web-design-guidelines` or an equivalent review skill when available. Use `references/quality-checklist.md`.
 12. **Publish**: commit and push only when the user asks for publishing. Do not stage unrelated changes silently.
 
@@ -69,16 +70,16 @@ For existing or in-progress sites where the user asks for a new requirement or a
 
 Use `references/skill-routing.md` as the source of truth for companion skill routing.
 
-Required routing behavior when available:
+Mandatory routing behavior when available:
 
-- Taste and design direction: `design-taste-frontend`, `taste-skill`, `taste`, or equivalent.
-- Theme system: `theme-factory` or equivalent.
-- Frontend/UI implementation: `frontend-design` or equivalent.
-- Complex React/Tailwind/shadcn artifact: `web-artifacts-builder`.
-- Raster hero images, portrait treatments, textures, or visual assets: `imagegen`.
-- Final UI/UX/accessibility review: `web-design-guidelines` or equivalent.
+- Taste and design direction: invoke `design-taste-frontend`, `taste-skill`, `taste`, or equivalent before final style direction or UI customization.
+- Theme system: invoke `theme-factory` or equivalent before choosing or finalizing a color, typography, spacing, or token system.
+- Frontend/UI implementation: invoke `frontend-design` or equivalent before building or substantially redesigning visible UI.
+- Complex React/Tailwind/shadcn artifact: invoke `web-artifacts-builder` when the confirmed implementation is a complex React, Tailwind, shadcn, routed, or multi-state artifact.
+- Raster hero images, portrait treatments, textures, or visual assets: invoke `imagegen` when original bitmap imagery or image transformation is needed.
+- Final UI/UX/accessibility review: invoke `web-design-guidelines` or equivalent before final delivery.
 
-If a relevant companion skill is unavailable, say so briefly and continue with the matching bundled reference file or general capability. Do not install companion skills automatically.
+For every route, record one of: `invoked`, `unavailable fallback`, or `not applicable`, with a short reason. If a relevant companion skill is unavailable, say so briefly and continue with the matching bundled reference file or general capability. Do not install companion skills automatically.
 
 ## Output Gates
 
@@ -115,6 +116,7 @@ Every brief must include:
 - open questions
 - content modules
 - page model and navigation plan
+- inspiration reference interpretation when references are provided
 - functional requirements
 - content model
 - non-functional requirements
@@ -140,6 +142,8 @@ Every brief must include:
 - `references/beginner-conversation-patterns.md`: choice-driven, low-friction conversation patterns for ordinary users.
 - `references/requirements-template.md`: user-readable requirements document template and confirmation baseline.
 - `references/skill-routing.md`: companion skill routing, required calls when available, and fallback behavior.
+- `references/inspiration-intake.md`: how to use CodePen, React Bits, SiteInspire, Pinterest, Behance, Awwwards, screenshots, and reference links without copying them.
+- `references/brief-examples.md`: good and bad homepage brief examples for calibration.
 - `references/homepage-brief.md`: canonical `personal_homepage_brief` schema and examples.
 - `references/personal-signal-intake.md`: lightweight intake prompts for users with little or no prepared material.
 - `references/iteration-requests.md`: handling new requirements on existing or in-progress homepages.
@@ -160,6 +164,7 @@ Every brief must include:
 - `references/implementation.md`: stack-aware implementation guidance.
 - `references/social-links.md`: supported contact/social platforms and display rules.
 - `references/quality-checklist.md`: final review checklist.
+- `assets/static-site-template/`: starter plain static site structure for new GitHub Pages friendly implementations.
 
 ## Beta Iteration
 

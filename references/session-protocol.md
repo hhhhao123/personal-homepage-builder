@@ -28,6 +28,14 @@ homepage_session:
     placeholders:
     to_prepare_next:
     privacy_risks:
+  inspiration:
+    provided_references:
+    inspiration_read:
+    accepted_ideas:
+    rejected_ideas:
+    should_not_copy:
+    asset_license_notes:
+    confirmation_status: none | unconfirmed | confirmed | partially_confirmed | rejected
   identity:
     confirmed_facts:
     inferred_positioning:
@@ -62,6 +70,7 @@ homepage_session:
     text_wireframes:
     page_maps:
     content_gap_maps:
+    inspiration_reads:
   taste:
     references:
     likes:

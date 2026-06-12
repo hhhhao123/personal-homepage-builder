@@ -56,6 +56,21 @@ personal_homepage_brief:
       writing_or_publication_item:
       link_item:
       media_item:
+  inspiration:
+    provided_references:
+      - source:
+        url_or_description:
+        reference_type: dynamic_effect | page_layout | mood_board | hero_image | typography | portfolio_structure | media_treatment
+        user_like:
+        user_dislike:
+        transferable_idea:
+        should_not_copy:
+        fit_for_homepage:
+        risk:
+    accepted_ideas:
+    rejected_ideas:
+    asset_license_notes:
+    confirmation_status: unconfirmed | confirmed | rejected | partially_confirmed
   information_architecture:
     page_model: single_page | hybrid | multi_page
     rationale:
@@ -166,6 +181,7 @@ For speed-focused work, the brief may be short but still needs these fields:
 - motion strategy
 - privacy avoids
 - material status
+- inspiration interpretation if references, screenshots, or effect links were provided
 - functional must-haves
 - practical constraints
 - companion skill routing

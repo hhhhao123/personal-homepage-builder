@@ -46,7 +46,17 @@ Here is the plan I would build from. Please check whether it represents you corr
 - Privacy boundaries:
 - Open questions:
 
-## 3. Minimum Viable Requirements
+## 3. Inspiration And References
+
+- References provided:
+- What the user likes:
+- What the user dislikes:
+- Transferable ideas:
+- Ideas that should not be copied:
+- Asset or license cautions:
+- Confirmation status:
+
+## 4. Minimum Viable Requirements
 
 - Primary audience:
 - Main purpose:
@@ -56,7 +66,7 @@ Here is the plan I would build from. Please check whether it represents you corr
 - Contact or next action:
 - Material status:
 
-## 4. Page Structure
+## 5. Page Structure
 
 ### Page Map
 
@@ -75,7 +85,7 @@ Here is the plan I would build from. Please check whether it represents you corr
 | Contact / links | Must | | | |
 | Optional section | Nice | | | |
 
-## 5. Functional Requirements
+## 6. Functional Requirements
 
 ### Must Have
 
@@ -85,7 +95,7 @@ Here is the plan I would build from. Please check whether it represents you corr
 
 - TBD
 
-## 6. Content Model
+## 7. Content Model
 
 ### Project / Work Item
 
@@ -111,7 +121,7 @@ Here is the plan I would build from. Please check whether it represents you corr
 - Usage:
 - Fallback:
 
-## 7. Non-Functional Requirements
+## 8. Non-Functional Requirements
 
 - Responsive behavior:
 - Accessibility:
@@ -120,7 +130,7 @@ Here is the plan I would build from. Please check whether it represents you corr
 - Maintainability:
 - Reduced-motion behavior:
 
-## 8. Visual And Interaction Direction
+## 9. Visual And Interaction Direction
 
 - Style keywords:
 - Layout direction:
@@ -131,7 +141,7 @@ Here is the plan I would build from. Please check whether it represents you corr
 - Motion should support:
 - Motion should avoid:
 
-## 9. Constraints And Assumptions
+## 10. Constraints And Assumptions
 
 - Hosting:
 - Repository or deployment target:
@@ -141,7 +151,7 @@ Here is the plan I would build from. Please check whether it represents you corr
 - Placeholders allowed:
 - Assumptions to confirm:
 
-## 10. Companion Skill Routing
+## 11. Companion Skill Routing
 
 - Taste/design direction:
 - Theme:
@@ -149,21 +159,22 @@ Here is the plan I would build from. Please check whether it represents you corr
 - Image/media:
 - Review:
 
-## 11. Implementation Plan
+## 12. Implementation Plan
 
 - Site structure:
 - Page model and page map:
 - Target files:
 - Asset organization:
+- Starter template decision:
 - Validation:
 - Publishing:
 - Confirmation before editing:
 
-## 12. Change Baseline
+## 13. Change Baseline
 
 This requirements document and the confirmed brief are the current build baseline. If identity, audience, content priority, page model, privacy, or visual direction changes, update the affected section and reconfirm before implementation continues.
 
-## 13. Adjustment Approval Rule
+## 14. Adjustment Approval Rule
 
 For later page adjustments, do not edit files from a broad request alone. First summarize:
 
@@ -175,7 +186,7 @@ For later page adjustments, do not edit files from a broad request alone. First 
 
 Then wait for explicit user confirmation.
 
-## 14. Brief Lifecycle Rule
+## 15. Brief Lifecycle Rule
 
 - Small visual or technical adjustments may keep the current brief unchanged.
 - Changes to confirmed sections, page map, motion level, content items, links, or media should patch the current brief.

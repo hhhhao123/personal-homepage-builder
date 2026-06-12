@@ -194,6 +194,52 @@ The skill can start from almost nothing. You do not need all materials upfront, 
 
 To save tokens, prepare a short Personal Signal Pack before starting: who you are, who the homepage is for, what visitors should remember, what to show, what to keep private, and what visual styles you like or dislike. See `references/personal-signal-intake.md`.
 
+## Optional Inspiration Sources
+
+You do not need design references to start. But if you want a more personal and visually specific homepage, spend a few minutes collecting examples before or during the discovery conversation.
+
+The recommended beginner workflow is:
+
+1. Browse the sites below for 10-20 minutes.
+2. Save 3-5 links or screenshots that feel close to what you want.
+3. For each reference, write one short note: what you like, what you dislike, and what should not be copied.
+4. Paste those references into the agent and ask it to translate them into a homepage direction before writing code.
+
+For dynamic effects and interaction ideas:
+
+| Source | How to use it |
+| --- | --- |
+| [CodePen](https://codepen.io/) | Find specific hover effects, scroll reveals, cursor interactions, card transitions, animated backgrounds, or small visual experiments. Share direct links to the effects you like. |
+| [React Bits](https://www.reactbits.dev/) | Useful for React-based homepages that need polished animated text, interactive components, backgrounds, or motion patterns. |
+| [SiteInspire](https://www.siteinspire.com/) | Study how real sites use motion in context, so the homepage does not become a pile of disconnected effects. |
+
+For page design, visual mood, and hero references:
+
+| Source | How to use it |
+| --- | --- |
+| [Pinterest](https://www.pinterest.com/) | Collect mood boards, color references, typography feelings, layout references, and possible hero-image directions. |
+| [Behance](https://www.behance.net/) | Find portfolio, personal brand, editorial, and visual identity references with stronger art direction. |
+| [Awwwards Portfolio Websites](https://www.awwwards.com/websites/portfolio/) | Explore highly designed portfolio examples, especially for layout, motion rhythm, and first-screen impact. |
+| [SiteInspire](https://www.siteinspire.com/) | Find cleaner, more mature website references that may be easier to adapt to a lightweight personal homepage. |
+
+Both approaches are valid:
+
+- **User-led reference gathering** is usually best for beginners because your own taste matters, and it saves tokens.
+- **Agent-assisted reference research** is useful when you have a confirmed brief but no design references. Ask the agent to inspect specific links or find examples that match the brief, then summarize what should be borrowed and what should be avoided.
+
+References should be used as inspiration, not copied. Ask the agent to adapt the layout logic, motion feeling, spacing, image strategy, or interaction pattern to your own identity and content. Do not copy proprietary layouts, code, images, or brand assets. If you want a strong first-screen background image, use your own photo, a properly licensed image, or ask the agent to generate an original visual asset.
+
+Example prompt:
+
+```text
+Use $personal-homepage-builder. I found these references:
+- CodePen link: I like the subtle hover and scroll reveal.
+- Behance link: I like the editorial first screen and typography.
+- Pinterest image: I like the color mood, but not the layout.
+
+Please extract a design direction from these references, explain what fits my homepage brief, and wait for my confirmation before changing code.
+```
+
 ## Example Prompts
 
 ```text
@@ -286,6 +332,8 @@ This skill works on its own, but homepage quality improves when these companion 
 
 The skill does not install companion skills automatically. Install them separately if you want your agent to use them during homepage creation.
 
+When these companion skills are installed and relevant to the current stage, the workflow expects the agent to actually invoke them, not just mention them. Taste, frontend/UI, and final review routing are mandatory when available; theme, image generation, and complex artifact routing are mandatory when that type of work is needed.
+
 When this skill is active in a homepage-design conversation, the agent should keep using this workflow for the rest of that conversation unless the user explicitly exits it. During taste interpretation and UI customization, it should use the relevant companion design/frontend skills when available. Emoji are disabled by default in briefs, copy, UI labels, and generated content unless the user explicitly asks for them.
 
 ## Repository Layout
@@ -299,11 +347,13 @@ personal-homepage-builder/
 |-- agents/
 |   `-- openai.yaml                  # Optional OpenAI/Codex UI metadata
 |-- assets/
-|   `-- images/
-|       `-- personal-homepage-builder-banner-wide.png
+|   |-- images/
+|   |   `-- personal-homepage-builder-banner-wide.png
+|   `-- static-site-template/        # Starter structure for plain static sites
 `-- references/
     |-- anti-patterns.md             # Failure modes to avoid
     |-- archetypes.md                # Homepage archetypes and structures
+    |-- brief-examples.md            # Good and bad brief examples
     |-- brief-lifecycle.md           # Brief versioning and iteration rules
     |-- beginner-conversation-patterns.md # Low-friction beginner interaction patterns
     |-- beginner-validation-scenario.md # End-to-end beginner validation script
@@ -313,6 +363,7 @@ personal-homepage-builder/
     |-- github-pages-bootstrap.md    # GitHub Pages setup guidance
     |-- homepage-brief.md            # Canonical homepage brief schema
     |-- implementation.md            # Stack-aware implementation guidance
+    |-- inspiration-intake.md        # Reference site and inspiration analysis workflow
     |-- interview.md                 # Discovery question bank
     |-- iteration-requests.md        # Existing-site change and suggestion workflow
     |-- media-assets.md              # Image, video, audio, and embed handling

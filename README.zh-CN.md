@@ -131,6 +131,52 @@ Use $personal-homepage-builder。我的项目展示区想做得更有设计感�
 | 动效偏好 | 不要、轻微、中等、强表达，或者不确定 | 控制动态效果 |
 | 发布限制 | GitHub 用户名、仓库、语言、上线时间 | 决定实现和发布方式 |
 
+## 可以提前看的灵感网站
+
+你不需要一开始就准备参考网站。但如果你希望主页更有个人感觉、更好看，建议在对话前或需求梳理过程中，花一点时间找一些自己喜欢的视觉参考。
+
+最推荐的新手用法是：
+
+1. 先自己逛 10-20 分钟，不需要看太多。
+2. 保存 3-5 个链接或截图。
+3. 每个参考只写一句话：喜欢哪里、不喜欢哪里、哪些地方不要照抄。
+4. 把这些参考发给 Agent，让它先整理成设计方向，等你确认后再进入开发。
+
+动态效果和交互参考：
+
+| 网站 | 具体怎么用 |
+| --- | --- |
+| [CodePen](https://codepen.io/) | 找具体的小动效，比如鼠标悬停、滚动出现、光标互动、卡片切换、动态背景等。看到喜欢的效果，直接把链接发给 Agent。 |
+| [React Bits](https://www.reactbits.dev/) | 如果主页准备用 React 实现，可以参考里面的动画文字、交互组件、背景效果和动效模式。 |
+| [SiteInspire](https://www.siteinspire.com/) | 看真实网站如何把动效放进页面里，避免为了炫技而堆很多不相关的动画。 |
+
+页面设计、视觉氛围和首屏参考：
+
+| 网站 | 具体怎么用 |
+| --- | --- |
+| [Pinterest](https://www.pinterest.com/) | 找氛围图、配色、字体感觉、排版参考、首屏背景图方向。 |
+| [Behance](https://www.behance.net/) | 找作品集、个人品牌、视觉识别和更强设计感的页面参考。 |
+| [Awwwards Portfolio Websites](https://www.awwwards.com/websites/portfolio/) | 看高质量作品集网站，重点参考首屏冲击力、页面节奏、动效强度和版式结构。 |
+| [SiteInspire](https://www.siteinspire.com/) | 找更清爽、成熟、容易落地到个人主页的网站参考。 |
+
+这几类网站可以有两种用法：
+
+- **用户自己先看**：这是最推荐的方式。因为主页最终代表你，主观喜欢和不喜欢很重要，而且这样可以减少来回沟通和 token 消耗。
+- **让 Agent 辅助看**：如果你已经确认了主页方向，但没有参考案例，可以让 Agent 按你的需求去查看具体链接或寻找相近案例，再提炼适合你的设计思路。
+
+无论哪种方式，都应该把这些网站当作灵感来源，而不是照抄对象。可以借鉴的是布局逻辑、动效感觉、留白方式、图片策略、首屏氛围和交互节奏；不应该直接复制别人的页面、代码、图片或品牌资产。如果你想用好看的首屏背景图，优先使用自己的照片、有授权的图片，或者让 Agent 生成一张原创图片。
+
+可以这样发给 Agent：
+
+```text
+Use $personal-homepage-builder。我找了几个参考：
+- CodePen 链接：我喜欢它的鼠标悬停和滚动出现效果。
+- Behance 链接：我喜欢它的首屏排版和字体感觉。
+- Pinterest 图片：我喜欢这个配色氛围，但不想照搬布局。
+
+请先帮我提炼成适合我的主页设计方向，说明哪些可以借鉴、哪些不适合我，等我确认后再改代码。
+```
+
 ## 默认工作方式
 
 如果你没有明确要求，新手不需要选择任何模式或档位。Agent 应该在后台自己判断工作方式，前台只需要告诉你：
@@ -197,6 +243,8 @@ Agent 在写代码前，应该先产出类似这样的需求文档，并等待�
 
 本仓库不会自动安装这些辅助 Skill。需要时请单独安装。
 
+当这些辅助 Skill 已经安装，并且当前阶段确实需要它们时，这个工作流要求 Agent 实际调用它们，而不是只在方案里提一句。审美判断、前端 UI 和最终检查在可用时必须调用；主题、图片生成和复杂 React/Tailwind/shadcn 页面，则是在对应需求出现时必须调用。
+
 ## 在其他 Agent 中使用
 
 这个仓库不绑定某一个运行时。如果你的 Agent 不支持 `skills` CLI，可以把整个仓库交给 Agent，或者把 `SKILL.md` 和 `references/` 文件夹复制到对应系统的 Skill、instruction 或 knowledge 格式中。
@@ -218,11 +266,13 @@ personal-homepage-builder/
 |-- agents/
 |   `-- openai.yaml
 |-- assets/
-|   `-- images/
-|       `-- personal-homepage-builder-banner-wide.png
+|   |-- images/
+|   |   `-- personal-homepage-builder-banner-wide.png
+|   `-- static-site-template/
 `-- references/
     |-- anti-patterns.md
     |-- archetypes.md
+    |-- brief-examples.md
     |-- brief-lifecycle.md
     |-- beginner-conversation-patterns.md
     |-- beginner-validation-scenario.md
@@ -232,6 +282,7 @@ personal-homepage-builder/
     |-- github-pages-bootstrap.md
     |-- homepage-brief.md
     |-- implementation.md
+    |-- inspiration-intake.md
     |-- interview.md
     |-- iteration-requests.md
     |-- media-assets.md

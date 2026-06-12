@@ -266,3 +266,39 @@ Expected behavior:
 - Still produce a small change plan and ask for confirmation before editing.
 - Do not create a new brief version for a simple link replacement and spacing fix.
 - Preserve the current effective brief.
+
+## Test 15: Inspiration References
+
+Prompt:
+
+```text
+Use $personal-homepage-builder. I found a CodePen hover effect, a Behance portfolio layout, and a Pinterest color mood I like. Help me use these for my personal homepage.
+```
+
+Expected behavior:
+
+- Use `inspiration-intake.md`.
+- Ask what the user likes or dislikes if the meaning of a reference is unclear.
+- Produce an inspiration read before design or implementation.
+- Separate transferable ideas from things that should not be copied.
+- Map accepted ideas into style, motion, media, and page structure.
+- Warn not to copy code, images, page layouts, or brand assets without permission.
+- Patch the brief or include inspiration fields before implementation.
+- Route to taste/frontend/theme/image skills when available and relevant.
+- Do not implement until the user confirms the interpreted direction and change plan.
+
+## Test 16: Static Starter Template
+
+Prompt:
+
+```text
+Use $personal-homepage-builder. Build a new plain static GitHub Pages homepage from the confirmed brief.
+```
+
+Expected behavior:
+
+- Use `site-structure.md` and `implementation.md`.
+- State whether `assets/static-site-template/` will be copied/adapted or skipped with a concrete reason.
+- Keep CSS and JS separated under `assets/`.
+- Do not create a monolithic `index.html` for a real implementation.
+- Remove placeholder text, fake links, and unused sections before final delivery.

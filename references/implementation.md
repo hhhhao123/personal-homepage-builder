@@ -42,11 +42,12 @@ Choose the smallest stack and page model that fits the user's needs:
 Use the current agent system's official documentation lookup tool for framework, library, SDK, CLI, or cloud docs before implementation. If no such tool is available, use official documentation or the best available retrieval path.
 Use `github-pages-bootstrap.md` for GitHub Pages setup and publish details.
 Use `site-structure.md` for default file organization.
+For new plain static sites, use `assets/static-site-template/` as the preferred starting structure unless the confirmed page map, existing project, or user request makes another stack more appropriate.
 Use `motion-design.md` when the brief allows motion.
 
 ## File Structure Rule
 
-For a real static homepage implementation, do not default to one large HTML file. Prefer a maintainable structure with `index.html`, optional supporting pages such as `about.html`, `projects.html`, or `writing.html`, `assets/css/`, `assets/js/`, `assets/images/`, and optional `assets/data/`. Keep single-file HTML only for disposable prototypes, constrained artifact environments, or when the user explicitly asks for it.
+For a real static homepage implementation, do not default to one large HTML file. Prefer a maintainable structure with `index.html`, optional supporting pages such as `about.html`, `projects.html`, or `writing.html`, `assets/css/`, `assets/js/`, `assets/images/`, and optional `assets/data/`. For a new plain static site, copy or adapt the starter structure in `assets/static-site-template/` rather than inventing a monolithic file. Keep single-file HTML only for disposable prototypes, constrained artifact environments, or when the user explicitly asks for it.
 
 Before editing, decide and state:
 

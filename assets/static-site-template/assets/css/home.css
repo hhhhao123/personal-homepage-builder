@@ -1,0 +1,17 @@
+.hero {
+  min-height: calc(100vh - 76px);
+  display: grid;
+  align-content: center;
+}
+
+.hero .action-row {
+  margin-top: 28px;
+}
+
+@media (max-width: 760px) {
+  .hero {
+    min-height: auto;
+    padding-top: 72px;
+  }
+}
+

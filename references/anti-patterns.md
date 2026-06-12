@@ -41,6 +41,9 @@ Avoid these failures when using `personal-homepage-builder`.
 - Using rich media because it is available rather than because it supports identity or audience.
 - Forcing dynamic effects after the user asked for no motion.
 - Adding heavy motion because it looks impressive rather than because it supports the person's content.
+- Copying a reference site's page, code, image, animation, or brand instead of translating it into transferable ideas.
+- Treating a reference link as proof that the user wants every part of that reference copied.
+- Skipping an inspiration read when the user provides CodePen, React Bits, SiteInspire, Pinterest, Behance, Awwwards, screenshots, or other visual references.
 - Answering mid-project design questions with generic option lists instead of inspecting the current homepage.
 - Editing UI, layout, motion, navigation, copy, or content before the user confirms the proposed adjustment.
 
@@ -48,6 +51,7 @@ Avoid these failures when using `personal-homepage-builder`.
 
 - Ignoring the existing stack and project conventions.
 - Creating one large monolithic HTML file for a real homepage when a maintainable `assets/css`, `assets/js`, and `assets/images` structure would fit.
+- Ignoring `assets/static-site-template/` for a new plain static site without explaining why another structure fits better.
 - Forcing all content into one long page when projects, writing, publications, services, or media clearly need supporting pages.
 - Adding empty supporting pages only because multi-page sites seem more complete.
 - Implementing multiple pages without confirming page names, paths, navigation, and which content belongs on each page.

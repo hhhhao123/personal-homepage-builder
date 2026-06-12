@@ -78,6 +78,31 @@ Use fewer files for very small sites, but keep CSS and JS out of `index.html` by
 |   `-- images/
 ```
 
+## Starter Template
+
+For a new plain static GitHub Pages friendly site, use `assets/static-site-template/` as the starting point when it fits the confirmed brief.
+
+The template provides:
+
+- `index.html` with semantic sections and asset links
+- `assets/css/base.css` for variables, typography, reset, and layout primitives
+- `assets/css/components.css` for navigation, buttons, cards, panels, and shared pieces
+- `assets/css/animations.css` for optional reveal behavior with `prefers-reduced-motion`
+- `assets/css/home.css` for homepage composition
+- `assets/js/main.js` for lightweight initialization
+- `assets/js/interactions.js` for progressive reveal behavior
+- `assets/data/profile.json` as an optional maintainable content seed
+- `assets/images/` for user-provided, licensed, or generated visuals
+
+Adapt the template to the confirmed brief. Do not keep placeholder text, fake links, or unused sections in the final homepage.
+
+Skip the template when:
+
+- the repository already has a coherent stack or design system
+- the confirmed stack is Jekyll, Astro, Next.js, React, or another framework
+- the user explicitly requests a different structure
+- the work is a small patch to an existing page
+
 ## Responsibilities
 
 - `index.html`: semantic document structure, sections, metadata, and links to assets.

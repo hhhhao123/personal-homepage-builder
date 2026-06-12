@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Personal homepage">
+    <title>Personal Homepage</title>
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/home.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" data-page="home">
+      <a class="site-mark" href="index.html">Name</a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero section-shell" data-reveal>
+        <p class="eyebrow">Personal homepage</p>
+        <h1>One clear sentence about who this person is.</h1>
+        <p class="hero-summary">A short public introduction that explains the person's focus, audience, and strongest signal.</p>
+        <div class="action-row" aria-label="Primary actions">
+          <a class="button primary" href="#work">View work</a>
+          <a class="button secondary" href="#contact">Contact</a>
+        </div>
+      </section>
+
+      <section id="work" class="section-shell" data-reveal>
+        <div class="section-heading">
+          <p class="eyebrow">Selected work</p>
+          <h2>Projects, writing, research, or creations.</h2>
+        </div>
+        <div class="card-grid">
+          <article class="feature-card">
+            <p class="card-kicker">Project</p>
+            <h3>Representative item</h3>
+            <p>Short description, role, proof, and link. Replace this with confirmed content from the brief.</p>
+            <a href="#" aria-label="View Representative item">View details</a>
+          </article>
+          <article class="feature-card">
+            <p class="card-kicker">Writing</p>
+            <h3>Selected note</h3>
+            <p>Use this for an article, paper, media item, service, or another public signal.</p>
+            <a href="#" aria-label="View Selected note">Read more</a>
+          </article>
+        </div>
+      </section>
+
+      <section id="about" class="section-shell two-column" data-reveal>
+        <div>
+          <p class="eyebrow">About</p>
+          <h2>What visitors should remember.</h2>
+        </div>
+        <p>Use this section for the human context: current focus, values, background, taste, or a concise story that supports the homepage goal.</p>
+      </section>
+
+      <section id="contact" class="section-shell contact-panel" data-reveal>
+        <p class="eyebrow">Contact</p>
+        <h2>Make the next action obvious.</h2>
+        <div class="link-list">
+          <a href="#">GitHub</a>
+          <a href="#">LinkedIn</a>
+          <a href="mailto:hello@example.com">Email</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Built as a lightweight personal homepage.</p>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/interactions.js"></script>
+  </body>
+</html>
+

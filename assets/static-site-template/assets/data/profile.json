@@ -1,0 +1,24 @@
+{
+  "name": "Name",
+  "role": "Public role or one-line identity",
+  "summary": "Short public introduction based on the confirmed homepage brief.",
+  "links": [
+    {
+      "label": "GitHub",
+      "url": "#"
+    },
+    {
+      "label": "Email",
+      "url": "mailto:hello@example.com"
+    }
+  ],
+  "items": [
+    {
+      "type": "project",
+      "title": "Representative item",
+      "summary": "Replace with confirmed project, writing, research, service, or media content.",
+      "url": "#"
+    }
+  ]
+}
+

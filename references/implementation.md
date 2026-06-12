@@ -19,6 +19,56 @@ Avoid by default:
 - heavy React apps for a one-page profile
 - deployment steps that require cloud configuration beyond GitHub Pages
 
+## Implementation Readiness Rule
+
+Do not treat an accepted brief as approval to start editing files. Implementation starts only after all of these are true:
+
+- the current effective requirements summary and `personal_homepage_brief` are confirmed
+- any post-brief request has a confirmed change plan or brief patch
+- project files have been inspected, or the user has approved creating a new project structure
+- companion skill routing has already happened, or each unavailable fallback is recorded
+- the agent has produced a scoped implementation plan with target files, no-touch files, placeholder policy, validation, and GitHub Pages assumptions
+- the user explicitly confirms that file edits may begin
+
+If any item is missing, stop and produce the missing planning output instead of writing code.
+
+## Brief-To-Implementation Plan
+
+Before file edits, translate the confirmed brief into a practical build plan. Keep it compact, but include enough detail that the user can catch wrong assumptions before code changes.
+
+```text
+Implementation plan from the confirmed brief:
+- Baseline: <requirements summary accepted? brief version/current effective? change plan if any?>
+- Stack decision: <existing stack preserved / plain static / Jekyll / Astro / React etc. and why>
+- Page model: <single-page / hybrid / multi-page and rationale>
+- Page map: <paths, purpose, priority, sections, missing content>
+- File plan:
+  - Create:
+  - Modify:
+  - Delete:
+  - Do not touch:
+- Brief-to-file mapping: <which brief sections become which pages/data/assets>
+- Content/data strategy: <HTML copy / assets/data/*.json / _data/*.yml / existing CMS/config>
+- Asset strategy: <images, generated assets, icons, media, alt text, fallbacks>
+- Placeholder policy: <allowed draft placeholders, removed-before-final items, no fake claims>
+- Motion plan: <level, files affected, reduced-motion fallback, no-JS behavior>
+- GitHub Pages assumptions: <relative paths, build/preview command, publish target if known>
+- Validation: <preview/build, responsive, accessibility, reduced motion, link/path checks>
+- Approval needed: <ask user to confirm before editing>
+```
+
+The `Brief-to-file mapping` is the guard against generic pages. Every created page or major section should trace back to a confirmed requirement, accepted reference interpretation, content module, or approved placeholder.
+
+## Stack Choice Guardrails
+
+- Preserve an existing coherent stack unless the user explicitly requests a rewrite or the stack cannot support the confirmed brief.
+- For ordinary GitHub Pages personal sites, prefer plain static HTML/CSS/JS or Jekyll.
+- Use Jekyll when `_data`, layouts, collections, posts, publications, or repeated content will reduce maintenance effort.
+- Use Astro or another static component framework only when the confirmed site benefits from components, content collections, or richer static routing.
+- Use React/Next-style applications only when the confirmed brief requires application-like interactivity, complex state, CMS-heavy behavior, or advanced routing.
+- Do not add dependencies only to make a small profile page feel modern.
+- When framework, CLI, SDK, or cloud behavior matters, consult the current official documentation path required by the host agent before implementation.
+
 ## Existing Project
 
 - Read project files before deciding: config, package manifests, layouts, pages, assets, styles, scripts, git status.
@@ -29,6 +79,7 @@ Avoid by default:
 - For mid-project feature or design requests, use `iteration-requests.md` and update the smallest coherent set of files.
 - Do not edit visible page behavior, content, layout, style, navigation, media, or motion until the user confirms the compact change plan.
 - Keep unrelated dirty worktree changes untouched.
+- List files that should not be touched in the implementation plan, especially user drafts, unrelated docs, generated artifacts, and previous uncommitted changes.
 
 ## From Scratch
 
@@ -58,6 +109,18 @@ Before editing, decide and state:
 - content ownership: which content appears on the homepage summary versus supporting pages
 - confirmation status: whether the user has approved this implementation plan
 
+## Content Integrity Rule
+
+Build from confirmed material only. Do not invent achievements, project outcomes, metrics, testimonials, publications, clients, employer names, photos, contact links, social handles, legal names, or locations to make the page feel complete.
+
+When material is missing:
+
+- use clearly marked draft placeholders only if the user approved them
+- prefer neutral labels such as "Project details coming soon" over fake specificity
+- record placeholders in the brief and implementation plan
+- remove or report every remaining placeholder before final delivery
+- keep private or needs-confirmation data out of rendered pages
+
 ## Motion Rule
 
 Motion is optional and must match the brief. If motion is enabled, implement it as progressive enhancement with `prefers-reduced-motion` support. Prefer `opacity` and `transform`, keep core content visible without JavaScript, and place reusable motion styles or scripts in asset files instead of inline code.
@@ -83,6 +146,8 @@ Motion is optional and must match the brief. If motion is enabled, implement it 
 - Use `profile-schema.md` as the data contract.
 - For future requests like adding a new work, social link, publication, or video, update profile data first.
 - Hard-code content only for a throwaway static page or when the existing project has no data layer and the user wants a fast edit.
+- Repeated items such as projects, publications, writing, social links, media, talks, or services should usually live in data/config when the stack supports it.
+- Each rendered item must be public-safe, confirmed, or explicitly approved as a draft placeholder.
 
 ## Media Strategy
 
@@ -123,3 +188,17 @@ For an implementation request:
 - build/test results
 - local preview instructions
 - GitHub Pages publish steps or direct push when requested
+
+## Final Implementation Review
+
+Before final delivery, produce a short review report using `quality-checklist.md`.
+
+The report must cover:
+
+- whether the built files match the confirmed brief and page map
+- whether CSS, JS, media, and data are separated or why an exception was necessary
+- remaining placeholders or missing materials
+- responsive, accessibility, reduced-motion, and link/path checks
+- GitHub Pages compatibility and local preview/build result
+- files changed and files intentionally left untouched
+- publish status, making clear that commit, push, or deployment requires explicit user approval unless already requested

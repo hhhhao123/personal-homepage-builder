@@ -172,6 +172,32 @@ Prefer multiple pages when:
 
 For hybrid sites, keep `index.html` as the strongest summary page and link to supporting pages for depth.
 
+## Page Model To File Plan
+
+Use the confirmed brief to choose the smallest maintainable structure. Do not create pages only because a template has them.
+
+| Confirmed need | Recommended structure | File-plan notes |
+| --- | --- | --- |
+| One focused identity, 3-5 compact modules, simple next action | Single page | `index.html` plus separated `assets/css/`, `assets/js/`, `assets/images/`, optional `assets/data/profile.json`. |
+| Strong first screen plus deeper projects, writing, gallery, research, or services | Hybrid | `index.html` for overview, 1-3 supporting pages for depth, shared navigation/footer, shared assets. |
+| Repeated content with detail views, articles, publications, posts, galleries, services, talks, or audience-specific paths | Multi-page | Page/index files plus data/config or collections where the stack supports it. |
+| Existing coherent project | Existing structure | Preserve stack conventions and add only the pages/assets/data needed by the confirmed plan. |
+
+Before implementation, write a file plan:
+
+```text
+Page model:
+Page map:
+- index.html:
+- <supporting page>:
+Shared assets:
+Data/config:
+Images/media:
+Do not touch:
+Reason this is not a monolithic HTML file:
+Reason this is not over-engineered:
+```
+
 ## Navigation Rules
 
 - Confirm the page map before implementation.
@@ -180,6 +206,8 @@ For hybrid sites, keep `index.html` as the strongest summary page and link to su
 - Make the current page clear with an active state.
 - Keep footer links and social/contact links consistent across pages.
 - For multi-page sites, include canonical metadata and page-specific titles/descriptions when practical.
+- Do not add navigation links to empty, fake, or unconfirmed pages.
+- If a supporting page is planned but content is missing, either keep it out of navigation until ready or label it as an approved draft placeholder.
 
 ## Implementation Rules
 
@@ -193,6 +221,10 @@ For hybrid sites, keep `index.html` as the strongest summary page and link to su
 - Avoid inline CSS and inline JS except for tiny critical snippets with a clear reason.
 - Use responsive CSS from the start.
 - Respect `prefers-reduced-motion` for animations.
+- Keep shared navigation, footer, theme variables, and repeated card styles in shared asset files instead of duplicating them across pages.
+- For repeated content, prefer `assets/data/*.json`, `_data/*.yml`, collections, or the existing project's data layer when it makes updates easier.
+- Render only confirmed public content or approved draft placeholders.
+- Do not leave template sections, placeholder links, or unused starter code in final delivery.
 
 ## When A Single HTML File Is Acceptable
 

@@ -86,6 +86,20 @@ Which direction feels closer?
 5. Minimal, quiet, typography-first.
 ```
 
+Use this only after the agent has at least some identity, audience, content, or memory-point signal. Do not make taste the first design question.
+
+If the user cannot describe visual style, ask about concrete reactions instead:
+
+```text
+Which version would feel less wrong for you?
+1. A calm page that makes people trust you quickly.
+2. A sharper page that makes your work feel technical and precise.
+3. A warmer page that shows more story and personality.
+4. A more visual page that puts projects, images, or media first.
+
+Also, choose anything to avoid: too corporate, too flashy, too cute, too dark, too much like a resume, too generic.
+```
+
 ### Motion
 
 ```text
@@ -209,6 +223,27 @@ Convert user answers into internal fields without showing the field names.
 | "I want Chinese and English" | functional requirements, content model, implementation constraints |
 | "My projects and writing need their own space" | information_architecture.page_model=hybrid or multi_page |
 | "Keep it simple; one page is enough" | information_architecture.page_model=single_page |
+
+## Scattered Answer Handling
+
+When the user gives a messy paragraph with mixed biography, links, taste, and private details, do not ask them to reorganize it. Sort it for them and ask only for the next missing decision.
+
+Use this response shape:
+
+```text
+I can work with this. I sorted it into:
+- Public facts I think are safe:
+- Things that sound useful but need confirmation:
+- Private or sensitive details I will not publish unless you explicitly approve:
+- Possible homepage sections:
+- Taste clues:
+- Missing materials or placeholders:
+
+The next useful question is:
+1.
+```
+
+Do not include sensitive details verbatim if repeating them would expose unnecessary private information. Summarize them as "private contact detail", "specific location", "unpublished project", or "sensitive personal context" when possible.
 
 ## User-Friendly Term Replacements
 

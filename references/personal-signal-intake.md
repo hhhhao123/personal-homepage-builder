@@ -104,6 +104,67 @@ Please correct anything that feels off.
 
 Update the internal delivery mode, quality tier, style direction, and motion level silently.
 
+## Discovery-To-Brief Bridge
+
+Use this bridge when the user has answered several small rounds and the agent needs to decide whether to keep asking or produce a requirements summary.
+
+Do not turn the bridge into a form. Internally sort the user's answers into five buckets:
+
+```text
+Confirmed:
+- facts the user clearly stated and can be used in the requirements summary
+
+Inferred:
+- agent interpretation that sounds likely but needs correction or confirmation
+
+Taste hypotheses:
+- atmosphere, style, density, motion, media, or layout ideas inferred from the user's words or references
+
+Open questions:
+- only the missing items that block a useful brief
+
+Materials roadmap:
+- missing links, images, project details, screenshots, proof, references, or deployment details
+```
+
+Before producing a requirements summary, the bridge must cover:
+
+- who the homepage represents
+- who should open it first
+- what visitors should remember or do next
+- at least three content modules or content types
+- what must not be public
+- whether materials are provided, missing, placeholder-ready, or private reference only
+- page shape: one page, hybrid, multi-page, or not sure with a recommended smallest fit
+- taste direction or explicit dislikes
+
+If no more than two non-critical details are missing, produce a practical requirements summary and mark those items as missing, assumed, or placeholder-ready. If a critical item is missing, ask only that item or offer 2-4 choices.
+
+Use this compact bridge response for beginners:
+
+```text
+Here is what I can build a plan from so far:
+- Confirmed:
+- My current interpretation:
+- Still missing:
+- Materials you can prepare later:
+
+Before I turn this into the homepage plan, I only need to confirm:
+1.
+2.
+```
+
+If the user wants a quick result, compress the bridge instead of skipping it:
+
+```text
+I can keep this quick. I still need the minimum plan so the page does not become generic:
+1. who should open the page first
+2. the three things it must show
+3. anything private or not ready for public use
+```
+
+After the user answers, produce the requirements summary before the `personal_homepage_brief`.
+
 ## Quick Start: 5 Questions
 
 Use this when the user starts from zero or wants to save tokens.

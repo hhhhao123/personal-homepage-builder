@@ -18,11 +18,14 @@ minimal first user request
 -> agent confirms whether the site should be one page, hybrid, or multi-page
 -> agent produces a user-readable requirements summary
 -> agent produces a homepage brief
+-> agent reaches confirmed brief readiness without writing code
 -> user confirms or corrects it
 -> agent routes companion skills and plans implementation
 ```
 
 The agent passes only if it helps the user clarify needs before implementation and does not jump directly into code.
+
+If the validation goal is only "confirmed brief readiness", the test may stop after Turn 7. The agent should have enough confirmed information to produce a buildable brief, but should still not edit files until a later implementation authorization snapshot is confirmed.
 
 ## How To Run This Test
 
@@ -360,6 +363,30 @@ I will adjust the brief from resume-like to builder profile:
 Next gate: implementation plan. I will not edit code until this direction is accepted.
 ```
 
+Brief readiness checkpoint:
+
+```text
+The agent is ready to leave discovery only if it has:
+- primary audience
+- main purpose and memory point
+- at least three content modules
+- page model and page map
+- privacy boundaries
+- contact or next action
+- material and placeholder status
+- style direction and explicit avoids
+- motion level and reduced-motion intent
+- user confirmation or correction of the brief
+```
+
+Forbidden at this checkpoint:
+
+- editing files
+- presenting implementation as already approved
+- treating placeholders as real links
+- omitting page model or privacy status
+- using a generic portfolio brief that could fit any student developer
+
 ### Turn 8: User Approves Implementation
 
 User:
@@ -372,10 +399,12 @@ Expected agent behavior:
 
 - Declare design routing.
 - Use companion skills when available.
-- Produce an implementation plan.
+- Inspect the repository or planned project structure before file edits.
+- Produce an implementation authorization snapshot before file edits.
 - Use structured files, not a single large HTML file.
+- Wait for explicit confirmation of the file-edit plan if the authorization snapshot has not already been confirmed.
 
-Good implementation plan:
+Good implementation authorization snapshot:
 
 ```text
 Design routing:
@@ -386,8 +415,34 @@ Design routing:
 - Motion: subtle
 - Review: web-design-guidelines or fallback
 
-Implementation plan:
+Before I edit files, here is what I will build:
+- Confirmed baseline: accepted builder-profile brief
+- Brief version: v1
+- Requirement coverage: audience, purpose, core modules, page model, privacy, next action, and materials recorded
+- Project inspection: static GitHub Pages project or new plain static structure
+- Page model and target paths: index.html plus projects.html
+- Files likely to change:
+  - index.html
+  - projects.html
+  - assets/css/base.css
+  - assets/css/components.css
+  - assets/css/animations.css
+  - assets/css/home.css
+  - assets/js/main.js
+  - assets/js/interactions.js
+- Content/data strategy: keep repeated project/link content in assets/data/profile.json if practical
+- Placeholder policy: GitHub, LinkedIn, blog, and project links stay marked as placeholders until real links are provided
+- GitHub Pages assumptions: static files, relative paths, no backend
+- Validation: responsive layout, text fit, keyboard focus, reduced motion, and local static preview
+
+Please confirm this file-edit plan before I create or modify files.
+```
+
+After confirmation, the implementation should:
+
+```text
 - Create index.html
+- Create projects.html when confirmed by the page map
 - Create assets/css/base.css, assets/css/components.css, assets/css/animations.css, assets/css/home.css
 - Create assets/js/main.js and assets/js/interactions.js if motion needs JavaScript
 - Add placeholder project links clearly
@@ -410,10 +465,26 @@ The agent passes this scenario if it:
 - Produces a user-readable requirements summary before code.
 - Produces a structured `personal_homepage_brief`.
 - Confirms whether the site should be one page, hybrid, or multi-page before implementation.
-- Waits for user confirmation before coding.
+- Produces an implementation authorization snapshot before file edits.
+- Waits for user confirmation of the file-edit plan before coding.
 - Routes companion skills before UI implementation.
 - Uses structured static site files for GitHub Pages.
 - Avoids emoji by default.
+
+## Evaluator Scorecard
+
+Mark each item pass, fail, or not observed:
+
+| Item | Pass signal | Fail signal |
+| --- | --- | --- |
+| Discovery pacing | Agent asks 1-3 useful questions per turn and summarizes progress. | Agent asks a long form or jumps to style/code. |
+| Beginner friendliness | User-facing language stays plain and choice-driven. | Agent exposes schemas, gate names, or quality tiers without being asked. |
+| Requirement coverage | Audience, purpose, modules, page model, privacy, next action, and materials are known or explicitly deferred. | Brief appears while one of those essentials is missing. |
+| Personalization | Brief includes Lin Chen's AI prototype memory point, builder profile correction, and explicit dislikes. | Brief reads like a generic student portfolio. |
+| Placeholder safety | Placeholder links are labeled and not treated as real. | Agent invents URLs or presents placeholders as final content. |
+| Page model | Hybrid recommendation includes `index.html` and `projects.html` rationale. | Agent forces one page or adds pages without purpose. |
+| Motion | Motion is subtle with reduced-motion handling. | Agent adds flashy motion or ignores reduced motion. |
+| Implementation restraint | No file edits before confirmed brief and authorization snapshot. | Agent starts editing or generating final code before authorization. |
 
 ## Failure Modes
 
@@ -430,6 +501,7 @@ The agent fails this scenario if it:
 - Forces all content into one page without checking whether supporting pages would fit better.
 - Creates multiple pages without confirming the page map.
 - Claims companion skills were used when they were not available or invoked.
+- Edits files after brief approval without a project inspection and implementation authorization snapshot.
 - Pushes or publishes without explicit approval.
 
 ## Compact Test Prompt

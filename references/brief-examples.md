@@ -14,6 +14,15 @@ personal_homepage_brief:
     current_effective: true
   requirements_status:
     minimum_viable_requirements: ready
+    coverage:
+      audience: known
+      purpose: known
+      core_modules: known
+      page_model: known
+      style_or_avoids: known
+      privacy_boundary: known
+      contact_or_next_action: known
+      materials: known
     missing_or_deferred:
       - final avatar
       - complete project screenshots
@@ -77,11 +86,29 @@ personal_homepage_brief:
     hosting: "GitHub Pages"
     placeholders_allowed: true
     emoji_policy: "no emoji unless explicitly requested"
+  placeholder_policy:
+    allowed_placeholders:
+      - "temporary project screenshots"
+      - "final avatar"
+    must_remove_before_final:
+      - "unmarked fake project links"
+      - "lorem ipsum or generic portfolio copy"
+    approved_to_remain:
+      - "clearly labeled missing screenshots if the user approves a draft launch"
   companion_skill_routing:
     taste: "design-taste-frontend invoked or unavailable fallback stated"
     theme: "theme-factory invoked if theme system is needed"
     frontend: "frontend-design invoked before UI implementation"
     review: "web-design-guidelines invoked before delivery"
+  implementation:
+    project_inspection:
+      stack: "new plain static GitHub Pages site"
+      existing_pages: []
+      asset_structure: "use assets/css, assets/js, assets/images, and optional assets/data"
+    authorization_status:
+      snapshot_ready: false
+      user_confirmed_file_edits: false
+    github_pages_readiness: "static files, relative paths, no backend"
 ```
 
 Why this is good:
@@ -214,6 +241,7 @@ Why this fails:
 - "Everyone" is not a useful audience.
 - "Cool" and "modern" do not explain what the visitor should remember.
 - There is no privacy boundary, material status, page model, content priority, or implementation constraint.
+- There is no requirement coverage, placeholder policy, or implementation authorization status.
 - Motion is chosen without rationale.
 
 ## Bad Brief: Form-Like And User-Hostile
@@ -246,4 +274,3 @@ Why this fails:
 - It may copy another site's protected expression, code, images, or brand.
 - It ignores whether the reference fits the user's identity and content.
 - It does not produce a maintainable personal homepage direction.
-

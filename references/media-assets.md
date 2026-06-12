@@ -85,6 +85,17 @@ Do not depend on scraping thumbnails from platforms when that requires authentic
 - Do not publish private family photos, private social media screenshots, copyrighted music, or copyrighted video unless the user confirms public rights.
 - If rights are unclear, use the media as private inspiration only.
 
+## Implementation Rules
+
+- Save public site media under the repository's asset structure, usually `assets/images/`, `assets/video/`, or an existing equivalent.
+- Do not reference private local absolute paths in deployable files.
+- Provide meaningful alt text for informative images and empty alt text for purely decorative images.
+- Use stable aspect ratios or media containers so images and video do not cause large layout shifts.
+- Use poster images for video and visible controls for audio.
+- Keep media optional when the homepage goal can be met with typography and layout.
+- If a generated raster asset is used, save it with a descriptive filename and record its role in the asset strategy.
+- If a media placeholder remains, label what it replaces and whether it is safe to publish as a draft.
+
 ## Brief Fields
 
 Add these fields when media is involved:

@@ -4,9 +4,22 @@ Use only the questions needed. Ask 1-3 at a time, then summarize what changed. P
 
 Every run needs a clarification dialogue. If the user starts blank, use the full discovery path. If the user uploads rich materials, use a shorter confirmation path focused on intent, audience, privacy, and what the materials should emphasize.
 
+## Round Selection Rule
+
+Before each question round, choose the next missing decision that most affects the brief:
+
+1. public identity, audience, or memory point
+2. must-show content and next action
+3. privacy boundary and public-use status
+4. page shape and material readiness
+5. taste, dislikes, references, and motion
+6. implementation constraints
+
+Ask no more than three questions. If a user answer contains several areas at once, summarize and move to the highest-impact missing item instead of restarting the checklist.
+
 ## Stage 0: Source Materials
 
-- Which mode best fits this request: quick launch, deep personalization, media enhanced, or publish/update?
+- Are we aiming for a quick first version, a more personalized version, a media-rich version, or a publish/update task?
 - Do you already have content to upload or paste? Examples: resume/CV, bio, portfolio list, publications, service description, social profile text, article draft, personal notes, link collection.
 - Should I treat the provided material as public-ready content, private reference, or mixed material that needs confirmation?
 - What should I prioritize from the material: credibility, life story, projects, services, social presence, creative personality, or career opportunities?
@@ -81,7 +94,7 @@ Use this even when source materials are detailed:
 - Does the user need Chinese, English, bilingual Chinese/English, or another language setup?
 - Does the user need a downloadable resume, blog, analytics, contact form, or CMS?
 - Is speed more important than maximum personalization?
-- Which output tier fits: Basic, Profile, Creator, Academic, or Premium?
+- Should this first version stay lightweight, or should it spend more effort on custom visuals, media, and polish?
 
 ## Reflection Prompt
 
@@ -89,8 +102,6 @@ After each round, summarize:
 
 ```text
 Current understanding:
-- Delivery mode:
-- Quality tier:
 - Source materials:
 - Extracted public facts:
 - Needs confirmation:
@@ -106,4 +117,7 @@ Current understanding:
 - Visual direction:
 - Avoid:
 - Open decisions:
+ - Materials to prepare next:
 ```
+
+Keep delivery mode, quality tier, and internal gate status out of beginner-facing summaries unless the user asks for process details.

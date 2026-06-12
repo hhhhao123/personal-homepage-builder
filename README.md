@@ -52,10 +52,13 @@ The skill now emphasizes:
 - brief lifecycle rules for patches, new versions, and post-launch changes
 - single-page, hybrid, or multi-page page-map decisions before implementation
 - explicit confirmation before editing existing page adjustments
+- implementation authorization snapshots before file edits
 - required output gates before style, implementation, review, and publish
+- brief-to-site audits before final delivery
 - explicit companion skill routing for taste, theme, frontend, media, and review work
 - structured static site implementation instead of monolithic HTML by default
 - iteration handling for existing or in-progress homepages when users ask for new ideas or scoped changes
+- post-first-version visual iteration when the first result feels too plain, generic, or not like the user
 - optional motion design that can be disabled, subtle, moderate, or expressive depending on the person, audience, and content
 - forward-test prompts for future regression checks
 - no emoji by default unless the user explicitly asks for emoji
@@ -276,6 +279,7 @@ Depending on the request and available materials, the agent can produce:
 - visual direction, color, typography, image, media, and optional motion guidance
 - a GitHub Pages compatible static site or updates to an existing site, with page files, CSS, JavaScript, images, and optional data kept maintainable by default
 - scoped suggestions for existing pages, including where an effect belongs, why it fits, implementation complexity, and risks
+- visual iteration diagnosis for first versions that need stronger style, better elements, references, or more fitting motion
 - confirmed change plans before editing existing page adjustments
 - brief patches or new brief versions when later changes alter the confirmed direction
 - a publish-ready commit and push workflow when the user asks for GitHub publishing
@@ -359,6 +363,7 @@ personal-homepage-builder/
     |-- beginner-validation-scenario.md # End-to-end beginner validation script
     |-- content-intake.md            # Source material extraction schema
     |-- delivery-modes.md            # Quick/deep/media/publish routing
+    |-- enforcement-checklist.md     # Hard-stop authorization, placeholder, and brief-to-site checks
     |-- forward-tests.md             # Test prompts for future validation
     |-- github-pages-bootstrap.md    # GitHub Pages setup guidance
     |-- homepage-brief.md            # Canonical homepage brief schema
@@ -378,6 +383,7 @@ personal-homepage-builder/
     |-- site-structure.md            # Default static site file organization
     |-- skill-routing.md             # Companion skill routing and fallbacks
     |-- social-links.md              # Contact and platform display rules
+    |-- visual-iteration.md          # First-version visual diagnosis and revision workflow
     `-- style-directions.md          # Style direction translation patterns
 ```
 

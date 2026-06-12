@@ -19,6 +19,59 @@ Produce a requirements summary before implementation when any of these are true:
 Here is the plan I would build from. Please check whether it represents you correctly. If anything feels wrong, tell me which part to change before I start implementation.
 ```
 
+## Compact Requirements Summary
+
+Use this before the full requirements document or brief when the user is a beginner, wants a quick result, or has provided scattered material. It is the bridge between discovery and `personal_homepage_brief`.
+
+Keep it short and user-readable:
+
+```markdown
+## Homepage Plan To Confirm
+
+### What I Understand
+
+- Public identity:
+- Primary visitors:
+- What visitors should remember:
+- Main action visitors should take:
+- Must-show content:
+
+### What I Am Inferring
+
+- Positioning:
+- Visual direction:
+- Page shape:
+- Motion:
+
+### Boundaries
+
+- Do not publish:
+- Needs confirmation before public use:
+- Placeholder-ready:
+
+### Materials Roadmap
+
+- Provided:
+- Missing but useful later:
+- Safe placeholder plan:
+
+### Proposed Structure
+
+- Page model:
+- Homepage sections:
+- Supporting pages, if any:
+
+Please confirm what feels right, what feels wrong, and anything private or exaggerated before I turn this into the build brief.
+```
+
+Rules:
+
+- Keep confirmed facts separate from inference.
+- List missing materials without blocking progress when placeholders are safe.
+- Do not include raw private details; describe their category instead.
+- Do not use the compact summary as implementation approval.
+- After the user confirms or corrects it, create the `personal_homepage_brief`.
+
 ## Requirements Document
 
 ```markdown
@@ -65,6 +118,19 @@ Here is the plan I would build from. Please check whether it represents you corr
 - Public/private boundaries:
 - Contact or next action:
 - Material status:
+
+### Coverage Status
+
+| Item | Status | Notes |
+| --- | --- | --- |
+| Audience | known / missing / explicitly deferred | |
+| Purpose | known / missing / explicitly deferred | |
+| Core modules | known / missing / explicitly deferred | |
+| Page model | known / missing / explicitly deferred | |
+| Style or avoids | known / missing / explicitly deferred | |
+| Privacy boundary | known / missing / explicitly deferred | |
+| Contact or next action | known / missing / explicitly deferred | |
+| Materials | known / missing / explicitly deferred | |
 
 ## 5. Page Structure
 
@@ -161,20 +227,36 @@ Here is the plan I would build from. Please check whether it represents you corr
 
 ## 12. Implementation Plan
 
+- Project inspection:
 - Site structure:
 - Page model and page map:
 - Target files:
 - Asset organization:
+- Content/data strategy:
+- Placeholder policy:
+- GitHub Pages assumptions:
+- Companion skill routing:
 - Starter template decision:
 - Validation:
 - Publishing:
 - Confirmation before editing:
 
-## 13. Change Baseline
+## 13. Final Review Baseline
+
+Before final delivery, the built site should be checked against this requirements document and the current brief:
+
+- identity, audience, purpose, and memory point are visible
+- confirmed sections and page map are present
+- visual direction, explicit avoids, and motion level are respected
+- public/private boundaries are honored
+- placeholders and fake content are removed or explicitly approved
+- GitHub Pages paths and publishing assumptions work
+
+## 14. Change Baseline
 
 This requirements document and the confirmed brief are the current build baseline. If identity, audience, content priority, page model, privacy, or visual direction changes, update the affected section and reconfirm before implementation continues.
 
-## 14. Adjustment Approval Rule
+## 15. Adjustment Approval Rule
 
 For later page adjustments, do not edit files from a broad request alone. First summarize:
 
@@ -186,7 +268,7 @@ For later page adjustments, do not edit files from a broad request alone. First 
 
 Then wait for explicit user confirmation.
 
-## 15. Brief Lifecycle Rule
+## 16. Brief Lifecycle Rule
 
 - Small visual or technical adjustments may keep the current brief unchanged.
 - Changes to confirmed sections, page map, motion level, content items, links, or media should patch the current brief.

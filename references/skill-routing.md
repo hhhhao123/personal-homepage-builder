@@ -19,6 +19,7 @@ Use this file to decide which companion skills or equivalent capabilities to inv
 - If a companion skill is installed or otherwise available in the current agent runtime and its stage is applicable, invocation is mandatory. Use the skill before producing the matching design, implementation, or review output.
 - Do not merely name a companion skill in the routing statement. The routing statement must reflect actual use: `invoked`, `unavailable fallback`, or `not applicable`.
 - Do not skip an available companion skill because the base agent can do the work without it. The purpose of this skill is to route to specialized taste, theme, frontend, media, and review support when available.
+- During post-first-version visual iteration, do not call every companion skill automatically. Use `visual-iteration.md` to decide which installed skills are actually relevant, then invoke those relevant skills before the matching output.
 - Before UI customization, invoke taste routing first when `design-taste-frontend`, `taste-skill`, `taste`, or an equivalent skill is available.
 - Before choosing or finalizing colors, type, spacing, tokens, or visual system rules, invoke `theme-factory` or an equivalent theme skill when available.
 - Before implementation or substantial visual redesign, invoke `frontend-design` or an equivalent frontend/UI skill when available.
@@ -29,6 +30,29 @@ Use this file to decide which companion skills or equivalent capabilities to inv
 - Do not install companion skills automatically.
 - Do not claim a companion skill was used unless it was actually available and invoked.
 - `Not applicable` is allowed only with a concrete reason, such as "no raster asset needed", "static HTML/CSS site, not a complex React artifact", or "no external framework docs needed".
+
+## Implementation Evidence
+
+The implementation plan must include routing evidence, not only future intentions:
+
+- Taste/design direction: invoked before finalizing visual direction, or fallback recorded.
+- Theme: invoked before finalizing color/type/spacing tokens when that work is needed, or fallback recorded.
+- Frontend/UI: invoked before building or substantially redesigning visible UI when available, or fallback recorded.
+- Media/image: invoked when generated raster imagery, portrait treatment, textures, or original visual assets are needed, or marked not applicable.
+- Artifact builder: invoked only for confirmed complex React/Tailwind/shadcn or multi-state artifacts, or marked not applicable.
+- Review: planned before implementation and actually invoked before final delivery when available, or fallback recorded.
+
+If a companion skill is unavailable, continue with the relevant bundled reference files unless the user explicitly made that skill a hard requirement. Do not block a GitHub Pages site only because an optional companion skill is missing.
+
+## Iteration Routing
+
+For post-brief changes, route only the skills relevant to the classified change:
+
+- No brief update needed: invoke companion skills only if the visible UI/design/motion work needs them.
+- Implementation-only fix: usually no taste/theme/frontend routing is needed unless the fix changes visible UI; still use review fallback or `quality-checklist.md` when accessibility, responsive, motion, or GitHub Pages compatibility is involved.
+- Brief patch: invoke the relevant taste, theme, frontend, media, or motion route before producing the updated plan when that area changes.
+- New brief version: rerun the applicable design routing because the old taste/theme/frontend assumptions may no longer apply.
+- Publish-only action: do not invoke design/frontend skills unless validation reveals a visible defect; use publish checks and git scope instead.
 
 ## Routing Statement Template
 
@@ -41,6 +65,22 @@ Design routing:
 - Frontend/UI: <invoked skill, unavailable fallback, or not applicable with reason>
 - Media: <invoked skill, unavailable fallback, or not applicable with reason>
 - Motion: <level and rationale, or none>
+- Artifact complexity: <web-artifacts-builder invoked, fallback, or not applicable with reason>
+- Review: <planned invoked skill, unavailable fallback, or not applicable with reason>
+```
+
+## Visual Iteration Routing Template
+
+Use this when the user is unhappy with the first version or asks to revise style:
+
+```text
+Visual iteration routing:
+- Diagnosis route: <visual-iteration.md used>
+- Taste: <invoked skill, unavailable fallback, or not applicable with reason>
+- Theme: <invoked skill, unavailable fallback, or not applicable with reason>
+- Frontend/UI: <invoked skill, unavailable fallback, or not applicable with reason>
+- Media/Image: <invoked skill, unavailable fallback, or not applicable with reason>
+- Motion: <level, change, and reduced-motion fallback>
 - Artifact complexity: <web-artifacts-builder invoked, fallback, or not applicable with reason>
 - Review: <planned invoked skill, unavailable fallback, or not applicable with reason>
 ```

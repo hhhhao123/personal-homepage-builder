@@ -9,6 +9,17 @@ Use the profile schema as the long-term editable data contract for a personal ho
 - Give agents a stable place to add or revise content later.
 - Track public/private and confirmation state for safety.
 
+## Implementation Placement Rule
+
+Use profile data when content is repeated, likely to change, or safer to manage outside layout code. Good candidates include projects, publications, writing, talks, services, social links, media, education, experience, and SEO metadata.
+
+Render only items that are public-safe:
+
+- `visibility: public` and `status: confirmed`
+- or an explicitly approved draft placeholder recorded in the brief
+
+Do not render `private`, `hidden`, `needs_confirmation`, or `outdated` items as public content unless the user confirms that specific use. Do not create fake profile data to make a page look full.
+
 ## Recommended Shape
 
 Use YAML for Jekyll/GitHub Pages when possible, for example `_data/profile.yml`. JSON is acceptable for plain static sites.
@@ -126,6 +137,8 @@ When the user asks to add or update content:
 4. Ask confirmation for public visibility if needed.
 5. Update the rendered page only if the current site does not already render from profile data.
 6. Build/test the site.
+
+For existing static pages with no data layer, add one only when it reduces future maintenance. A tiny one-time copy edit does not need a new data architecture.
 
 ## SEO And Sharing
 

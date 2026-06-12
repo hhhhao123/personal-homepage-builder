@@ -73,6 +73,72 @@ content_intake:
 - If source materials conflict, ask the user which is current.
 - If content sounds inflated, keep wording factual and grounded.
 
+## Scattered Material Triage
+
+When the user provides scattered text, links, resume/CV fragments, screenshots, or inspiration references, first triage the input before asking follow-up questions.
+
+Use this internal split:
+
+```yaml
+triage:
+  confirmed_public_candidates:
+  needs_confirmation:
+  private_or_sensitive_quarantine:
+  taste_or_reference_signals:
+  homepage_content_candidates:
+  missing_or_placeholder_ready:
+  contradictions_or_outdated_items:
+```
+
+Rules:
+
+- Do not ask the user to reformat the material.
+- Do not treat a link, screenshot, or resume line as permission to publish it.
+- Do not repeat sensitive details verbatim unless needed for confirmation.
+- Ask only 1-3 follow-up questions after triage.
+- If references are included, separate content facts from visual inspiration.
+
+Use this user-facing summary:
+
+```text
+I sorted the material into:
+- likely public homepage material:
+- useful but needs confirmation:
+- private or sensitive, so I will not publish it by default:
+- possible style/reference clues:
+- missing items or placeholders:
+
+Before I turn this into a homepage plan, I only need to confirm:
+1.
+2.
+3.
+```
+
+## Privacy Quarantine
+
+If the user over-shares private information, quarantine it instead of treating it as normal content.
+
+Quarantine examples:
+
+- phone number, home address, ID number, private email
+- precise location if not clearly intended for public use
+- legal name when the user may prefer a display name
+- unpublished work, confidential employer/client context, class projects, medical/family/personal context
+- private photos, private social screenshots, unlicensed images or music
+
+For quarantined material:
+
+- mark as `private_or_sensitive_quarantine`
+- never put it in the brief as public content
+- ask whether to omit it, generalize it, or use it only as private context
+- if repeated in a summary, describe the category rather than the exact detail when possible
+
+Example:
+
+```text
+I noticed a few details that may be private, such as direct contact or exact location information. I will not publish those by default. Should the site use only a public email/social link, or should we omit direct contact for now?
+```
+
 ## Turning Raw Text Into A Homepage
 
 1. Extract facts and story material.

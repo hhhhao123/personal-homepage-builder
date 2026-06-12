@@ -18,6 +18,17 @@ If the user wants the page to feel more dynamic but has not specified a style, r
 
 For existing or in-progress pages, inspect the current design before recommending motion. Suggest the few motion patterns that fit the actual sections instead of listing every possible animation.
 
+## Motion Change Control
+
+When motion changes after a brief exists, classify the change before editing:
+
+- Adding or refining motion within the confirmed level, such as subtle hover feedback when the brief already allows subtle motion, is usually no brief update needed.
+- Adding a new motion pattern that should become part of the design plan is a brief patch.
+- Changing `level: none` to `expressive`, or moving from restrained academic motion to strong creator-style motion, is usually a new brief version because it changes the visitor experience and design direction.
+- Fixing missing `prefers-reduced-motion`, keyboard focus feedback, or a layout-shifting animation bug is usually an implementation-only fix if the intended motion level stays the same.
+
+Every motion iteration plan must state the affected sections, motion level, reduced-motion fallback, validation, risk, and confirmation status.
+
 ## Motion Levels
 
 Use one of these levels in the homepage brief:
@@ -159,3 +170,16 @@ For plain static sites:
   }
 }
 ```
+
+## Implementation Acceptance Criteria
+
+Motion implementation passes only when:
+
+- the implemented level matches the confirmed brief: `none`, `subtle`, `moderate`, or `expressive`
+- `level: none` removes decorative reveal, parallax, cursor, and autoplay motion
+- `prefers-reduced-motion` has an explicit CSS or JS fallback
+- core content is visible without JavaScript
+- hover effects have focus-visible or keyboard-accessible equivalents where relevant
+- animations use `opacity` and `transform` where practical and do not cause large layout shifts
+- motion code lives in `assets/css/animations.css`, `assets/js/interactions.js`, or the existing project's equivalent unless a small exception is justified
+- final review states what was checked for reduced motion

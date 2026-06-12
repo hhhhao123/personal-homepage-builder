@@ -14,6 +14,8 @@ Avoid these failures when using `personal-homepage-builder`.
 - Accepting source materials as final intent without user confirmation.
 - Repeating abstract questions after the user says they do not know, instead of offering choices or a probe sketch.
 - Refusing to provide any concrete direction until a perfect requirements document exists.
+- Marking requirements as ready without showing which essentials are known, missing, or explicitly deferred.
+- Treating a quick path as permission to skip audience, purpose, privacy, next action, or at least three content modules.
 
 ## Brief Failures
 
@@ -30,6 +32,11 @@ Avoid these failures when using `personal-homepage-builder`.
 - Treating a user's broad adjustment request as permission to edit files before a concrete change plan is confirmed.
 - Continuing to implement from an old brief after audience, purpose, page model, privacy, content priority, or visual direction changed.
 - Creating multiple competing active briefs instead of marking one current effective version.
+- Creating unnecessary new brief versions for typo fixes, link replacements, spacing fixes, or implementation-only bugs.
+- Treating implementation-only fixes or publish-only actions as permission to change identity, content, page structure, or design direction.
+- Claiming a brief is confirmed because the agent summarized it, even though the user never accepted or corrected it.
+- Leaving placeholders, fake content, or missing assets untracked in the brief.
+- Omitting the maintainability plan for repeatable content such as projects, posts, links, publications, media, or services.
 
 ## Design Failures
 
@@ -46,6 +53,10 @@ Avoid these failures when using `personal-homepage-builder`.
 - Skipping an inspiration read when the user provides CodePen, React Bits, SiteInspire, Pinterest, Behance, Awwwards, screenshots, or other visual references.
 - Answering mid-project design questions with generic option lists instead of inspecting the current homepage.
 - Editing UI, layout, motion, navigation, copy, or content before the user confirms the proposed adjustment.
+- Treating first-version dissatisfaction as either a total failure or automatic permission to redesign without diagnosis.
+- Calling every companion skill for a small iteration instead of selectively invoking the relevant available skills.
+- Listing companion skills as recommendations without actually invoking applicable installed skills before producing the matching design, implementation, or review output.
+- Asking the user to explain the design solution when they only know that the current page feels wrong.
 
 ## Implementation Failures
 
@@ -56,19 +67,26 @@ Avoid these failures when using `personal-homepage-builder`.
 - Adding empty supporting pages only because multi-page sites seem more complete.
 - Implementing multiple pages without confirming page names, paths, navigation, and which content belongs on each page.
 - Generating HTML/CSS/JS during the requirement-discovery phase unless the user explicitly asked for a disposable prototype and a minimal brief exists.
+- Editing files without a project inspection snapshot that covers stack, pages, routes, assets, data/config files, deployment clues, and user changes to preserve.
+- Editing files without an implementation authorization snapshot that names the confirmed baseline, target files, placeholder policy, validation plan, and explicit user confirmation.
 - Hard-coding maintainable profile data when a data file or schema would fit better.
 - Referencing generated assets that were not saved into the project.
 - Adding backend-only features to a simple GitHub Pages site.
+- Using absolute local paths, unsupported runtime features, or external dependencies that break GitHub Pages without documenting the assumption.
 - Adding motion that ignores `prefers-reduced-motion`, causes layout shift, blocks reading, or depends on JavaScript for core content.
 - Rebuilding the whole homepage for a small iteration request when a scoped edit would solve it.
 - Applying "you decide" or "make it better" as implicit approval to change files without discussion.
 - Updating code for a brief-impacting change without patching or versioning the brief first.
+- Publishing or pushing as part of a normal implementation pass without a publish-only plan and explicit approval.
 - Staging unrelated files.
 
 ## Review Failures
 
 - Declaring completion without build/test or a stated reason.
 - Skipping responsive, accessibility, text-fit, and visual hierarchy checks.
+- Skipping the brief-to-site audit and delivering a page that no longer matches the confirmed identity, audience, page map, visual direction, motion level, or privacy boundaries.
 - Shipping visible placeholder copy.
+- Shipping fake names, fake projects, fake metrics, fake testimonials, fake links, missing image references, or unapproved private information.
+- Claiming GitHub Pages readiness without checking static paths, internal links, unsupported features, and publish assumptions.
 - Pushing without user approval.
 - Force pushing without explicit overwrite approval.

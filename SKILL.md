@@ -1,6 +1,6 @@
 ---
 name: personal-homepage-builder
-description: Translate vague personal homepage or small personal site ideas into clear requirements, identity positioning, audience, content, taste, constraints, source materials, media assets, page structure, and social links, then orchestrate a gated workflow that produces a confirmed homepage/site plan, brief, and GitHub Pages friendly implementation. Use when users want to create, redesign, personalize, refine, extend, or publish a github.io homepage, personal homepage, portfolio, academic profile, creator site, resume site, freelancer page, or personal brand site, including when they start from zero, do not know what information, page structure, or style they need, or have an existing/in-progress homepage and ask for new ideas, dynamic effects, UI changes, section additions, or better design suggestions before implementation.
+description: Translate vague personal homepage or small personal site ideas into clear requirements, identity positioning, audience, content, taste, constraints, source materials, media assets, page structure, and social links, then orchestrate a gated workflow that produces a confirmed homepage/site plan, brief, and GitHub Pages friendly implementation. Use when users want to create, redesign, personalize, refine, extend, iterate, or publish a github.io homepage, personal homepage, portfolio, academic profile, creator site, resume site, freelancer page, or personal brand site, including when they start from zero, do not know what information, page structure, or style they need, or have an existing/in-progress/first-version homepage and ask for new ideas, dynamic effects, UI changes, section additions, visual iteration, style improvements, reference-guided changes, or better design suggestions before implementation.
 ---
 
 # Personal Homepage Builder
@@ -21,10 +21,14 @@ Keep two layers separate:
 - Treat this skill as the controlling workflow for the rest of the current homepage-design conversation once it is invoked, until the user explicitly exits it or gives a superseding instruction.
 - Do not jump directly into page design, UI customization, implementation, publishing, or repository pushes before the relevant gate in `references/output-contracts.md` has passed.
 - Do not edit homepage/site code for any visible page change before discussing the intended change and receiving explicit user confirmation. This includes layout, content, copy, style, motion, media, navigation, page structure, and component behavior changes, even when the user initially asks to "adjust", "improve", "add", or "make it better".
-- Do not let the implemented site drift away from the confirmed brief. For every post-brief change, use `references/brief-lifecycle.md` to decide whether the current brief stays unchanged, receives a patch, or must become a new brief version before implementation.
+- When the user is dissatisfied with a first version or says the page does not feel right, use `references/visual-iteration.md` to diagnose the issue, route only the necessary companion skills, propose a revision plan, and wait for confirmation before editing code.
+- Do not let the implemented site drift away from the confirmed brief. For every post-brief change, use `references/brief-lifecycle.md` to classify it as no brief update needed, brief patch, new brief version, implementation-only fix, or publish-only action before implementation or publishing.
+- Before creating or editing files for any visible homepage/site change, produce the implementation authorization snapshot in `references/enforcement-checklist.md`. The snapshot must prove the confirmed baseline, project inspection, companion skill routing or fallback, target files, content/data strategy, placeholder policy, GitHub Pages assumptions, validation plan, and explicit user confirmation.
+- Before final delivery, run the brief-to-site audit in `references/enforcement-checklist.md`. If the implemented page no longer matches the confirmed brief, fix the mismatch or reopen the affected requirement with the user before claiming completion.
 - Do not begin by asking "what style do you want?" Ask grounded questions about identity, audience, work, memory point, taste signals, dislikes, privacy boundaries, and public goals.
 - Do not make beginners fill an engineering form. Translate their plain-language answers into internal requirements silently.
 - Do not begin implementation before the minimum viable requirements gate, a confirmed requirements summary, and a confirmed homepage brief. A compressed quick path still needs a minimal brief.
+- A confirmed brief is not permission to edit files. Before implementation, derive a scoped file plan from the current effective brief, explain the stack/page-model/data/asset/motion decisions, list files that will and will not be touched, and receive explicit user confirmation.
 - Treat code generation as phase 2. In phase 1, produce conversation summaries, direction cards, text wireframes, probe sketches, and requirements documents, not final HTML/CSS/JS.
 - When a relevant companion skill is available in the current agent environment, actually invoke it at the matching stage before producing that stage's design, implementation, or review output. Do not merely mention companion skills, and do not skip them because general model ability seems sufficient.
 - Do not use emoji in questions, briefs, homepage copy, UI labels, status text, markdown, generated content, or final deliverables unless the user explicitly asks for emoji.
@@ -57,14 +61,14 @@ Follow these phases in order unless the user explicitly requests a smaller path 
 4. **Reflect**: produce an identity reflection that separates confirmed facts, inferred positioning, tentative taste hypotheses, and open questions. Gate this with `references/output-contracts.md`.
 5. **Probe Sketch**: when the user is vague or reactive, optionally show a non-code probe artifact from `references/beginner-conversation-patterns.md`: direction cards, a rough text wireframe, a page map, an inspiration read, or a "plain version vs richer version" contrast. Use this to invite correction, not to bypass gates.
 6. **Taste Discovery**: if visual references are present, first translate them with `references/inspiration-intake.md` so the agent knows what to borrow, reject, and adapt. Then use `design-taste-frontend`, `taste-skill`, `taste`, or an equivalent taste/design-direction skill when available. If unavailable, use `references/style-directions.md` and say what fallback is being used. Discuss motion as an optional design choice using `references/motion-design.md`.
-7. **Requirements Confirmation**: produce a user-readable requirements summary or `requirements.md`-style spec using `references/requirements-template.md`. Confirm the requirements baseline before implementation.
-8. **Brief**: create a `personal_homepage_brief` using `references/homepage-brief.md`. Include whether the project is a single-page homepage, a multi-page personal site, or a hybrid landing page with supporting pages. Do not implement until the user accepts or corrects it.
+7. **Requirements Confirmation**: produce a user-readable requirements summary or `requirements.md`-style spec using `references/requirements-template.md`. For beginners, quick paths, or scattered material, use the compact requirements summary first: confirmed facts, inferred positioning, missing materials, placeholders, privacy boundaries, page shape, and assumptions. Confirm the requirements baseline before implementation.
+8. **Brief**: create a `personal_homepage_brief` using `references/homepage-brief.md`. For beginner users, show the beginner-facing brief wrapper before or alongside the structured brief. Include whether the project is a single-page homepage, a multi-page personal site, or a hybrid landing page with supporting pages. Do not implement until the user accepts or corrects it.
 9. **Design Routing**: declare which companion skills are available, which will be used, and which fallbacks apply. Use `references/skill-routing.md`.
-10. **Implement**: prefer the existing stack and conventions. For new GitHub Pages sites, use `references/github-pages-bootstrap.md`, `references/implementation.md`, `references/site-structure.md`, and the starter structure in `assets/static-site-template/` when a plain static site is appropriate. Do not default to a large single-file HTML implementation unless the user explicitly asks for a disposable prototype. Do not force every project into one long page when the confirmed content needs multiple pages.
-11. **Review**: run build/tests where possible and use `web-design-guidelines` or an equivalent review skill when available. Use `references/quality-checklist.md`.
+10. **Implement**: before editing, pass the implementation authorization snapshot in `references/enforcement-checklist.md`. Derive the implementation plan from the confirmed requirements summary and current effective brief: stack choice, page model, page map, target files, no-touch files, content/data ownership, placeholder policy, motion/reduced-motion behavior, GitHub Pages assumptions, validation, and publish boundaries. Then prefer the existing stack and conventions. For new GitHub Pages sites, use `references/github-pages-bootstrap.md`, `references/implementation.md`, `references/site-structure.md`, and the starter structure in `assets/static-site-template/` when a plain static site is appropriate. Do not default to a large single-file HTML implementation unless the user explicitly asks for a disposable prototype. Do not force every project into one long page when the confirmed content needs multiple pages.
+11. **Review**: run build/tests where possible, use `web-design-guidelines` or an equivalent review skill when available, and complete the brief-to-site audit in `references/enforcement-checklist.md`. Use `references/quality-checklist.md`.
 12. **Publish**: commit and push only when the user asks for publishing. Do not stage unrelated changes silently.
 
-For existing or in-progress sites where the user asks for a new requirement or asks "should we add something like X?", use `references/iteration-requests.md` and `references/brief-lifecycle.md`. Do not restart the whole discovery workflow unless the requested change invalidates the existing brief, audience, purpose, page model, or design direction.
+For existing or in-progress sites where the user asks for a new requirement, says the first version does not feel right, asks to change style, or asks "should we add something like X?", use `references/iteration-requests.md`, `references/visual-iteration.md`, and `references/brief-lifecycle.md`. Classify the change, propose a scoped plan, and wait for explicit confirmation before editing visible files. Do not restart the whole discovery workflow unless the requested change invalidates the existing brief, audience, purpose, page model, or design direction.
 
 ## Companion Skill Routing
 
@@ -92,8 +96,9 @@ Minimum gates:
 - No implementation before a user-confirmed requirements summary and homepage brief.
 - No UI customization before taste discovery or explicit fallback.
 - No existing-page adjustment before a compact discussion, change plan, and explicit user confirmation.
-- No post-brief change before classifying whether the brief stays unchanged, receives a patch, or becomes a new version.
-- No final delivery before UI/UX/responsive/accessibility review or explicit fallback.
+- No file edits before an implementation authorization snapshot proves the baseline, project inspection, target files, placeholder policy, companion skill routing, GitHub Pages assumptions, and validation plan.
+- No post-brief change before classifying it as no brief update needed, brief patch, new brief version, implementation-only fix, or publish-only action.
+- No final delivery before UI/UX/responsive/accessibility review or explicit fallback, plus a brief-to-site audit against the current effective brief.
 - No publishing before user approval and clean git scope.
 
 ## Brief Contract
@@ -130,6 +135,8 @@ Every brief must include:
 - emoji policy
 - companion skill routing
 - implementation and validation plan
+- project inspection and implementation authorization status before file edits
+- placeholder and fake-content policy
 - structured site file plan for real implementations
 - requirements baseline and change handling notes
 - brief version and lifecycle status
@@ -138,6 +145,7 @@ Every brief must include:
 
 - `references/session-protocol.md`: conversation state, phase transitions, and restart rules.
 - `references/output-contracts.md`: required outputs and gates before design, implementation, review, and publish.
+- `references/enforcement-checklist.md`: hard-stop implementation authorization, project inspection, placeholder policy, and brief-to-site audit.
 - `references/brief-lifecycle.md`: active brief, brief patch, new version, and change-plan relationship rules.
 - `references/beginner-conversation-patterns.md`: choice-driven, low-friction conversation patterns for ordinary users.
 - `references/requirements-template.md`: user-readable requirements document template and confirmation baseline.
@@ -147,6 +155,7 @@ Every brief must include:
 - `references/homepage-brief.md`: canonical `personal_homepage_brief` schema and examples.
 - `references/personal-signal-intake.md`: lightweight intake prompts for users with little or no prepared material.
 - `references/iteration-requests.md`: handling new requirements on existing or in-progress homepages.
+- `references/visual-iteration.md`: post-first-version visual diagnosis, style dissatisfaction handling, selective skill routing, and revision plans.
 - `references/motion-design.md`: optional motion design levels, patterns, and safety rules.
 - `references/site-structure.md`: default structured static site layout for HTML/CSS/JS GitHub Pages implementations.
 - `references/anti-patterns.md`: common failure modes to avoid during discovery, design, implementation, and delivery.

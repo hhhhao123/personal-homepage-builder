@@ -62,6 +62,12 @@ homepage_session:
     change_log:
   iteration:
     pending_change_plan:
+    visual_diagnosis:
+    dissatisfaction_type:
+    preserved_strengths:
+    rejected_directions:
+    selected_revision_level:
+    selective_skill_routes:
     confirmation_required:
     confirmed_change_plan:
     last_confirmed_at:
@@ -88,10 +94,19 @@ homepage_session:
     last_confirmed_at:
   implementation:
     allowed: false
+    authorization_snapshot_ready:
+    project_inspected:
+    target_files:
+    content_data_strategy:
+    placeholder_policy:
+    github_pages_readiness:
+    user_confirmed_file_edits:
     companion_skills:
     fallback_notes:
   validation:
     build_checked:
+    brief_to_site_audit_checked:
+    placeholder_audit_checked:
     design_review_checked:
     responsive_checked:
     publish_approved:
@@ -120,7 +135,7 @@ If the conversation resumes after a pause:
 - Reconstruct `homepage_session` from available context.
 - State the current phase and any uncertainty.
 - Do not assume a previous brief is confirmed unless the user clearly accepted it.
-- If implementation already began, re-check the brief, stack, and git scope before editing.
+- If implementation already began, re-check the brief, stack, git scope, project inspection, and implementation authorization snapshot before editing.
 
 ## User Wants To Skip Ahead
 
@@ -130,6 +145,7 @@ If the user asks to jump directly to design or code:
 - Produce the smallest viable identity reflection and brief.
 - Ask only the missing high-impact questions.
 - State which gates are being compressed and which cannot be skipped.
+- If the user is asking for file edits, produce the implementation authorization snapshot from `enforcement-checklist.md` after the brief is confirmed and wait for explicit edit confirmation.
 
 ## User Needs Something Concrete
 
@@ -156,6 +172,20 @@ If the user already has a built or in-progress homepage and asks for a new featu
 - Use `brief-lifecycle.md` to classify whether the current brief stays unchanged, needs a patch, or needs a new version.
 - Wait for explicit confirmation of the change plan before editing files. Do not skip this for low-risk or "you decide" requests.
 - If a requirements baseline or brief was confirmed, use the Change Control Gate in `output-contracts.md` and reconfirm the affected part before editing.
+
+## User Dislikes The First Version
+
+If the user says the initial homepage feels wrong, too plain, too generic, not like them, visually weak, or unsatisfying:
+
+- Treat the reaction as useful design feedback, not as a full restart by default.
+- Use `visual-iteration.md`.
+- Inspect the current page, screenshot, files, or URL before making visual claims.
+- Ask for references only if they would help; do not force the user to find references.
+- Diagnose the likely issue in plain language.
+- Preserve what still works.
+- Invoke only the necessary available companion skills for the diagnosed problem.
+- Produce a revision plan and wait for explicit confirmation before editing files.
+- Use `brief-lifecycle.md` if the change affects the confirmed plan or visual direction.
 
 ## User Wants To Save Tokens
 
